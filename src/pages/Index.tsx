@@ -1,4 +1,4 @@
-import { Code, Palette, Rocket, Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Code, Palette, Rocket, Mail, Github, Linkedin, Twitter, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
@@ -120,6 +120,65 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Resume Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl font-bold mb-6">Resume</h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Download my resume to learn more about my experience and qualifications.
+          </p>
+          <Button size="lg" variant="outline">
+            <FileText className="mr-2 h-5 w-5" />
+            Download Resume
+          </Button>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl font-bold mb-12 text-center">Testimonials</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-xl bg-card border border-border">
+              <p className="text-muted-foreground mb-4 italic">
+                "Michael is an exceptional developer who brings creativity and technical expertise to every project."
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary/20" />
+                <div>
+                  <p className="font-semibold">Jane Doe</p>
+                  <p className="text-sm text-muted-foreground">CEO, Tech Corp</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-6 rounded-xl bg-card border border-border">
+              <p className="text-muted-foreground mb-4 italic">
+                "Working with Michael was a pleasure. His attention to detail and problem-solving skills are outstanding."
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-secondary/20" />
+                <div>
+                  <p className="font-semibold">John Smith</p>
+                  <p className="text-sm text-muted-foreground">CTO, Startup Inc</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-6 rounded-xl bg-card border border-border">
+              <p className="text-muted-foreground mb-4 italic">
+                "Michael's ability to turn ideas into reality is remarkable. Highly recommend!"
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary/20" />
+                <div>
+                  <p className="font-semibold">Sarah Johnson</p>
+                  <p className="text-sm text-muted-foreground">Designer, Creative Studio</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
@@ -136,24 +195,41 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 border-t border-border">
+      <footer className="py-12 px-4 border-t bg-card/50">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground">© 2025 Michael Szczepan. All rights reserved.</p>
-            <div className="flex gap-4">
-              <a href="mailto:michael@example.com" className="text-muted-foreground hover:text-primary transition-colors">
-                <Mail className="w-5 h-5" />
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 className="font-bold text-lg mb-4">Michael Szczepan</h3>
+              <p className="text-muted-foreground">Developer & Designer passionate about creating beautiful digital experiences.</p>
             </div>
+            <div>
+              <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li><Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link></li>
+                <li><Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">Projects</Link></li>
+                <li><Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-4">Connect</h3>
+              <div className="flex gap-4">
+                <a href="mailto:michael@example.com" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Mail className="h-5 w-5" />
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Github className="h-5 w-5" />
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Twitter className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="text-center pt-8 border-t">
+            <p className="text-muted-foreground">© {new Date().getFullYear()} Michael Szczepan. All rights reserved.</p>
           </div>
         </div>
       </footer>
