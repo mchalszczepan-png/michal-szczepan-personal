@@ -21,8 +21,7 @@ const Index = () => {
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                A passionate developer and creative problem solver dedicated to building 
-                innovative solutions and bringing ideas to life through code.
+                A passionate entrepreneur and engineering student, dedicated to finding simple solutions to people's (seemingly) complex problems.
               </p>
             </div>
             <div className="flex justify-center">
@@ -44,14 +43,20 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
           <p className="text-lg text-muted-foreground leading-relaxed text-center">
-            I'm a developer with a passion for creating elegant solutions to complex problems. 
-            With a strong foundation in both design and development, I bring a unique perspective 
+            I'm a creative entrepreneur. I bring a unique perspective 
             to every project I work on. I believe in continuous learning and staying up-to-date 
             with the latest technologies and best practices.
           </p>
         </div>
       </section>
-
+    <section className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl font-bold mb-8 text-center">About Me(Detailed)</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed text-center">
+            There have been many things that interested me over my relatively short life (18 years). From soccer, to coding, to spending 3 months learning a single piano song just to find out that i should probably learn basics first.There have been a couple interests that have burned themselves into my brainhole permanently; Reading/Learning, entrepreneurship, and a sadistic little sport called rock climbing.I started reading in and abouts the age of 12. I started with a well known series called the wheel of time. It includes the first book i properly read, and it shot a love of reading right down into my brain stem. gathering information and learning has always been a passion of mine. I believe that without reading, we would completely stagnate as a civilisation. Maybe after a while we would even regress. Books provide us with knowledge from other peoples' mistakes. Without this knowledge, we are doomed to repeat the mistakes of our forefathers.Over the past couple years I've been researching different ways to improve one's memory and focus. If you think about it, what is the point of reading if you forget everything within the day? one of my goals is to have a good enough memory that its not a problem. Maybe even fix alzheimer's with it who knows?This ties into a topic that arguably spikes my enthusiasm the most; Solving people's problems, otherwise known as entrepreneurship. What do i mean? To me, entrepreneurship is fixing people's trides and tribulations first. And getting rewarded for it second. Help people, get paid, help more people. The joy you get from finally succeeding after trying and trying over and over is almost unmatched.
+          </p>
+        </div>
+      </section>
       {/* Interests Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
@@ -72,10 +77,9 @@ const Index = () => {
               <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
                 <Palette className="w-6 h-6 text-secondary-foreground" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Design</h3>
+              <h3 className="text-2xl font-semibold mb-3">Reading</h3>
               <p className="text-muted-foreground">
-                Creating beautiful, intuitive user interfaces that provide exceptional user 
-                experiences.
+                Learning more about how to better utilise and expand my skills to help people. 
               </p>
             </div>
             
