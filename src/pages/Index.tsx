@@ -17,7 +17,7 @@ const Index = () => {
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                 Hi, I'm{" "}
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Michael Szczepan
+                  Michal Szczepan
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
