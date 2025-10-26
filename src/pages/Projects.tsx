@@ -82,8 +82,10 @@ const Projects = () => {
       </section>
 
       <footer className="py-8 px-4 border-t border-border">
-        <div className="container mx-auto text-center text-muted-foreground">
-          <p>© 2025 Michael Szczepan. All rights reserved.</p>
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-muted-foreground">© 2025 Michael Szczepan. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>
