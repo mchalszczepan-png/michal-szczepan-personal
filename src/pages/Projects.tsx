@@ -1,15 +1,13 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
+import rocketProject from "@/assets/rocket-project.jpg";
 
 const Projects = () => {
   const projects = [
     {
       title: "UCC Rocketry Society - Rocket Development Project",
       description: "Contributing to the design and development of a high-performance rocket with the University College Cork Rocketry Society. Responsibilities include Python programming for flight simulation and data analysis, 3D modeling of rocket components, strategic sourcing of aerospace-grade components, and leading team coordination efforts to ensure project milestones are met efficiently.",
-      image: project1,
+      image: rocketProject,
       tech: ["Python", "3D Modeling", "Team Leadership", "Component Sourcing", "Project Management"]
     }
     /* Uncomment to add more projects
