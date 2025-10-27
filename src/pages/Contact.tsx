@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, Twitter, Send } from "lucide-react";
+import { Mail, Github, Linkedin, Send } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -47,7 +47,7 @@ const Contact = () => {
 
               <div className="space-y-4">
                 <a 
-                  href="mailto:michael.szczepan@example.com"
+                  href="mailto:mchalszczepan@gmail.com"
                   className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
@@ -55,12 +55,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold">Email</p>
-                    <p className="text-sm text-muted-foreground">michael.szczepan@example.com</p>
+                    <p className="text-sm text-muted-foreground">mchalszczepan@gmail.com</p>
                   </div>
                 </a>
 
                 <a 
-                  href="https://github.com"
+                  href="https://github.com/mchalszczepan-png"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
@@ -70,12 +70,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold">GitHub</p>
-                    <p className="text-sm text-muted-foreground">github.com/yourusername</p>
+                    <p className="text-sm text-muted-foreground">github.com/mchalszczepan-png</p>
                   </div>
                 </a>
 
                 <a 
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/michal-szczepan-728189370"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
@@ -85,22 +85,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold">LinkedIn</p>
-                    <p className="text-sm text-muted-foreground">linkedin.com/in/yourusername</p>
-                  </div>
-                </a>
-
-                <a 
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
-                    <Twitter className="w-6 h-6 text-secondary-foreground" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Twitter</p>
-                    <p className="text-sm text-muted-foreground">@yourusername</p>
+                    <p className="text-sm text-muted-foreground">linkedin.com/in/michal-szczepan-728189370</p>
                   </div>
                 </a>
               </div>
@@ -168,7 +153,7 @@ const Contact = () => {
 
       <footer className="py-8 px-4 border-t border-border">
         <div className="container mx-auto text-center text-muted-foreground">
-          <p>© 2025 Michael Szczepan. All rights reserved.</p>
+          <p>© 2025 Michal Szczepan. All rights reserved.</p>
         </div>
       </footer>
     </div>

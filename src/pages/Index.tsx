@@ -1,4 +1,4 @@
-import { Code, Palette, Rocket, Mail, Github, Linkedin, Twitter, FileText } from "lucide-react";
+import { Code, Palette, Rocket, Mail, Github, Linkedin, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
@@ -99,26 +99,28 @@ const Index = () => {
       {/* Skills Section */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold mb-12 text-center">Skills & Technologies</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h2 className="text-4xl font-bold mb-12 text-center">Skills & Expertise</h2>
+          <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
             {[
-              { category: "Frontend", skills: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Vue.js"] },
-              { category: "Backend", skills: ["Node.js", "Python", "PostgreSQL", "MongoDB", "REST APIs"] },
-              { category: "Tools & Other", skills: ["Git", "Docker", "AWS", "Figma", "CI/CD"] }
-            ].map((group, index) => (
-              <div key={index} className="p-6 rounded-xl bg-card border border-border">
-                <h3 className="text-xl font-semibold mb-4 text-primary">{group.category}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill, skillIndex) => (
-                    <span 
-                      key={skillIndex}
-                      className="px-3 py-1.5 text-sm rounded-lg bg-muted text-foreground font-medium"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              "Python",
+              "HTML",
+              "CSS",
+              "Entrepreneurship",
+              "Digital Marketing",
+              "Sales",
+              "Public Speaking",
+              "Electronics/Circuits",
+              "Electrical Engineering",
+              "Desktop & Laptop Assembly",
+              "Troubleshooting",
+              "Cooking"
+            ].map((skill, index) => (
+              <span 
+                key={index}
+                className="px-4 py-2 text-base rounded-lg bg-card border border-border text-foreground font-medium hover:shadow-md transition-shadow"
+              >
+                {skill}
+              </span>
             ))}
           </div>
         </div>
@@ -129,23 +131,23 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold mb-6">Resume</h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Download my resume to learn more about my experience and qualifications.
+            My resume is currently a work in progress. Check back soon!
           </p>
-          <Button size="lg" variant="outline">
+          <Button size="lg" variant="outline" disabled>
             <FileText className="mr-2 h-5 w-5" />
-            Download Resume
+            Download Unavailable
           </Button>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-muted/30">
+      {/* Testimonials Section - Coming Soon */}
+      {/* <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold mb-12 text-center">Testimonials</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-6 rounded-xl bg-card border border-border">
               <p className="text-muted-foreground mb-4 italic">
-                "Michael is an exceptional developer who brings creativity and technical expertise to every project."
+                "Michal is an exceptional developer who brings creativity and technical expertise to every project."
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/20" />
@@ -157,7 +159,7 @@ const Index = () => {
             </div>
             <div className="p-6 rounded-xl bg-card border border-border">
               <p className="text-muted-foreground mb-4 italic">
-                "Working with Michael was a pleasure. His attention to detail and problem-solving skills are outstanding."
+                "Working with Michal was a pleasure. His attention to detail and problem-solving skills are outstanding."
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-secondary/20" />
@@ -169,7 +171,7 @@ const Index = () => {
             </div>
             <div className="p-6 rounded-xl bg-card border border-border">
               <p className="text-muted-foreground mb-4 italic">
-                "Michael's ability to turn ideas into reality is remarkable. Highly recommend!"
+                "Michal's ability to turn ideas into reality is remarkable. Highly recommend!"
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/20" />
@@ -181,7 +183,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 px-4">
@@ -203,8 +205,8 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="font-bold text-lg mb-4">Michael Szczepan</h3>
-              <p className="text-muted-foreground">Developer & Designer passionate about creating beautiful digital experiences.</p>
+              <h3 className="font-bold text-lg mb-4">Michal Szczepan</h3>
+              <p className="text-muted-foreground">Entrepreneur and engineering student passionate about solving complex problems.</p>
             </div>
             <div>
               <h3 className="font-bold text-lg mb-4">Quick Links</h3>
@@ -217,23 +219,20 @@ const Index = () => {
             <div>
               <h3 className="font-bold text-lg mb-4">Connect</h3>
               <div className="flex gap-4">
-                <a href="mailto:michael@example.com" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="mailto:mchalszczepan@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                   <Mail className="h-5 w-5" />
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="https://github.com/mchalszczepan-png" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                   <Github className="h-5 w-5" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="https://www.linkedin.com/in/michal-szczepan-728189370" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                   <Linkedin className="h-5 w-5" />
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Twitter className="h-5 w-5" />
                 </a>
               </div>
             </div>
           </div>
           <div className="text-center pt-8 border-t">
-            <p className="text-muted-foreground">© {new Date().getFullYear()} Michael Szczepan. All rights reserved.</p>
+            <p className="text-muted-foreground">© {new Date().getFullYear()} Michal Szczepan. All rights reserved.</p>
           </div>
         </div>
       </footer>

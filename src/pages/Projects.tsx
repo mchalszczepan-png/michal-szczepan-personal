@@ -7,11 +7,12 @@ import project3 from "@/assets/project-3.jpg";
 const Projects = () => {
   const projects = [
     {
-      title: "Project One",
-      description: "A web application built with modern technologies focusing on performance and user experience.",
+      title: "UCC Rocketry Society - Rocket Development Project",
+      description: "Contributing to the design and development of a high-performance rocket with the University College Cork Rocketry Society. Responsibilities include Python programming for flight simulation and data analysis, 3D modeling of rocket components, strategic sourcing of aerospace-grade components, and leading team coordination efforts to ensure project milestones are met efficiently.",
       image: project1,
-      tech: ["React", "TypeScript", "Tailwind CSS"]
-    },
+      tech: ["Python", "3D Modeling", "Team Leadership", "Component Sourcing", "Project Management"]
+    }
+    /* Uncomment to add more projects
     {
       title: "Project Two",
       description: "An innovative solution that streamlines workflows and improves productivity.",
@@ -24,6 +25,7 @@ const Projects = () => {
       image: project3,
       tech: ["React", "Three.js", "WebGL"]
     }
+    */
   ];
 
   return (
@@ -84,7 +86,7 @@ const Projects = () => {
       <footer className="py-8 px-4 border-t border-border">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground">© 2025 Michael Szczepan. All rights reserved.</p>
+            <p className="text-muted-foreground">© 2025 Michal Szczepan. All rights reserved.</p>
           </div>
         </div>
       </footer>
