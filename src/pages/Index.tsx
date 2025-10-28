@@ -21,7 +21,7 @@ const Index = () => {
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                A passionate entrepreneur and engineering student, dedicated to finding simple solutions to people's (seemingly) complex problems.
+                A passionate entrepreneur and engineering student, dedicated to finding simple solutions to people's complex problems.
               </p>
             </div>
             <div className="flex justify-center">
@@ -90,6 +90,36 @@ const Index = () => {
               <h3 className="text-2xl font-semibold mb-3">Innovation</h3>
               <p className="text-muted-foreground">
                 Pushing boundaries and finding creative solutions to challenging problems.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                <Rocket className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <h3 className="text-2xl font-semibold mb-3">Entrepreneurship</h3>
+              <p className="text-muted-foreground">
+                Solving people's problems and creating value through innovative business solutions.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
+                <Rocket className="w-6 h-6 text-secondary-foreground" />
+              </div>
+              <h3 className="text-2xl font-semibold mb-3">Sports</h3>
+              <p className="text-muted-foreground">
+                Staying active and pushing physical limits through various sports and activities.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                <Code className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <h3 className="text-2xl font-semibold mb-3">Networking</h3>
+              <p className="text-muted-foreground">
+                Socialising and making new contacts to build meaningful professional relationships.
               </p>
             </div>
           </div>
