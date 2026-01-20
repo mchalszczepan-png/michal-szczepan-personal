@@ -1,20 +1,7 @@
-import { Mail, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Github, Linkedin } from "lucide-react";
 import Navigation from "@/components/Navigation";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -34,8 +21,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Info */}
+          <div className="max-w-xl mx-auto">
             <div className="space-y-8">
               <div>
                 <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
@@ -89,63 +75,6 @@ const Contact = () => {
                   </div>
                 </a>
               </div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border">
-              <h2 className="text-3xl font-bold mb-6">Send a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Name
-                  </label>
-                  <Input 
-                    id="name" 
-                    placeholder="Your name" 
-                    required 
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email
-                  </label>
-                  <Input 
-                    id="email" 
-                    type="email" 
-                    placeholder="your.email@example.com" 
-                    required 
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                    Subject
-                  </label>
-                  <Input 
-                    id="subject" 
-                    placeholder="What's this about?" 
-                    required 
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message
-                  </label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell me about your project..." 
-                    className="min-h-[150px]" 
-                    required 
-                  />
-                </div>
-                
-                <Button type="submit" className="w-full" size="lg">
-                  <Send className="w-4 h-4 mr-2" />
-                  Send Message
-                </Button>
-              </form>
             </div>
           </div>
         </div>
