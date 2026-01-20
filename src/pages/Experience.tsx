@@ -34,7 +34,8 @@ const Experience = () => {
       institution: "University College Cork (UCC) | 2025 - 2029",
       details: "First Class Honours (1:1) Average / 3.92 GPA",
       highlights: [
-        "Electives: \"Essentials of AI\" (Ethics & Agents) and \"Developing an Entrepreneurial Mindset\"",
+        "Sem 1 Electives: \"Essentials of AI\" (Ethics & Agents) and \"Developing an Entrepreneurial Mindset\"",
+        "Sem 2 Electives: French at Intermediate Level",
         "Activities: 1st Year Engineering Academic Rep, Rocketry Society, Mountaineering Society, WARPS Society"
       ],
       icon: GraduationCap,
