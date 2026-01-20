@@ -161,11 +161,13 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold mb-6">Resume</h2>
           <p className="text-lg text-muted-foreground mb-8">
-            My resume is currently a work in progress. Check back soon!
+            View my full CV to learn more about my experience and qualifications.
           </p>
-          <Button size="lg" variant="outline" disabled>
-            <FileText className="mr-2 h-5 w-5" />
-            Download Unavailable
+          <Button size="lg" asChild>
+            <a href="/Michal_Szczepan_CV.pdf" target="_blank" rel="noopener noreferrer">
+              <FileText className="mr-2 h-5 w-5" />
+              View CV
+            </a>
           </Button>
         </div>
       </section>
