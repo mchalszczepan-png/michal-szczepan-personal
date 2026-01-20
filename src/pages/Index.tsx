@@ -1,10 +1,8 @@
-import { Code, Palette, Rocket, Mail, Github, Linkedin, FileText, Users, TrendingUp, Lightbulb } from "lucide-react";
+import { Mountain, BookOpen, Lightbulb, Brain, Users, Hammer, Mail, Github, Linkedin, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import profilePhoto from "@/assets/profile-photo.jpg";
-import ganzyLogo from "@/assets/ganzy-logo.png";
 
 const Index = () => {
   return (
@@ -50,70 +48,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Project - Ganzy */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold mb-4 text-center">Featured Project</h2>
-          <p className="text-lg text-muted-foreground text-center mb-12">My flagship venture in EdTech</p>
-          
-          <Card className="overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20">
-            <div className="grid md:grid-cols-2 gap-8 p-8">
-              <div className="flex items-center justify-center">
-                <img 
-                  src={ganzyLogo} 
-                  alt="Ganzy - EdTech Platform"
-                  className="w-full max-w-sm h-auto object-contain rounded-lg"
-                />
-              </div>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-3xl font-bold mb-2">Ganzy</h3>
-                  <p className="text-xl text-primary font-semibold">Decision Support System for Leaving Cert Students</p>
-                </div>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Adaptive scheduling, microskill breakdowns, and gamification—empowering students to achieve their academic goals with data-driven insights.
-                </p>
-                
-                {/* Metrics */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 rounded-lg bg-card border border-border">
-                    <p className="text-2xl font-bold text-primary">Co-Founder</p>
-                    <p className="text-sm text-muted-foreground">& CTO</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-card border border-border">
-                    <p className="text-2xl font-bold text-primary">5-Person</p>
-                    <p className="text-sm text-muted-foreground">Senior Dev Team</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-card border border-border">
-                    <p className="text-2xl font-bold text-primary">50k+</p>
-                    <p className="text-sm text-muted-foreground">Organic TikTok Views</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-card border border-border">
-                    <p className="text-2xl font-bold text-primary">Beta</p>
-                    <p className="text-sm text-muted-foreground">Launch 2024</p>
-                  </div>
-                </div>
-                
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2">
-                  {["Python", "React", "AWS", "Agile"].map((tech, index) => (
-                    <span 
-                      key={index}
-                      className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                
-                <Button asChild>
-                  <Link to="/projects">Learn More →</Link>
-                </Button>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </section>
 
       {/* About Section */}
       <section className="py-20 px-4">
@@ -128,66 +62,65 @@ const Index = () => {
       {/* Interests Section */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold mb-12 text-center">What I Love</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <h2 className="text-4xl font-bold mb-12 text-center">Things I Love</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                <Code className="w-6 h-6 text-primary-foreground" />
+                <Mountain className="w-6 h-6 text-primary-foreground" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Coding</h3>
-              <p className="text-muted-foreground">
-                Building robust applications with clean, maintainable code and exploring new 
-                frameworks and technologies.
+              <h3 className="text-xl font-semibold mb-3">Gravity Checks (Rock Climbing)</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                A genuinely petrifying sport where I analyze the earth's gravity by falling spectacularly. It teaches me that failing 200 times is just part of the process before the final send. It also teaches me that even the largest fears can be overcome.
               </p>
             </div>
             
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
-                <Palette className="w-6 h-6 text-secondary-foreground" />
+                <BookOpen className="w-6 h-6 text-secondary-foreground" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Reading</h3>
-              <p className="text-muted-foreground">
-                Learning more about how to better utilise and expand my skills to help people. 
+              <h3 className="text-xl font-semibold mb-3">Epic Reads</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                I don't just read, I devour information. From the massive Wheel of Time series to deep dives on psychology, management, and technology. Books are how I ensure I learn from others' mistakes rather than repeating them.
               </p>
             </div>
             
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
                 <Lightbulb className="w-6 h-6 text-primary-foreground" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Innovation</h3>
-              <p className="text-muted-foreground">
-                Pushing boundaries and finding creative solutions to challenging problems.
+              <h3 className="text-xl font-semibold mb-3">The Thrill of the Fix</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                To me, entrepreneurship is just fixing people's tribulations. Whether it was selling gum in school or building Ganzy today, I love the unmatched rush of finally cracking a problem that helps people.
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="w-6 h-6 text-primary-foreground" />
+                <Brain className="w-6 h-6 text-primary-foreground" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Entrepreneurship</h3>
-              <p className="text-muted-foreground">
-                Solving people's problems and creating value through innovative business solutions.
+              <h3 className="text-xl font-semibold mb-3">Brain Optimization</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                I am obsessed with how the brain works. I actively research and practice memory techniques and mnemonics—because what's the point of reading if you don't retain it?
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
-                <Rocket className="w-6 h-6 text-secondary-foreground" />
+                <Users className="w-6 h-6 text-secondary-foreground" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Sports</h3>
-              <p className="text-muted-foreground">
-                Staying active and pushing physical limits through various sports and activities.
+              <h3 className="text-xl font-semibold mb-3">Networking</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                I love meeting new people and establishing connections. It expands my horizons and allows me to make new friends.
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-primary-foreground" />
+                <Hammer className="w-6 h-6 text-primary-foreground" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Networking</h3>
-              <p className="text-muted-foreground">
-                Socialising and making new contacts to build meaningful professional relationships.
+              <h3 className="text-xl font-semibold mb-3">Hard Work</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                It may not be an activity per-se, but it sure is right about the most fun thing I do. Just getting into the deep end and working on something for hours on end. A glorious feeling.
               </p>
             </div>
           </div>

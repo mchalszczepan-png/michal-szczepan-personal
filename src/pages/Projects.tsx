@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import ganzyProject from "@/assets/ganzy-project.png";
+import ganzyLogo from "@/assets/ganzy-logo.png";
 import rocketProject from "@/assets/rocket-project.png";
 import giveagoProject from "@/assets/giveago-project.png";
 
@@ -9,9 +9,10 @@ const Projects = () => {
     {
       title: "Ganzy - CTO & Co-Founder",
       description: "A Decision Support System for Leaving Cert students. Adaptive scheduling, microskill breakdowns, and gamification. Overseeing the entire product lifecycle from Specs to VnV & QC. Leading a 5-person senior dev team and ensuring agile timelines are met.",
-      image: ganzyProject,
+      image: ganzyLogo,
       tech: ["Python", "React", "AWS", "Agile", "TypeScript", "UI/UX Design"],
-      highlight: true
+      highlight: true,
+      featured: true
     },
     {
       title: "GiveAGo AI Build Jam (Jan 2026)",
@@ -58,11 +59,69 @@ const Projects = () => {
             </p>
           </div>
 
+          {/* Featured Project - Ganzy */}
+          {projects.filter(p => p.featured).map((project, index) => (
+            <Card key={`featured-${index}`} className="overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20 mb-12">
+              <div className="grid md:grid-cols-2 gap-6 p-6">
+                <div className="flex items-center justify-center">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full max-w-xs h-auto object-contain rounded-lg"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2">Featured Project</div>
+                    <h3 className="text-2xl font-bold">Ganzy</h3>
+                    <p className="text-lg text-primary font-semibold">Decision Support System for Leaving Cert Students</p>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+                  
+                  {/* Metrics */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="p-3 rounded-lg bg-card border border-border">
+                      <p className="text-lg font-bold text-primary">Co-Founder</p>
+                      <p className="text-xs text-muted-foreground">& CTO</p>
+                    </div>
+                    <div className="p-3 rounded-lg bg-card border border-border">
+                      <p className="text-lg font-bold text-primary">5-Person</p>
+                      <p className="text-xs text-muted-foreground">Senior Dev Team</p>
+                    </div>
+                    <div className="p-3 rounded-lg bg-card border border-border">
+                      <p className="text-lg font-bold text-primary">50k+</p>
+                      <p className="text-xs text-muted-foreground">Organic TikTok Views</p>
+                    </div>
+                    <div className="p-3 rounded-lg bg-card border border-border">
+                      <p className="text-lg font-bold text-primary">Beta</p>
+                      <p className="text-xs text-muted-foreground">Launch 2024</p>
+                    </div>
+                  </div>
+                  
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex}
+                        className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Card>
+          ))}
+
+          {/* Other Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {projects.filter(p => !p.featured).map((project, index) => (
               <Card 
                 key={index} 
-                className={`overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-primary/5 to-secondary/5 ${project.highlight ? 'md:col-span-2 lg:col-span-1 border-2 border-primary/30' : ''}`}
+                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-primary/5 to-secondary/5"
               >
                 {project.image ? (
                   <div className="aspect-video overflow-hidden bg-muted flex items-center justify-center">
