@@ -27,6 +27,12 @@ const Navigation = () => {
             <Link to="/projects">Projects</Link>
           </Button>
           <Button 
+            variant={isActive("/experience") ? "default" : "ghost"} 
+            asChild
+          >
+            <Link to="/experience">Experience</Link>
+          </Button>
+          <Button 
             variant={isActive("/contact") ? "default" : "ghost"} 
             asChild
           >
