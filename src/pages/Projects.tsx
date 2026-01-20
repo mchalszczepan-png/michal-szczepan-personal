@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ganzyProject from "@/assets/ganzy-project.png";
 import rocketProject from "@/assets/rocket-project.png";
+import giveagoProject from "@/assets/giveago-project.png";
 
 const Projects = () => {
   const projects = [
@@ -13,10 +14,11 @@ const Projects = () => {
       highlight: true
     },
     {
-      title: "GiveAGo Buildathon (Jan 2026)",
-      description: "Developed an autonomous AI messaging agent using Python and 'Browser-use'. Rapid prototyping winner—built a functional AI agent capable of autonomous web browsing and task completion.",
-      image: null,
-      tech: ["Python", "AI Agents", "APIs", "Rapid Prototyping"]
+      title: "GiveAGo AI Build Jam (Jan 2026)",
+      subtitle: "LazyMorning.com",
+      description: "Built a functional AI automation tool in a 4-hour rapid prototyping sprint. Collaborated with a team of 5 to engineer an autonomous agent using Browser-use and Python. The system automates daily communication routines by scheduling randomized, context-aware messages to friends and family.",
+      image: giveagoProject,
+      tech: ["Python", "Browser-use", "AI Agents", "Rapid Prototyping"]
     },
     {
       title: "Custom PC Venture (2019-2023)",
@@ -77,6 +79,9 @@ const Projects = () => {
                 )}
                 <CardHeader>
                   <CardTitle className="text-xl">{project.title}</CardTitle>
+                  {project.subtitle && (
+                    <p className="text-sm font-medium text-primary">{project.subtitle}</p>
+                  )}
                   <CardDescription className="text-base">
                     {project.description}
                   </CardDescription>
