@@ -1,9 +1,16 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import rocketProject from "@/assets/rocket-project.jpg";
+import ganzyProject from "@/assets/ganzy-project.png";
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Ganzy - CTO",
+      description: "Overseeing the entire product lifecycle from Specs to VnV & QC. Actively coding, resolving complex stack issues, managing the dev team, and ensuring agile timelines are met following agile software development methodologies. Serving as the technical liaison to the CEO.",
+      image: ganzyProject,
+      tech: ["Project Management", "Agile Development", "System Design", "Python", "Next.js", "TypeScript", "UI/UX Design", "Wireframing"]
+    },
     {
       title: "UCC Rocketry Society - Rocket Development Project",
       description: "Contributing to the design and development of a high-performance rocket with the University College Cork Rocketry Society. Responsibilities include Python programming for flight simulation and data analysis, 3D modeling of rocket components, strategic sourcing of aerospace-grade components, and leading team coordination efforts to ensure project milestones are met efficiently.",
