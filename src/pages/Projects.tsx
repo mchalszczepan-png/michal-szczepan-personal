@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import rocketProject from "@/assets/rocket-project.jpg";
+import rocketProject from "@/assets/rocket-project.png";
 import ganzyProject from "@/assets/ganzy-project.png";
 
 const Projects = () => {
