@@ -1,6 +1,9 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, GraduationCap, Users, Globe, Building } from "lucide-react";
+import { Award, GraduationCap, Users } from "lucide-react";
+import hultprizeLogo from "@/assets/hultprize-logo.png";
+import eypLogo from "@/assets/eyp-logo.png";
+import stFrancisCrest from "@/assets/stfrancis-crest.png";
 
 const Experience = () => {
   const leadership = [
@@ -8,20 +11,20 @@ const Experience = () => {
       title: "Hult Prize Campus Director",
       organization: "UCC",
       description: "Running a mini-accelerator for social entrepreneurship at University College Cork. Organizing events, mentoring teams, and connecting students with global entrepreneurship opportunities.",
-      icon: Globe,
+      image: hultprizeLogo,
       current: true
     },
     {
       title: "European Youth Parliament Delegate",
       organization: "National Session - Dáil Éireann",
       description: "Selected delegate at the National Session held in Dáil Éireann (Irish Parliament). Drafted and debated cyber security legislation with peers from across Ireland.",
-      icon: Building
+      image: eypLogo
     },
     {
       title: "Student Council President",
       organization: "St. Francis College",
       description: "Led the student body, organized school-wide initiatives, and served as the primary liaison between students and administration.",
-      icon: Users
+      image: stFrancisCrest
     }
   ];
 
@@ -80,8 +83,8 @@ const Experience = () => {
               {leadership.map((item, index) => (
                 <Card key={index} className="overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 hover:shadow-lg transition-all duration-300">
                   <CardHeader className="flex flex-row items-start gap-4">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0">
-                      <item.icon className="w-6 h-6 text-primary-foreground" />
+                    <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0 overflow-hidden bg-white">
+                      <img src={item.image} alt={item.title} className="w-full h-full object-contain p-1" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-3 flex-wrap">
