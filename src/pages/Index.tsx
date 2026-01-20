@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import profilePhoto from "@/assets/profile-photo.jpg";
-import ganzyProject from "@/assets/ganzy-project.png";
+import ganzyLogo from "@/assets/ganzy-logo.png";
 
 const Index = () => {
   return (
@@ -60,9 +60,9 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-8 p-8">
               <div className="flex items-center justify-center">
                 <img 
-                  src={ganzyProject} 
+                  src={ganzyLogo} 
                   alt="Ganzy - EdTech Platform"
-                  className="w-full max-w-md h-auto object-contain rounded-lg"
+                  className="w-full max-w-sm h-auto object-contain rounded-lg"
                 />
               </div>
               <div className="space-y-6">
