@@ -91,12 +91,12 @@ const Projects = () => {
                       <p className="text-xs text-muted-foreground">Senior Dev Team</p>
                     </div>
                     <div className="p-3 rounded-lg bg-card border border-border">
-                      <p className="text-lg font-bold text-primary">50k+</p>
+                      <p className="text-lg font-bold text-primary">10k+</p>
                       <p className="text-xs text-muted-foreground">Organic TikTok Views</p>
                     </div>
                     <div className="p-3 rounded-lg bg-card border border-border">
                       <p className="text-lg font-bold text-primary">Beta</p>
-                      <p className="text-xs text-muted-foreground">Launch 2024</p>
+                      <p className="text-xs text-muted-foreground">Launch March 2026</p>
                     </div>
                   </div>
                   
