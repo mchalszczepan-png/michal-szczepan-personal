@@ -31,25 +31,33 @@ const Experience = () => {
   const education = [
     {
       title: "BE Electrical & Electronic Engineering",
-      institution: "University College Cork (UCC)",
-      details: "Current GPA: 3.92 / 1:1 Grade",
+      institution: "University College Cork (UCC) | 2025 - 2029",
+      details: "First Class Honours (1:1) Average / 3.92 GPA",
       highlights: [
-        "Elective: Essentials of AI (Ethics & Agents)",
-        "Elective: Entrepreneurial Mindset",
-        "Active member of UCC Rocketry & Space Exploration Society"
+        "Electives: \"Essentials of AI\" (Ethics & Agents) and \"Developing an Entrepreneurial Mindset\"",
+        "Activities: 1st Year Engineering Academic Rep, Rocketry Society, Mountaineering Society, WARPS Society"
       ],
       icon: GraduationCap,
       current: true
     },
     {
-      title: "Leaving Certificate",
-      institution: "St. Francis College",
+      title: "Leaving Certificate (High School Diploma)",
+      institution: "Douglas Community School | 2024 - 2025",
       details: "613/625 Points — Top 2% Nationally",
       highlights: [
-        "H1 in Mathematics",
-        "H1 in Applied Mathematics",
-        "H1 in Chemistry",
-        "H1 in Physics"
+        "H1 (A) in Maths (93%), Applied Maths (91%), Biology (92%), Chemistry (94%), and Polish (98.7%)",
+        "H2 (B) in Physics and French",
+        "Key Project: Mathematical Modelling Analysis — Comprehensive study modelling Poland's population growth using iterative methods and advanced differential equations",
+        "Activities: Dungeons & Dragons Club"
+      ],
+      icon: Award
+    },
+    {
+      title: "Junior Cycle",
+      institution: "St. Francis College Rochestown | 2021 - 2023",
+      details: "Distinction in Maths; Higher Merit in Science, English, Geography, Business, and French",
+      highlights: [
+        "Leadership: Student Council President, Green Schools Committee, Debating Club"
       ],
       icon: Award
     }
