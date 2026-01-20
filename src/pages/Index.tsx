@@ -131,30 +131,55 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold mb-12 text-center">Skills & Expertise</h2>
-          <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
-            {[
-              "Python",
-              "Javascript",
-              "TypeScript",
-              "AWS",
-              "HTML/CSS",
-              "Agile Development",
-              "Entrepreneurship",
-              "Digital Marketing",
-              "Sales",
-              "Public Speaking",
-              "Electronics/Circuits",
-              "Electrical Engineering",
-              "Team Leadership",
-              "Product Strategy"
-            ].map((skill, index) => (
-              <span 
-                key={index}
-                className="px-4 py-2 text-base rounded-lg bg-card border border-border text-foreground font-medium hover:shadow-md transition-shadow"
-              >
-                {skill}
-              </span>
-            ))}
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Technical (Core) */}
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border">
+              <h3 className="text-lg font-semibold mb-4 text-primary">Technical (Core)</h3>
+              <div className="flex flex-wrap gap-2">
+                {["Python", "HTML/CSS", "Electronics/Circuits", "System Specification", "Wireframing (Figma)"].map((skill, index) => (
+                  <span key={index} className="px-3 py-1.5 text-sm rounded-lg bg-card border border-border text-foreground font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Technical (Learning/Familiar) */}
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border">
+              <h3 className="text-lg font-semibold mb-4 text-primary">Technical (Learning/Familiar)</h3>
+              <p className="text-xs text-muted-foreground mb-3">Managing teams using these stacks as CTO</p>
+              <div className="flex flex-wrap gap-2">
+                {["JavaScript", "TypeScript", "React", "Next.js", "AWS", "SQL"].map((skill, index) => (
+                  <span key={index} className="px-3 py-1.5 text-sm rounded-lg bg-card border border-border text-foreground font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Business & Entrepreneurship */}
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border">
+              <h3 className="text-lg font-semibold mb-4 text-secondary">Business & Entrepreneurship</h3>
+              <div className="flex flex-wrap gap-2">
+                {["Business Management", "Sales & Negotiation", "Event Planning", "Fraud Awareness", "Supply Chain Management"].map((skill, index) => (
+                  <span key={index} className="px-3 py-1.5 text-sm rounded-lg bg-card border border-border text-foreground font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Marketing & Creative */}
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border">
+              <h3 className="text-lg font-semibold mb-4 text-secondary">Marketing & Creative</h3>
+              <div className="flex flex-wrap gap-2">
+                {["Digital Marketing Strategy", "Content Creation", "Script Writing", "Advertising", "Public Speaking & Debating"].map((skill, index) => (
+                  <span key={index} className="px-3 py-1.5 text-sm rounded-lg bg-card border border-border text-foreground font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
