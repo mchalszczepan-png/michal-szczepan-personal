@@ -134,7 +134,7 @@ const Index = () => {
           <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
             {[
               "Python",
-              "React",
+              "Javascript",
               "TypeScript",
               "AWS",
               "HTML/CSS",
