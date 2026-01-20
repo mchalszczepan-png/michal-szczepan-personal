@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navigation = () => {
   const location = useLocation();
@@ -12,7 +13,7 @@ const Navigation = () => {
         <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
           MS
         </Link>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           <Button 
             variant={isActive("/") ? "default" : "ghost"} 
             asChild
@@ -31,6 +32,7 @@ const Navigation = () => {
           >
             <Link to="/contact">Contact</Link>
           </Button>
+          <ThemeToggle />
         </div>
       </div>
     </nav>
