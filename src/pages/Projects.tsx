@@ -1,36 +1,41 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import rocketProject from "@/assets/rocket-project.png";
 import ganzyProject from "@/assets/ganzy-project.png";
+import rocketProject from "@/assets/rocket-project.png";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Ganzy - CTO",
-      description: "Overseeing the entire product lifecycle from Specs to VnV & QC. Actively coding, resolving complex stack issues, managing the dev team, and ensuring agile timelines are met following agile software development methodologies. Serving as the technical liaison to the CEO.",
+      title: "Ganzy - CTO & Co-Founder",
+      description: "A Decision Support System for Leaving Cert students. Adaptive scheduling, microskill breakdowns, and gamification. Overseeing the entire product lifecycle from Specs to VnV & QC. Leading a 5-person senior dev team and ensuring agile timelines are met.",
       image: ganzyProject,
-      tech: ["Project Management", "Agile Development", "System Design", "Python", "Next.js", "TypeScript", "UI/UX Design", "Wireframing"]
+      tech: ["Python", "React", "AWS", "Agile", "TypeScript", "UI/UX Design"],
+      highlight: true
     },
     {
-      title: "UCC Rocketry Society - Rocket Development Project",
-      description: "Contributing to the design and development of a high-performance rocket with the University College Cork Rocketry Society. Responsibilities include Python programming for flight simulation and data analysis, 3D modeling of rocket components, strategic sourcing of aerospace-grade components, and leading team coordination efforts to ensure project milestones are met efficiently.",
+      title: "GiveAGo Buildathon (Jan 2026)",
+      description: "Developed an autonomous AI messaging agent using Python and 'Browser-use'. Rapid prototyping winner—built a functional AI agent capable of autonomous web browsing and task completion.",
+      image: null,
+      tech: ["Python", "AI Agents", "APIs", "Rapid Prototyping"]
+    },
+    {
+      title: "Custom PC Venture (2019-2023)",
+      description: "Bootstrap hardware business. Generated €8k+ revenue, navigated global silicon shortage, and managed complex supply chains. Built custom PCs for clients while learning real-world business operations.",
+      image: null,
+      tech: ["Hardware", "Sales", "Logistics", "Business Operations"]
+    },
+    {
+      title: "EduCat / ScreenPaws",
+      description: "Mobile app concept turning screen time into micro-learning opportunities. Validated prototype built in 28 days—exploring gamification mechanics for educational engagement.",
+      image: null,
+      tech: ["Android", "Figma", "Product Design", "Prototyping"]
+    },
+    {
+      title: "UCC Rocketry Society - Rocket Development",
+      description: "Contributing to the design and development of a high-performance rocket. Responsibilities include Python programming for flight simulation and data analysis, 3D modeling of rocket components, and leading team coordination efforts.",
       image: rocketProject,
-      tech: ["Python", "3D Modeling", "Team Leadership", "Component Sourcing", "Project Management"]
+      tech: ["Python", "3D Modeling", "Team Leadership", "Component Sourcing"]
     }
-    /* Uncomment to add more projects
-    {
-      title: "Project Two",
-      description: "An innovative solution that streamlines workflows and improves productivity.",
-      image: project2,
-      tech: ["Next.js", "Node.js", "PostgreSQL"]
-    },
-    {
-      title: "Project Three",
-      description: "A creative project showcasing modern design principles and interactive features.",
-      image: project3,
-      tech: ["React", "Three.js", "WebGL"]
-    }
-    */
   ];
 
   return (
@@ -47,7 +52,7 @@ const Projects = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              A showcase of my recent work and creative endeavors
+              A showcase of ventures, builds, and creative endeavors
             </p>
           </div>
 
@@ -55,17 +60,23 @@ const Projects = () => {
             {projects.map((project, index) => (
               <Card 
                 key={index} 
-                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-primary/5 to-secondary/5"
+                className={`overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-primary/5 to-secondary/5 ${project.highlight ? 'md:col-span-2 lg:col-span-1 border-2 border-primary/30' : ''}`}
               >
-                <div className="aspect-video overflow-hidden bg-muted flex items-center justify-center">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+                {project.image ? (
+                  <div className="aspect-video overflow-hidden bg-muted flex items-center justify-center">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ) : (
+                  <div className="aspect-video overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                    <div className="text-6xl opacity-20">🚀</div>
+                  </div>
+                )}
                 <CardHeader>
-                  <CardTitle className="text-2xl">{project.title}</CardTitle>
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
                   <CardDescription className="text-base">
                     {project.description}
                   </CardDescription>

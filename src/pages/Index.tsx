@@ -1,8 +1,10 @@
-import { Code, Palette, Rocket, Mail, Github, Linkedin, FileText } from "lucide-react";
+import { Code, Palette, Rocket, Mail, Github, Linkedin, FileText, Users, TrendingUp, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import profilePhoto from "@/assets/profile-photo.jpg";
+import ganzyProject from "@/assets/ganzy-project.png";
 
 const Index = () => {
   return (
@@ -15,21 +17,31 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                Hi, I'm{" "}
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Michal Szczepan
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                A passionate entrepreneur and engineering student, dedicated to finding simple solutions to people's complex problems.
+              <p className="text-2xl font-semibold text-foreground">
+                Engineering Student & EdTech Founder
               </p>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Bridging the gap between technical engineering and entrepreneurial strategy. Turning problems into ventures.
+              </p>
+              <div className="flex gap-4 pt-4">
+                <Button size="lg" asChild>
+                  <Link to="/projects">View Projects</Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/contact">Get in Touch</Link>
+                </Button>
+              </div>
             </div>
             <div className="flex justify-center">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-2xl opacity-30 animate-pulse"></div>
                 <img 
                   src={profilePhoto} 
-                  alt="Michael Szczepan" 
+                  alt="Michal Szczepan" 
                   className="relative w-80 h-80 rounded-full object-cover border-4 border-primary/20 shadow-2xl"
                 />
               </div>
@@ -38,27 +50,83 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Featured Project - Ganzy */}
       <section className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl font-bold mb-4 text-center">Featured Project</h2>
+          <p className="text-lg text-muted-foreground text-center mb-12">My flagship venture in EdTech</p>
+          
+          <Card className="overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20">
+            <div className="grid md:grid-cols-2 gap-8 p-8">
+              <div className="flex items-center justify-center">
+                <img 
+                  src={ganzyProject} 
+                  alt="Ganzy - EdTech Platform"
+                  className="w-full max-w-md h-auto object-contain rounded-lg"
+                />
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-3xl font-bold mb-2">Ganzy</h3>
+                  <p className="text-xl text-primary font-semibold">Decision Support System for Leaving Cert Students</p>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Adaptive scheduling, microskill breakdowns, and gamification—empowering students to achieve their academic goals with data-driven insights.
+                </p>
+                
+                {/* Metrics */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-card border border-border">
+                    <p className="text-2xl font-bold text-primary">Co-Founder</p>
+                    <p className="text-sm text-muted-foreground">& CTO</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-card border border-border">
+                    <p className="text-2xl font-bold text-primary">5-Person</p>
+                    <p className="text-sm text-muted-foreground">Senior Dev Team</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-card border border-border">
+                    <p className="text-2xl font-bold text-primary">50k+</p>
+                    <p className="text-sm text-muted-foreground">Organic TikTok Views</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-card border border-border">
+                    <p className="text-2xl font-bold text-primary">Beta</p>
+                    <p className="text-sm text-muted-foreground">Launch 2024</p>
+                  </div>
+                </div>
+                
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2">
+                  {["Python", "React", "AWS", "Agile"].map((tech, index) => (
+                    <span 
+                      key={index}
+                      className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
+                <Button asChild>
+                  <Link to="/projects">Learn More →</Link>
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
           <p className="text-lg text-muted-foreground leading-relaxed text-center">
-            I'm a creative entrepreneur. I bring a unique perspective 
-            to every project I work on. I believe in continuous learning and staying up-to-date 
-            with the latest technologies and best practices.
+            I'm an Engineering Student at UCC achieving a 1:1 Grade (GPA 3.92), and the CTO of Ganzy—an EdTech startup revolutionizing how students prepare for exams. I bring a unique perspective combining technical engineering expertise with entrepreneurial strategy, always focused on creating real value through innovation.
           </p>
         </div>
       </section>
-    <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold mb-8 text-center">About Me(Detailed)</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed text-center">
-            There have been many things that interested me over my relatively short life (18 years). From soccer, to coding, to spending 3 months learning a single piano song just to find out that i should probably learn basics first.There have been a couple interests that have burned themselves into my brainhole permanently; Reading/Learning, entrepreneurship, and a sadistic little sport called rock climbing.I started reading in and abouts the age of 12. I started with a well known series called the wheel of time. It includes the first book i properly read, and it shot a love of reading right down into my brain stem. gathering information and learning has always been a passion of mine. I believe that without reading, we would completely stagnate as a civilisation. Maybe after a while we would even regress. Books provide us with knowledge from other peoples' mistakes. Without this knowledge, we are doomed to repeat the mistakes of our forefathers.Over the past couple years I've been researching different ways to improve one's memory and focus. If you think about it, what is the point of reading if you forget everything within the day? one of my goals is to have a good enough memory that its not a problem. Maybe even fix alzheimer's with it who knows?This ties into a topic that arguably spikes my enthusiasm the most; Solving people's problems, otherwise known as entrepreneurship. What do i mean? To me, entrepreneurship is fixing people's trides and tribulations first. And getting rewarded for it second. Help people, get paid, help more people. The joy you get from finally succeeding after trying and trying over and over is almost unmatched.
-          </p>
-        </div>
-      </section>
+
       {/* Interests Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold mb-12 text-center">What I Love</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -85,7 +153,7 @@ const Index = () => {
             
             <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                <Rocket className="w-6 h-6 text-primary-foreground" />
+                <Lightbulb className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="text-2xl font-semibold mb-3">Innovation</h3>
               <p className="text-muted-foreground">
@@ -95,7 +163,7 @@ const Index = () => {
 
             <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                <Rocket className="w-6 h-6 text-primary-foreground" />
+                <TrendingUp className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="text-2xl font-semibold mb-3">Entrepreneurship</h3>
               <p className="text-muted-foreground">
@@ -115,7 +183,7 @@ const Index = () => {
 
             <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                <Code className="w-6 h-6 text-primary-foreground" />
+                <Users className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="text-2xl font-semibold mb-3">Networking</h3>
               <p className="text-muted-foreground">
@@ -127,23 +195,25 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold mb-12 text-center">Skills & Expertise</h2>
           <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
             {[
               "Python",
-              "HTML",
-              "CSS",
+              "React",
+              "TypeScript",
+              "AWS",
+              "HTML/CSS",
+              "Agile Development",
               "Entrepreneurship",
               "Digital Marketing",
               "Sales",
               "Public Speaking",
               "Electronics/Circuits",
               "Electrical Engineering",
-              "Desktop & Laptop Assembly",
-              "Troubleshooting",
-              "Cooking"
+              "Team Leadership",
+              "Product Strategy"
             ].map((skill, index) => (
               <span 
                 key={index}
@@ -157,7 +227,7 @@ const Index = () => {
       </section>
 
       {/* Resume Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold mb-6">Resume</h2>
           <p className="text-lg text-muted-foreground mb-8">
@@ -172,58 +242,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section - Coming Soon */}
-      {/* <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold mb-12 text-center">Testimonials</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 rounded-xl bg-card border border-border">
-              <p className="text-muted-foreground mb-4 italic">
-                "Michal is an exceptional developer who brings creativity and technical expertise to every project."
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/20" />
-                <div>
-                  <p className="font-semibold">Jane Doe</p>
-                  <p className="text-sm text-muted-foreground">CEO, Tech Corp</p>
-                </div>
-              </div>
-            </div>
-            <div className="p-6 rounded-xl bg-card border border-border">
-              <p className="text-muted-foreground mb-4 italic">
-                "Working with Michal was a pleasure. His attention to detail and problem-solving skills are outstanding."
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-secondary/20" />
-                <div>
-                  <p className="font-semibold">John Smith</p>
-                  <p className="text-sm text-muted-foreground">CTO, Startup Inc</p>
-                </div>
-              </div>
-            </div>
-            <div className="p-6 rounded-xl bg-card border border-border">
-              <p className="text-muted-foreground mb-4 italic">
-                "Michal's ability to turn ideas into reality is remarkable. Highly recommend!"
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/20" />
-                <div>
-                  <p className="font-semibold">Sarah Johnson</p>
-                  <p className="text-sm text-muted-foreground">Designer, Creative Studio</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="p-12 rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-border">
             <h2 className="text-4xl font-bold mb-4">Let's Work Together</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Have a project in mind? Let's create something amazing together.
+              Interested in collaborating or investing? Let's connect and create something impactful.
             </p>
             <Button size="lg" className="text-lg px-8" asChild>
               <Link to="/contact">Get in Touch</Link>
@@ -238,13 +263,14 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="font-bold text-lg mb-4">Michal Szczepan</h3>
-              <p className="text-muted-foreground">Entrepreneur and engineering student passionate about solving complex problems.</p>
+              <p className="text-muted-foreground">Engineering student and EdTech founder passionate about turning problems into ventures.</p>
             </div>
             <div>
               <h3 className="font-bold text-lg mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li><Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link></li>
                 <li><Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">Projects</Link></li>
+                <li><Link to="/experience" className="text-muted-foreground hover:text-primary transition-colors">Experience</Link></li>
                 <li><Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
               </ul>
             </div>
