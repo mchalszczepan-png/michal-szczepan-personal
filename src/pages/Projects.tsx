@@ -21,10 +21,10 @@ const Projects = () => {
       tech: ["Python", "Browser-use", "AI Agents", "Rapid Prototyping"]
     },
     {
-      title: "Custom PC Venture (2019-2023)",
-      description: "Bootstrap hardware business. Generated €8k+ revenue, navigated global silicon shortage, and managed complex supply chains. Built custom PCs for clients while learning real-world business operations.",
+      title: "Custom PC Venture (Founder | 2019 - 2023)",
+      description: "A self-funded hardware startup launched at age 14 by liquidating personal assets (consoles/electronics) to buy initial inventory. Scaled operations until a major setback involving an €1,100 fake cheque fraud wiped out all stock and capital. Demonstrated resilience by pivoting to small-scale repairs and device fixing to manually rebuild liquidity from zero. Successfully relaunched, navigating the 2020 global silicon shortage to eventually generate €8,000+ in revenue.",
       image: null,
-      tech: ["Hardware", "Sales", "Logistics", "Business Operations"]
+      tech: ["Resilience", "Supply Chain Mgmt", "Hardware", "Sales"]
     },
     {
       title: "EduCat / ScreenPaws",
