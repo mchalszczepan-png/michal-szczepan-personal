@@ -5,6 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import hultprizeLogo from "@/assets/hultprize-logo.png";
 import eypLogo from "@/assets/eyp-logo.png";
 import stFrancisCrest from "@/assets/stfrancis-crest.png";
+import douglasCrest from "@/assets/douglas-crest.jpg";
+import uccCrest from "@/assets/ucc-crest.jpg";
+import liffeyTrustLogo from "@/assets/liffey-trust-logo.png";
 
 const Experience = () => {
   const leadership = [
@@ -50,7 +53,7 @@ const Experience = () => {
         "Sem 2 Electives: French at Intermediate Level",
         "Activities: 1st Year Engineering Academic Rep, Rocketry Society, Mountaineering Society, WARPS Society"
       ],
-      icon: GraduationCap,
+      image: uccCrest,
       current: true
     },
     {
@@ -63,7 +66,7 @@ const Experience = () => {
         "Key Project: Mathematical Modelling Analysis — Comprehensive study modelling Poland's population growth using iterative methods and advanced differential equations",
         "Activities: Dungeons & Dragons Club"
       ],
-      icon: Award
+      image: douglasCrest
     },
     {
       title: "Junior Cycle",
@@ -72,7 +75,7 @@ const Experience = () => {
       highlights: [
         "Leadership: Student Council President, Green Schools Committee, Debating Club"
       ],
-      icon: Award
+      image: stFrancisCrest
     }
   ];
 
@@ -104,8 +107,8 @@ const Experience = () => {
               {achievements.map((item, index) => (
                 <Card key={index} className="overflow-hidden bg-gradient-to-br from-yellow-500/10 via-primary/5 to-secondary/5 hover:shadow-lg transition-all duration-300 border-yellow-500/20">
                   <CardHeader className="flex flex-row items-start gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center shrink-0 shadow-lg">
-                      <Trophy className="w-7 h-7 text-white" />
+                    <div className="w-14 h-14 rounded-lg flex items-center justify-center shrink-0 shadow-lg overflow-hidden bg-white">
+                      <img src={liffeyTrustLogo} alt="Liffey Trust" className="w-full h-full object-contain p-1" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-3 flex-wrap">
@@ -184,8 +187,8 @@ const Experience = () => {
               {education.map((item, index) => (
                 <Card key={index} className="overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 hover:shadow-lg transition-all duration-300">
                   <CardHeader className="flex flex-row items-start gap-4">
-                    <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center shrink-0">
-                      <item.icon className="w-6 h-6 text-secondary-foreground" />
+                    <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0 overflow-hidden bg-white">
+                      <img src={item.image} alt={item.title} className="w-full h-full object-contain p-1" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-3 flex-wrap">
