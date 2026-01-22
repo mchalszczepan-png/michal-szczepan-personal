@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, GraduationCap, Users } from "lucide-react";
+import { Award, GraduationCap, Trophy, Users } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import hultprizeLogo from "@/assets/hultprize-logo.png";
 import eypLogo from "@/assets/eyp-logo.png";
 import stFrancisCrest from "@/assets/stfrancis-crest.png";
@@ -25,6 +26,17 @@ const Experience = () => {
       organization: "St. Francis College",
       description: "Led the student body, organized school-wide initiatives, and served as the primary liaison between students and administration.",
       image: stFrancisCrest
+    }
+  ];
+
+  const achievements = [
+    {
+      title: "Dr. Séamus McDermott Entrepreneurial Scholar 2026",
+      organization: "The Liffey Trust & University College Cork",
+      value: "Valued at €9,000. Awarded to 1 student per year.",
+      description: "Selected as the 2026 recipient for demonstrating exceptional potential in entrepreneurship and social impact. This award recognizes my track record with Ganzy (EdTech) and my bootstrap PC venture, validating my commitment to 'education for life' and job creation in the Irish economy.",
+      badges: ["Social Impact", "Entrepreneurship", "Scholarship"],
+      current: true
     }
   ];
 
@@ -80,6 +92,51 @@ const Experience = () => {
             <p className="text-xl text-muted-foreground">
               Leadership roles, academic achievements, and milestones
             </p>
+          </div>
+
+          {/* Achievements Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+              <Trophy className="w-8 h-8 text-primary" />
+              Achievements
+            </h2>
+            <div className="space-y-6">
+              {achievements.map((item, index) => (
+                <Card key={index} className="overflow-hidden bg-gradient-to-br from-yellow-500/10 via-primary/5 to-secondary/5 hover:shadow-lg transition-all duration-300 border-yellow-500/20">
+                  <CardHeader className="flex flex-row items-start gap-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center shrink-0 shadow-lg">
+                      <Trophy className="w-7 h-7 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 flex-wrap">
+                        <CardTitle className="text-xl">{item.title}</CardTitle>
+                        {item.current && (
+                          <span className="px-2 py-1 text-xs rounded-full bg-yellow-500 text-white font-medium">
+                            2026
+                          </span>
+                        )}
+                      </div>
+                      <CardDescription className="text-base font-medium text-primary">
+                        {item.organization}
+                      </CardDescription>
+                      <p className="text-sm font-semibold text-yellow-600 dark:text-yellow-400 mt-1">
+                        {item.value}
+                      </p>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pl-[4.5rem]">
+                    <p className="text-muted-foreground mb-4">{item.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {item.badges.map((badge, bIndex) => (
+                        <Badge key={bIndex} variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20">
+                          {badge}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
 
           {/* Leadership Section */}
