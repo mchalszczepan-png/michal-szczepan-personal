@@ -7,8 +7,8 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
   
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
-      <div className="container mx-auto max-w-4xl px-4 py-3 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border w-full">
+      <div className="w-full px-4 py-3 flex justify-between items-center md:max-w-4xl md:mx-auto">
         <Link to="/" className="text-xl font-bold text-foreground no-underline hover:text-primary">
           MS
         </Link>
