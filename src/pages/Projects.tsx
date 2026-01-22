@@ -1,5 +1,4 @@
 import Navigation from "@/components/Navigation";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ganzyLogo from "@/assets/ganzy-logo.png";
 import rocketProject from "@/assets/rocket-project.png";
 import giveagoProject from "@/assets/giveago-project.png";
@@ -45,129 +44,96 @@ const Projects = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold mb-4">
-              My{" "}
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Projects
-              </span>
-            </h1>
-            <p className="text-xl text-muted-foreground">
-              A showcase of ventures, builds, and creative endeavors
-            </p>
-          </div>
+      <section className="pt-32 pb-16 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <h1 className="text-3xl font-bold mb-2">My Projects</h1>
+          <p className="text-muted-foreground mb-8">
+            A showcase of ventures, builds, and creative endeavors
+          </p>
+
+          <hr className="border-border mb-8" />
 
           {/* Featured Project - Ganzy */}
           {projects.filter(p => p.featured).map((project, index) => (
-            <Card key={`featured-${index}`} className="overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20 mb-12">
-              <div className="grid md:grid-cols-2 gap-6 p-6">
+            <div key={`featured-${index}`} className="mb-8 p-6 border-2 border-primary bg-card">
+              <span className="text-xs uppercase tracking-wide text-primary font-semibold">Featured Project</span>
+              <div className="grid md:grid-cols-3 gap-6 mt-4">
                 <div className="flex items-center justify-center">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full max-w-xs h-auto object-contain rounded-lg"
+                    className="w-full max-w-[200px] h-auto object-contain"
                   />
                 </div>
-                <div className="space-y-4">
-                  <div>
-                    <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2">Featured Project</div>
-                    <h3 className="text-2xl font-bold">Ganzy</h3>
-                    <p className="text-lg text-primary font-semibold">Decision Support System for Leaving Cert Students</p>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
+                <div className="md:col-span-2">
+                  <h2 className="text-2xl font-bold mb-1">Ganzy</h2>
+                  <p className="text-primary mb-3">Decision Support System for Leaving Cert Students</p>
+                  <p className="text-muted-foreground text-sm mb-4">
                     {project.description}
                   </p>
                   
-                  {/* Metrics */}
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="p-3 rounded-lg bg-card border border-border">
-                      <p className="text-lg font-bold text-primary">Co-Founder</p>
-                      <p className="text-xs text-muted-foreground">& CTO</p>
+                  <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
+                    <div className="p-2 border border-border">
+                      <strong>Co-Founder</strong> & CTO
                     </div>
-                    <div className="p-3 rounded-lg bg-card border border-border">
-                      <p className="text-lg font-bold text-primary">5-Person</p>
-                      <p className="text-xs text-muted-foreground">Senior Dev Team</p>
+                    <div className="p-2 border border-border">
+                      <strong>5-Person</strong> Senior Dev Team
                     </div>
-                    <div className="p-3 rounded-lg bg-card border border-border">
-                      <p className="text-lg font-bold text-primary">10k+</p>
-                      <p className="text-xs text-muted-foreground">Organic TikTok Views</p>
+                    <div className="p-2 border border-border">
+                      <strong>10k+</strong> Organic TikTok Views
                     </div>
-                    <div className="p-3 rounded-lg bg-card border border-border">
-                      <p className="text-lg font-bold text-primary">Beta</p>
-                      <p className="text-xs text-muted-foreground">Launch March 2026</p>
+                    <div className="p-2 border border-border">
+                      <strong>Beta</strong> Launch March 2026
                     </div>
                   </div>
                   
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex}
-                        className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  <div className="text-sm">
+                    <strong>Tech:</strong> {project.tech.join(", ")}
                   </div>
                 </div>
               </div>
-            </Card>
+            </div>
           ))}
 
-          {/* Other Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <hr className="border-border mb-8" />
+
+          {/* Other Projects */}
+          <h2 className="text-xl font-bold mb-4">Other Projects</h2>
+          <div className="space-y-6">
             {projects.filter(p => !p.featured).map((project, index) => (
-              <Card 
-                key={index} 
-                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-primary/5 to-secondary/5"
-              >
-                {project.image ? (
-                  <div className="aspect-video overflow-hidden bg-muted flex items-center justify-center">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                ) : (
-                  <div className="aspect-video overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                    <div className="text-6xl opacity-20">🚀</div>
-                  </div>
-                )}
-                <CardHeader>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  {project.subtitle && (
-                    <p className="text-sm font-medium text-primary">{project.subtitle}</p>
+              <div key={index} className="p-4 border border-border bg-card">
+                <div className="flex flex-col md:flex-row gap-4">
+                  {project.image && (
+                    <div className="md:w-1/4 flex items-center justify-center">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full max-w-[150px] h-auto object-contain"
+                      />
+                    </div>
                   )}
-                  <CardDescription className="text-base">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex}
-                        className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  <div className={project.image ? "md:w-3/4" : "w-full"}>
+                    <h3 className="text-lg font-bold mb-1">{project.title}</h3>
+                    {project.subtitle && (
+                      <p className="text-sm text-primary mb-2">{project.subtitle}</p>
+                    )}
+                    <p className="text-muted-foreground text-sm mb-3">
+                      {project.description}
+                    </p>
+                    <p className="text-sm">
+                      <strong>Tech:</strong> {project.tech.join(", ")}
+                    </p>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <footer className="py-8 px-4 border-t border-border">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground">© 2025 Michal Szczepan. All rights reserved.</p>
-          </div>
+      <footer className="py-6 px-4 border-t border-border">
+        <div className="container mx-auto max-w-4xl text-center">
+          <p className="text-muted-foreground text-sm">© 2025 Michal Szczepan. All rights reserved.</p>
         </div>
       </footer>
     </div>
