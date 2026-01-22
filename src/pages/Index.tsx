@@ -84,10 +84,10 @@ const Index = () => {
             <div className="p-4 border border-border bg-card">
               <div className="flex items-center gap-3 mb-2">
                 <Lightbulb className="w-5 h-5 text-primary" />
-                <h3 className="text-lg font-semibold">The Thrill of the Fix</h3>
+                <h3 className="text-lg font-semibold">Problem Solving</h3>
               </div>
               <p className="text-muted-foreground text-sm">
-                To me, entrepreneurship is just fixing people's tribulations. I love the unmatched rush of finally cracking a problem that helps people.
+                To me, entrepreneurship is simply solving problems for people. There's nothing quite like the satisfaction of cracking a difficult challenge.
               </p>
             </div>
 
