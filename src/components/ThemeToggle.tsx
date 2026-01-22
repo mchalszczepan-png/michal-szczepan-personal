@@ -15,16 +15,16 @@ export function ThemeToggle() {
       />
       <div 
         className={`
-          w-12 h-6 border border-border bg-secondary
+          w-8 h-4 border border-border bg-secondary
           relative transition-colors duration-200
           ${isDark ? 'bg-primary' : 'bg-secondary'}
         `}
       >
         <div 
           className={`
-            absolute top-0.5 w-5 h-5 bg-foreground
+            absolute top-0.5 w-3 h-3 bg-foreground
             transition-[left] duration-200 ease-in-out
-            ${isDark ? 'left-[calc(100%-22px)]' : 'left-0.5'}
+            ${isDark ? 'left-[calc(100%-14px)]' : 'left-0.5'}
           `}
         />
       </div>
