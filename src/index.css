@@ -23,7 +23,7 @@
     --secondary-foreground: 0 0% 10%;
 
     --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 40%;
+    --muted-foreground: 0 0% 30%;
 
     --accent: 0 0% 95%;
     --accent-foreground: 0 0% 10%;
@@ -125,12 +125,13 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   a {
