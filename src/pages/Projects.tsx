@@ -56,18 +56,18 @@ const Projects = () => {
           {/* Featured Project - Ganzy */}
           {projects.filter(p => p.featured).map((project, index) => (
             <div key={`featured-${index}`} className="mb-8 p-6 border-2 border-primary bg-card">
-              <span className="text-xs uppercase tracking-wide text-primary font-semibold">Featured Project</span>
-              <div className="grid md:grid-cols-3 gap-6 mt-4">
-                <div className="flex items-center justify-center">
+              <span className="text-sm uppercase tracking-wide text-primary font-semibold">Featured Project</span>
+              <div className="grid md:grid-cols-[180px_1fr] gap-6 mt-4">
+                <div className="flex items-start justify-start">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full max-w-[200px] h-auto object-contain"
+                    className="w-full max-w-[180px] h-auto object-contain"
                   />
                 </div>
-                <div className="md:col-span-2">
-                  <h2 className="text-2xl font-bold mb-1">Ganzy</h2>
-                  <p className="text-primary mb-3">Decision Support System for Leaving Cert Students</p>
+                <div>
+                  <h2 className="text-3xl font-bold mb-2">Ganzy</h2>
+                  <p className="text-primary text-lg mb-3">Decision Support System for Leaving Cert Students</p>
                   <p className="text-muted-foreground text-sm mb-4">
                     {project.description}
                   </p>
