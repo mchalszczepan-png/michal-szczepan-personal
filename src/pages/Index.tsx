@@ -15,7 +15,7 @@ const Index = () => {
       </div>
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4">
+      <section className="pt-8 pb-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="md:w-1/3 flex justify-center">
