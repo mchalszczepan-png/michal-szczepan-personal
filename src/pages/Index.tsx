@@ -10,7 +10,7 @@ const Index = () => {
       <Navigation />
       
       {/* Theme Toggle */}
-      <div className="fixed top-16 right-4 z-40">
+      <div className="pt-20 px-4 flex justify-end max-w-4xl mx-auto">
         <ThemeToggle />
       </div>
       
