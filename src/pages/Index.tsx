@@ -1,12 +1,18 @@
 import { Mountain, BookOpen, Lightbulb, Brain, Users, Hammer, Mail, Github, Linkedin, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+      
+      {/* Theme Toggle */}
+      <div className="fixed top-16 right-4 z-40">
+        <ThemeToggle />
+      </div>
       
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4">
