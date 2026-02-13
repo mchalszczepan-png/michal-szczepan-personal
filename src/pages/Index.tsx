@@ -62,6 +62,60 @@ const Index = () => {
 
       <hr className="border-border max-w-4xl mx-auto" />
 
+      {/* Skills Section */}
+      <section className="py-12 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-2xl font-bold mb-6">Skills & Expertise</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 border border-border bg-card">
+              <h3 className="text-lg font-semibold mb-3 text-primary">Technical (Core)</h3>
+              <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                <li>Python</li>
+                <li>HTML/CSS</li>
+                <li>Electronics/Circuits</li>
+                <li>System Specification</li>
+                <li>Wireframing (Figma)</li>
+              </ul>
+            </div>
+
+            <div className="p-4 border border-border bg-card">
+              <h3 className="text-lg font-semibold mb-3 text-primary">Technical (Learning/Familiar)</h3>
+              <p className="text-xs text-muted-foreground mb-2">Managing teams using these stacks as CTO</p>
+              <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                <li>JavaScript / TypeScript</li>
+                <li>React / Next.js</li>
+                <li>AWS</li>
+                <li>SQL</li>
+              </ul>
+            </div>
+
+            <div className="p-4 border border-border bg-card">
+              <h3 className="text-lg font-semibold mb-3 text-primary">Business & Entrepreneurship</h3>
+              <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                <li>Business Management</li>
+                <li>Sales & Negotiation</li>
+                <li>Event Planning</li>
+                <li>Fraud Awareness</li>
+                <li>Supply Chain Management</li>
+              </ul>
+            </div>
+
+            <div className="p-4 border border-border bg-card">
+              <h3 className="text-lg font-semibold mb-3 text-primary">Marketing & Creative</h3>
+              <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                <li>Digital Marketing Strategy</li>
+                <li>Content Creation</li>
+                <li>Script Writing</li>
+                <li>Advertising</li>
+                <li>Public Speaking & Debating</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr className="border-border max-w-4xl mx-auto" />
+
       {/* Interests Section */}
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-4xl">
@@ -125,60 +179,6 @@ const Index = () => {
               <p className="text-muted-foreground text-sm">
                 Just getting into the deep end and working on something for hours on end. A glorious feeling.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <hr className="border-border max-w-4xl mx-auto" />
-
-      {/* Skills Section */}
-      <section className="py-12 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold mb-6">Skills & Expertise</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-4 border border-border bg-card">
-              <h3 className="text-lg font-semibold mb-3 text-primary">Technical (Core)</h3>
-              <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
-                <li>Python</li>
-                <li>HTML/CSS</li>
-                <li>Electronics/Circuits</li>
-                <li>System Specification</li>
-                <li>Wireframing (Figma)</li>
-              </ul>
-            </div>
-
-            <div className="p-4 border border-border bg-card">
-              <h3 className="text-lg font-semibold mb-3 text-primary">Technical (Learning/Familiar)</h3>
-              <p className="text-xs text-muted-foreground mb-2">Managing teams using these stacks as CTO</p>
-              <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
-                <li>JavaScript / TypeScript</li>
-                <li>React / Next.js</li>
-                <li>AWS</li>
-                <li>SQL</li>
-              </ul>
-            </div>
-
-            <div className="p-4 border border-border bg-card">
-              <h3 className="text-lg font-semibold mb-3 text-primary">Business & Entrepreneurship</h3>
-              <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
-                <li>Business Management</li>
-                <li>Sales & Negotiation</li>
-                <li>Event Planning</li>
-                <li>Fraud Awareness</li>
-                <li>Supply Chain Management</li>
-              </ul>
-            </div>
-
-            <div className="p-4 border border-border bg-card">
-              <h3 className="text-lg font-semibold mb-3 text-primary">Marketing & Creative</h3>
-              <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
-                <li>Digital Marketing Strategy</li>
-                <li>Content Creation</li>
-                <li>Script Writing</li>
-                <li>Advertising</li>
-                <li>Public Speaking & Debating</li>
-              </ul>
             </div>
           </div>
         </div>
