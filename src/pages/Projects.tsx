@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import ganzyLogo from "@/assets/ganzy-logo.png";
 import rocketProject from "@/assets/rocket-project.png";
 import giveagoProject from "@/assets/giveago-project.png";
+import carecomplyProject from "@/assets/carecomply-project.png";
 
 const Projects = () => {
   const projects = [
@@ -12,6 +13,12 @@ const Projects = () => {
       tech: ["Python", "React", "AWS", "Agile", "TypeScript", "UI/UX Design"],
       highlight: true,
       featured: true
+    },
+    {
+      title: "CareComply — NDRC Startup Sprint (Feb 2026)",
+      description: "Built CareComply at the NDRC Startup Sprint hackathon at ENGINE Limerick — a roster management system for large nursing home groups that integrates health standard compliance directly into staff scheduling. Our team validated the concept by cold-calling directors of nursing at five homes nationwide, discovering that most still managed rosters via WhatsApp or whiteboards. We built a working demo on the day, pitched it successfully, and received interest from a Local Enterprise Office director for potential investment shortlisting.",
+      image: carecomplyProject,
+      tech: ["Hackathon", "Healthcare", "SaaS", "Compliance"]
     },
     {
       title: "GiveAGo AI Build Jam (Jan 2026)",
@@ -31,12 +38,6 @@ const Projects = () => {
       description: "Mobile app concept turning screen time into micro-learning opportunities. Validated prototype built in 28 days—exploring gamification mechanics for educational engagement.",
       image: null,
       tech: ["Android", "Figma", "Product Design", "Prototyping"]
-    },
-    {
-      title: "CareComply — NDRC Startup Sprint (Feb 2026)",
-      description: "Built CareComply at the NDRC Startup Sprint hackathon at ENGINE Limerick — a roster management system for large nursing home groups that integrates health standard compliance directly into staff scheduling. Our team validated the concept by cold-calling directors of nursing at five homes nationwide, discovering that most still managed rosters via WhatsApp or whiteboards. We built a working demo on the day, pitched it successfully, and received interest from a Local Enterprise Office director for potential investment shortlisting.",
-      image: null,
-      tech: ["Hackathon", "Healthcare", "SaaS", "Compliance"]
     },
     {
       title: "UCC Rocketry Society - Rocket Development",
