@@ -15,7 +15,7 @@ const Projects = () => {
       featured: true
     },
     {
-      title: "CareComply — NDRC Startup Sprint (Feb 2026)",
+      title: "CareComply, NDRC Startup Sprint (Feb 2026)",
       description: "Built CareComply at the NDRC Startup Sprint hackathon at ENGINE Limerick — a roster management system for large nursing home groups that integrates health standard compliance directly into staff scheduling. Our team validated the concept by cold-calling directors of nursing at five homes nationwide, discovering that most still managed rosters via WhatsApp or whiteboards. We built a working demo on the day, pitched it successfully, and received interest from a Local Enterprise Office director for potential investment shortlisting.",
       image: carecomplyProject,
       tech: ["Hackathon", "Healthcare", "SaaS", "Compliance"]
