@@ -33,6 +33,12 @@ const Projects = () => {
       tech: ["Android", "Figma", "Product Design", "Prototyping"]
     },
     {
+      title: "CareComply — NDRC Startup Sprint (Feb 2026)",
+      description: "Built CareComply at the NDRC Startup Sprint hackathon at ENGINE Limerick — a roster management system for large nursing home groups that integrates health standard compliance directly into staff scheduling. Our team validated the concept by cold-calling directors of nursing at five homes nationwide, discovering that most still managed rosters via WhatsApp or whiteboards. We built a working demo on the day, pitched it successfully, and received interest from a Local Enterprise Office director for potential investment shortlisting.",
+      image: null,
+      tech: ["Hackathon", "Healthcare", "SaaS", "Compliance"]
+    },
+    {
       title: "UCC Rocketry Society - Rocket Development",
       description: "Contributing to the design and development of a high-performance rocket. Responsibilities include Python programming for flight simulation and data analysis, 3D modeling of rocket components, and leading team coordination efforts.",
       image: rocketProject,
