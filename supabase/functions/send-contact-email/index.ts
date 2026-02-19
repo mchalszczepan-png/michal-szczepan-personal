@@ -5,7 +5,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
 
-const AI_GATEWAY_URL = "https://ai.gateway.lovable.dev/v1/chat/completions";
+
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -39,39 +39,42 @@ serve(async (req) => {
       });
     }
 
-    // AI spam detection
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
-    if (!LOVABLE_API_KEY) {
-      throw new Error('LOVABLE_API_KEY is not configured');
+    // Local Heuristic Spam Check
+    const SPAM_KEYWORDS = [
+      "cryto", "crypto", "bitcoin", "investment", "forex", "pharmacy", "casino",
+      "viagra", "cialis", "seo service", "marketing solution", "optimization",
+      "partnership opportunity", "passive income", "100% free", "click here",
+      "financial freedom", "urgent business", "beneficiary", "lottery",
+      "google ranking", "page one", "website traffic", "domain authority"
+    ];
+
+    const content = (subject + " " + message).toLowerCase();
+
+    // Check 1: Excessive Links (More than 3 http/https links)
+    const linkCount = (content.match(/http[s]?:\/\//g) || []).length;
+    if (linkCount > 3) {
+      console.log('Spam detected: Excessive links');
+      return new Response(JSON.stringify({ error: 'Message contains too many links.' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
-    const spamCheckResponse = await fetch(AI_GATEWAY_URL, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'google/gemini-2.5-flash-lite',
-        messages: [
-          {
-            role: 'system',
-            content: 'You are a spam detection system. Analyze the following contact form submission and respond with ONLY "spam" or "not_spam". Consider: suspicious links, gibberish text, known spam patterns, excessive capitalization, promotional content.',
-          },
-          {
-            role: 'user',
-            content: `Name: ${name}\nEmail: ${email}\nSubject: ${subject || 'N/A'}\nMessage: ${message}`,
-          },
-        ],
-        max_tokens: 10,
-      }),
-    });
+    // Check 2: Spam Keywords
+    const foundKeywords = SPAM_KEYWORDS.filter(keyword => content.includes(keyword));
+    if (foundKeywords.length >= 2) { // Allow 1 incidental match, block if 2 or more
+      console.log(`Spam detected: Keywords found [${foundKeywords.join(', ')}]`);
+      return new Response(JSON.stringify({ error: 'Message flagged as potential spam.' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
-    const spamResult = await spamCheckResponse.json();
-    const spamVerdict = spamResult.choices?.[0]?.message?.content?.trim()?.toLowerCase();
-
-    if (spamVerdict === 'spam') {
-      return new Response(JSON.stringify({ error: 'Your message was flagged as spam. Please try again with a genuine message.' }), {
+    // Check 3: Russian/Cyrillic characters (common in spam if not your target audience)
+    // Optional: Block if message contains significant Cyrillic characters
+    if (/[а-яА-Я]/.test(message) && (message.match(/[а-яА-Я]/g) || []).length > 5) {
+      console.log('Spam detected: Cyrillic characters');
+      return new Response(JSON.stringify({ error: 'Message flagged as potential spam.' }), {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
