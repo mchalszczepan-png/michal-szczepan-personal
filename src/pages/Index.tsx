@@ -8,20 +8,20 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Theme Toggle */}
       <div className="pt-20 px-4 flex justify-end max-w-4xl mx-auto">
         <ThemeToggle />
       </div>
-      
+
       {/* Hero Section */}
       <section className="pt-8 pb-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="md:w-1/3 flex justify-center">
-              <img 
-                src={profilePhoto} 
-                alt="Michal Szczepan" 
+              <img
+                src={profilePhoto}
+                alt="Michal Szczepan"
                 className="w-48 h-48 object-cover border-2 border-border"
               />
             </div>
@@ -33,7 +33,7 @@ const Index = () => {
                 Engineering Student & EdTech Founder
               </p>
               <p className="text-muted-foreground mb-6">
-                Bridging the gap between technical engineering and entrepreneurial strategy. Turning problems into ventures.
+                Co-founder and CTO at ganzy.ie, tech guy at ganzy, leading a team of four developers to revolutionise how students study and schedule their life.
               </p>
               <div className="flex gap-4 justify-center md:justify-start">
                 <Link to="/projects" className="px-4 py-2 bg-primary text-primary-foreground border border-primary hover:bg-primary/90 no-underline">
@@ -55,7 +55,7 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold mb-4">About Me</h2>
           <p className="text-muted-foreground leading-relaxed">
-            I'm an Engineering Student at UCC achieving a 1:1 Grade (GPA 3.92), and the CTO of Ganzy—an EdTech startup revolutionizing how students prepare for exams. I bring a unique perspective combining technical engineering expertise with entrepreneurial strategy, always focused on creating real value through innovation.
+            I'm an Engineering Student at UCC achieving a 1:2 Grade (3.88 GPA), and the CTO of Ganzy, an EdTech startup revolutionizing how students prepare for exams. I bring a unique perspective combining A hardware-first technical background with software knowledge and business acumen.
           </p>
         </div>
       </section>
@@ -80,7 +80,7 @@ const Index = () => {
 
             <div className="p-4 border border-border bg-card">
               <h3 className="text-lg font-semibold mb-3 text-primary">Technical (Learning/Familiar)</h3>
-              <p className="text-xs text-muted-foreground mb-2">Managing teams using these stacks as CTO</p>
+              <p className="text-xs text-muted-foreground mb-2">Managing teams and AI using these stacks as CTO</p>
               <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
                 <li>JavaScript / TypeScript</li>
                 <li>React / Next.js</li>
@@ -124,23 +124,23 @@ const Index = () => {
             <div className="p-4 border border-border bg-card">
               <div className="flex items-center gap-3 mb-2">
                 <Mountain className="w-5 h-5 text-primary" />
-                <h3 className="text-lg font-semibold">Gravity Checks (Rock Climbing)</h3>
+                <h3 className="text-lg font-semibold">Falling at 9.8m/s^2 (Rock Climbing)</h3>
               </div>
               <p className="text-muted-foreground text-sm">
-                A genuinely petrifying sport where I analyze the earth's gravity by falling spectacularly. It teaches me that failing 200 times is just part of the process before the final send.
+                A genuinely petrifying sport where I learn how to just keep going no matter what. It teaches me that failing 200 times is just part of the process before the final send.
               </p>
             </div>
-            
+
             <div className="p-4 border border-border bg-card">
               <div className="flex items-center gap-3 mb-2">
                 <BookOpen className="w-5 h-5 text-primary" />
-                <h3 className="text-lg font-semibold">Epic Reads</h3>
+                <h3 className="text-lg font-semibold">Reading</h3>
               </div>
               <p className="text-muted-foreground text-sm">
-                I don't just read, I devour information. From the massive Wheel of Time series to deep dives on psychology, management, and technology.
+                I don't just read, I devour information. From the massive Wheel of Time series to deep dives on psychology, management, and technology. Favourite Book: Millionaire Fastlane by MJ DeMarco
               </p>
             </div>
-            
+
             <div className="p-4 border border-border bg-card">
               <div className="flex items-center gap-3 mb-2">
                 <Lightbulb className="w-5 h-5 text-primary" />
@@ -193,9 +193,9 @@ const Index = () => {
           <p className="text-muted-foreground mb-6">
             View my full CV to learn more about my experience and qualifications.
           </p>
-          <a 
-            href="/Michal_Szczepan_CV.pdf" 
-            target="_blank" 
+          <a
+            href="/Michal_Szczepan_CV.pdf"
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground border border-primary hover:bg-primary/90 no-underline"
           >
@@ -215,8 +215,8 @@ const Index = () => {
             <p className="text-muted-foreground mb-6">
               Interested in collaborating or investing? Let's connect and create something impactful.
             </p>
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="inline-block px-4 py-2 bg-primary text-primary-foreground border border-primary hover:bg-primary/90 no-underline"
             >
               Get in Touch

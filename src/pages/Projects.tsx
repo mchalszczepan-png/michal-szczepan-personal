@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import { ExternalLink } from "lucide-react";
 import ganzyLogo from "@/assets/ganzy-logo.png";
 import rocketProject from "@/assets/rocket-project.png";
 import giveagoProject from "@/assets/giveago-project.png";
@@ -16,7 +17,7 @@ const Projects = () => {
     },
     {
       title: "CareComply, NDRC Startup Sprint (Feb 2026)",
-      description: "Built CareComply at the NDRC Startup Sprint hackathon at ENGINE Limerick — a roster management system for large nursing home groups that integrates health standard compliance directly into staff scheduling. Our team validated the concept by cold-calling directors of nursing at five homes nationwide, discovering that most still managed rosters via WhatsApp or whiteboards. We built a working demo on the day, pitched it successfully, and received interest from a Local Enterprise Office director for potential investment shortlisting.",
+      description: "Built CareComply at the NDRC Startup Sprint hackathon at ENGINE Limerick, a roster management system for large nursing home groups that integrates health standard compliance directly into staff scheduling. Our team validated the concept by cold-calling directors of nursing at five homes nationwide, discovering that most still managed rosters via WhatsApp or whiteboards. We built a working demo on the day, pitched it successfully, and received interest from a Local Enterprise Office director for potential investment shortlisting.",
       image: carecomplyProject,
       tech: ["Hackathon", "Healthcare", "SaaS", "Compliance"]
     },
@@ -35,7 +36,7 @@ const Projects = () => {
     },
     {
       title: "EduCat / ScreenPaws",
-      description: "Mobile app concept turning screen time into micro-learning opportunities. Validated prototype built in 28 days—exploring gamification mechanics for educational engagement.",
+      description: "Mobile app concept turning screen time into micro-learning opportunities. Validated prototype built in 28 days, exploring gamification mechanics for educational engagement.",
       image: null,
       tech: ["Android", "Figma", "Product Design", "Prototyping"]
     },
@@ -78,6 +79,16 @@ const Projects = () => {
                   <p className="text-muted-foreground text-sm mb-4">
                     {project.description}
                   </p>
+                  
+                  <a 
+                    href="https://ganzy.ie" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 no-underline mb-4"
+                  >
+                    Visit ganzy.ie
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
                   
                   <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
                     <div className="p-2 border border-border">
