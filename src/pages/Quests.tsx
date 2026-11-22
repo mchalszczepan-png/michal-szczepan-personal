@@ -16,7 +16,7 @@ const Pin = ({ c = "", style }: { c?: string; style?: CSSProperties }) => (
 );
 
 const Chillies = ({ n }: { n: number }) => (
-  <span className="chillies" role="img" aria-label={`Difficulty ${n} out of 5 chillies (draft)`}>
+  <span className="chillies" role="img" aria-label={`Difficulty ${n} out of 5 chillies`}>
     {[1, 2, 3, 4, 5].map((i) => (
       <svg key={i} className={`chilli${i > n ? " off" : ""}`} aria-hidden="true">
         <use href="#q-chilli" />
@@ -51,8 +51,8 @@ const quests: Quest[] = [
     ],
     stack: "React · Convex · Modal · Gemini / MedGemma",
     n: 5,
-    hard: "Finland's suspected-cancer wait is 100+ days, 41 of them at the GP, so the referral has to be complete. Voice in, structured referral out, plus a risk aid that cites its source, all inside one hackathon.",
-    learned: "A fine-tuned Gemma LoRA reached AUROC 0.96, but on synthetic patients only. Promising, not proven.",
+    hard: "In Finland the wait for a cancer diagnosis is over 100 days, and 41 of those are spent at the GP. GPs can't order an MRI, so the referral is everything. If it's vague, it gets sent back. We had one hackathon to turn a GP talking into a full referral, plus a risk check that shows where it got its answer.",
+    learned: "I fine-tuned my first Gemma LoRA and got AUROC 0.96. Then I had to be honest about it. 78 synthetic patients are not real patients. A good start, nothing more (yet).",
     media: (
       <>
         <div className="badge" style={v({ "--sc": "#e9742c", "--r": "-2.5deg" })}>
@@ -77,16 +77,16 @@ const quests: Quest[] = [
     title: "Remento",
     pin: "g",
     meta: "UCC SDG Hackathon, then National SDG Hackathon · with Jack Garvey & Nathan Manley",
-    what: "An iOS app built in 100 minutes to spot early signs of dementia: a weekly 5-minute test plus voice analysis. My first hackathon.",
+    what: "An iOS app built in 90 minutes to spot early signs of dementia: a weekly 5-minute test plus voice analysis. My first hackathon.",
     chips: [
-      <><b>100</b>min build</>,
+      <><b>90</b>min build</>,
       <><b>1st</b>UCC, €1,000</>,
       <><b>National</b>champions</>,
       <><b>Best</b>Pitch</>,
     ],
     n: 4,
-    hard: "A whole iOS app in 100 minutes, at my first hackathon.",
-    learned: "Keep it small. One weekly test plus voice analysis was enough to win at UCC, then nationally, with Best Pitch.",
+    hard: "Everyone else got 3 hours. We got 90 minutes, thanks to a scheduling mix-up at UCC. A whole iOS app in Swift, voice analysis included, at my first ever hackathon.",
+    learned: "Keep it small. One 5-minute test a week was enough. We won UCC, then nationals, and took Best Pitch too (still proud of that one).",
     media: (
       <>
         <figure className="pol" style={v({ "--ar": "1/1", "--r": "3deg" })}>
@@ -109,8 +109,8 @@ const quests: Quest[] = [
     what: "Use my PC from my phone on a 3 to 4 hour daily commute. Open-source guide and setup script on GitHub.",
     chips: [<><b>3–4 h</b>commute, daily</>, <><b>tmux-resurrect</b>restores sessions</>],
     n: 2,
-    hard: "The real machine is at home and I am out for 3 to 4 hours a day. My sessions have to come back after a restart.",
-    learned: "Tailscale, SSH and tmux are enough. Writing it up as a guide and a setup script made it useful to other people.",
+    hard: "My PC is at home. I'm commuting 3 to 4 hours a day. Every time the connection dropped or the PC restarted, my sessions on the phone died with it.",
+    learned: "You don't need anything fancy. Tailscale, SSH and tmux did the job. Writing it up as a guide and a setup script turned my fix into something other people can use.",
     media: (
       <>
         <span className="dymo nv" style={v({ "--ds": "16px", "--r": "-3deg" })}>Tailscale + SSH + tmux</span>
@@ -126,8 +126,8 @@ const quests: Quest[] = [
     what: "A vector database behind Hermes Agent: safe LLM access to company data.",
     chips: [<><b>Presented</b>at the build-athon</>],
     n: 3,
-    hard: "Letting an LLM use company data without exposing more than it should.",
-    learned: "Safe access has to be designed in from the start, not added after.",
+    hard: "Giving an AI agent access to company data without it seeing stuff it shouldn't. In one build-athon.",
+    learned: "Access rules go in at the start. Bolting them on afterwards is how data leaks.",
     media: (
       <>
         <div className="badge" style={v({ "--sc": "#2f6fb5", "--r": "2deg" })}>
@@ -153,8 +153,8 @@ const quests: Quest[] = [
     what: "Built a browser-use agent at the AI Build Jam.",
     chips: [<b>Jan 2026</b>, <><b>Browser-use</b>agent</>],
     n: 3,
-    hard: "Getting an agent to drive a real browser inside one jam.",
-    learned: "An agent that clicks around a real browser is a good way to see what agents can and cannot do.",
+    hard: "Getting an agent to click around a real browser, live, inside one jam.",
+    learned: "Watching an agent use a browser shows you very fast what it can and can't do. Some of it is magic. Some of it is a toddler with a mouse.",
     media: (
       <figure className="pol solo" style={v({ "--ar": "3/2", "--r": "-3deg" })}>
         <Pin c="g" />
@@ -170,8 +170,8 @@ const quests: Quest[] = [
     what: "A nursing roster and compliance tool, built during the Startup Sprint.",
     chips: [<b>Feb 2026</b>, <><b>Roster</b>+ compliance</>],
     n: 3,
-    hard: "A roster is only useful if it meets the compliance rules, so both had to work together.",
-    learned: "Pick one real nursing problem and show it working from start to finish.",
+    hard: "Before writing any code, Jack and I cold-called five Directors of Nursing, from Dublin to Galway. Then the roster had to follow the compliance rules too, or nobody would touch it.",
+    learned: "Validate before you build. Those calls were worth more than any feature. LEO Limerick offered us fast-track investment off the back of it (we didn't take it).",
     media: (
       <>
         <figure className="pol solo" style={v({ "--ar": "3/2", "--r": "2.5deg" })}>
@@ -186,12 +186,12 @@ const quests: Quest[] = [
   {
     title: "Custom PC business",
     pin: "g",
-    meta: "2019 to 2023 · founded at 14",
-    what: "Built and sold custom PCs, a business I started at 14.",
-    chips: [<><b>€8,000+</b>revenue</>, <><b>€1,100</b>fake cheque, survived</>],
+    meta: "2020 to 2022 · started at 13",
+    what: "Built and sold custom PCs, a business I started at 13 during lockdown.",
+    chips: [<><b>€4,000+</b>revenue</>, <><b>€1,100</b>fake cheque, survived</>],
     n: 4,
-    hard: "A €1,100 fake-cheque scam, and the business had to survive it.",
-    learned: "A sale is not final until the money is real. Revenue passed €8,000 anyway.",
+    hard: "Someone paid with a fake cheque. The bank flagged it a week later, when the PC was already sitting in a parcel sorting centre in Britain. Then the silicon shortage pushed builds from €800 to €2,500+.",
+    learned: "A sale isn't final until the money clears. I rebuilt from repairs and flipping parts, and still got the business past €4,000 in revenue.",
     media: (
       <>
         <div className="cheque" style={v({ "--r": "-3deg" })}>
@@ -203,7 +203,7 @@ const quests: Quest[] = [
           <span className="fake">Fake</span>
         </div>
         <div className="tag" style={v({ "--r": "2.5deg" })}>
-          Founded at 14<small>2019 to 2023</small>
+          Started at 13<small>2020 to 2022</small>
         </div>
       </>
     ),
@@ -215,8 +215,8 @@ const quests: Quest[] = [
     what: "A Python flight simulator and 3D modelling for the society.",
     chips: [<><b>Python</b>flight sim</>, <><b>3D</b>modelling</>],
     n: 3,
-    hard: "Getting a simulation to behave like a real rocket.",
-    learned: "Simulate first, then build. (Add what the sim predicted.)",
+    hard: "Getting a Python simulation to behave like a real rocket before anything gets built.",
+    learned: "Simulate first, build second. It's a lot cheaper to crash a rocket in code.",
     media: (
       <>
         <div className="sticker photo" style={v({ "--r": "-6deg", width: "132px", height: "132px" })}>
@@ -254,9 +254,9 @@ const Quests = () => {
                 <h1 className="dymo big" tabIndex={-1}>Side quests</h1>
                 <div className="q-legend">
                   <Pin c="b" />
-                  <p>Hackathons, builds and one business, pinned up. The notes are drafts, to be rewritten.</p>
+                  <p>Hackathons, builds and one business, pinned up.</p>
                   <p>
-                    Chillies are how hard it was (draft ratings):
+                    Chillies are how hard it was:
                     <span className="chillies" aria-hidden="true">
                       <svg className="chilli"><use href="#q-chilli" /></svg>
                       <svg className="chilli"><use href="#q-chilli" /></svg>
@@ -283,10 +283,8 @@ const Quests = () => {
                       <div className="diff">
                         <span>Difficulty</span>
                         <Chillies n={q.n} />
-                        <em className="draft">draft</em>
                       </div>
                       <dl className="notes">
-                        <em className="draft">draft, rewrite me</em>
                         <dt>What made it hard</dt>
                         <dd>{q.hard}</dd>
                         <dt>What I learned</dt>

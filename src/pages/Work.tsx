@@ -99,13 +99,13 @@ const rows: Row[] = [
     ),
   },
   {
-    when: "2019 – 2023",
+    when: "2020 – 2022",
     pin: { c: "#d13b2f", kind: "dot" },
     title: "Founder, custom PC business",
-    org: "Started at 14",
+    org: "Started at 13",
     out: (
       <>
-        <b>€8,000+</b> revenue. Survived a <b>€1,100</b> fake-cheque scam.
+        <b>€4,000+</b> revenue. Survived a <b>€1,100</b> fake-cheque scam.
       </>
     ),
   },

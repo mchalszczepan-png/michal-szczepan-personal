@@ -10,7 +10,7 @@ const ORDER: Cart[] = ["work", "quests", "sketch"];
 const INFO: Record<Cart, { title: string; text: string; to: string }> = {
   work: {
     title: "World 1 · The Workbench",
-    text: "Roles, degree and the PC business started at 14. Circuit boards, terminals and hardware.",
+    text: "Roles, degree and the PC business started at 13. Circuit boards, terminals and hardware.",
     to: "/work",
   },
   quests: {
@@ -34,7 +34,7 @@ const ACHIEVEMENTS: { b: string; rest?: string; small: string }[] = [
   { b: "PostHog Startup Plan: $50k+ credits", small: "2026" },
   { b: "Dr Séamus McDermott Entrepreneurial Scholar", small: "2026 · Liffey Trust + UCC · €9,000" },
   { b: "Hult Prize Campus Director, UCC", small: "Nov 2025–Mar 2026 · ran UCC's first-ever Hult Prize, 5 teams pitched" },
-  { b: "National SDG Hackathon champions", small: "plus Best Pitch · iOS app built in 100 minutes" },
+  { b: "National SDG Hackathon champions", small: "plus Best Pitch · iOS app built in 90 minutes" },
 ];
 
 const Index = () => {
