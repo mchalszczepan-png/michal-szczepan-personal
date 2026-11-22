@@ -359,10 +359,13 @@ const Work = () => {
                     <h3 className="lab mk ink" style={v({ "--r": "-.8deg" })}>Next</h3>
                     <ul>
                       <li className="sticky" style={v({ "--bg": "#fcd2a0", "--r": "-2.4deg", "--pen": "#d13b2f" })}>
-                        <h4 className="mk ink">TBD</h4>
-                        <p className="ca ink">by Michal</p>
+                        <h4 className="mk ink">App stores</h4>
+                        <p className="ca ink">Publish Ganzy on Google Play and the Apple App Store</p>
                       </li>
-                      <li className="slot" aria-hidden="true" />
+                      <li className="sticky" style={v({ "--bg": "#c9e8f5", "--r": "1.8deg", "--pen": "#2f6fb5" })}>
+                        <h4 className="mk ink">Winter exams</h4>
+                        <p className="ca ink">1:1 average in my engineering exams</p>
+                      </li>
                       <li className="slot" aria-hidden="true" />
                     </ul>
                     <div className="pad" aria-hidden="true">
