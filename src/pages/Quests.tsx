@@ -147,18 +147,18 @@ const quests: Quest[] = [
     ),
   },
   {
-    title: "GiveAGo AI Build Jam",
+    title: "LazyMornings",
     pin: "",
-    meta: "Give(a)Go · January 2026",
-    what: "Built a browser-use agent at the AI Build Jam.",
-    chips: [<b>Jan 2026</b>, <><b>Browser-use</b>agent</>],
+    meta: "GiveAGo AI Build Jam · January 2026 · team of 5",
+    what: "An AI agent that texts your friends and family for you. Random, personal messages on a schedule (so grandma always gets her happy birthday). Built with Python and Browser-use. lazymornings.com",
+    chips: [<><b>4 h</b>sprint</>, <><b>Browser-use</b>+ Python</>],
     n: 3,
-    hard: "Getting an agent to click around a real browser, live, inside one jam.",
+    hard: "Four hours, five people, one agent that has to open a real browser and send a message that doesn't sound like a robot wrote it.",
     learned: "Watching an agent use a browser shows you very fast what it can and can't do. Some of it is magic. Some of it is a toddler with a mouse.",
     media: (
       <figure className="pol solo" style={v({ "--ar": "3/2", "--r": "-3deg" })}>
         <Pin c="g" />
-        <img src={giveago} alt="Michal coding at the GiveAGo AI Build Jam" loading="lazy" />
+        <img src={giveago} alt="Michal building LazyMornings at the GiveAGo AI Build Jam" loading="lazy" />
         <figcaption>AI Build Jam, Jan 2026</figcaption>
       </figure>
     ),
