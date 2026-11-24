@@ -150,7 +150,7 @@ const quests: Quest[] = [
     title: "LazyMornings",
     pin: "",
     meta: "GiveAGo AI Build Jam · January 2026 · team of 5",
-    what: "An AI agent that texts your friends and family for you. Random, personal messages on a schedule (so grandma always gets her happy birthday). Built with Python and Browser-use. lazymornings.com",
+    what: "An AI agent that texts your friends and family for you. Random, personal messages on a schedule (so grandma always gets her happy birthday). We built the backend with Python and Browser-use.",
     chips: [<><b>4 h</b>sprint</>, <><b>Browser-use</b>+ Python</>],
     n: 3,
     hard: "Four hours, five people, one agent that has to open a real browser and send a message that doesn't sound like a robot wrote it.",
