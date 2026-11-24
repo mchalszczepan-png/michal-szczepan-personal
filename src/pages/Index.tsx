@@ -1,166 +1,336 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import SiteHud from "@/components/SiteHud";
+import { useCallback, useEffect, useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent, type ReactNode } from "react";
+import { Link } from "react-router-dom";
+import profilePhoto from "@/assets/profile-photo.jpg";
+import ganzyLogo from "@/assets/ganzy-logo.png";
+import hultGroupPhoto from "@/assets/hult-group-photo.jpg";
 import "@/styles/home.css";
 
-type Cart = "work" | "quests" | "sketch";
+/** Free-floating windows are used only at this width and up; below it they stack. */
+const DESKTOP_QUERY = "(min-width: 1280px)";
 
-const ORDER: Cart[] = ["work", "quests", "sketch"];
+type WinId = "about" | "ganzy" | "recog" | "photo";
+type Pos = { x: number; y: number };
 
-const INFO: Record<Cart, { title: string; text: string; to: string }> = {
-  work: {
-    title: "World 1 · The Workbench",
-    text: "Roles, degree and the PC business started at 13. Circuit boards, terminals and hardware.",
-    to: "/work",
-  },
-  quests: {
-    title: "World 2 · Side Quests",
-    text: "Hackathons and builds: Vitruvian, Remento, pc-from-anywhere and more. Main quest: Ganzy.",
-    to: "/quests",
-  },
-  sketch: {
-    title: "World 3 · The Sketchbook",
-    text: "Maths, books, drawing and creative writing. The off-duty save file.",
-    to: "/sketchbook",
-  },
+/** Starting positions inside the desk (below the 40px menu bar). */
+const START: Record<WinId, Pos> = {
+  about: { x: 72, y: 36 },
+  ganzy: { x: 700, y: 60 },
+  recog: { x: 120, y: 412 },
+  photo: { x: 716, y: 430 },
+};
+const START_ORDER: WinId[] = ["photo", "recog", "ganzy", "about"];
+
+const useIsDesktop = () => {
+  const [desktop, setDesktop] = useState(() => window.matchMedia(DESKTOP_QUERY).matches);
+  useEffect(() => {
+    const mq = window.matchMedia(DESKTOP_QUERY);
+    const onChange = () => setDesktop(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+  return desktop;
 };
 
-const TROPHY =
-  "M6 2h12v2h3v4a4 4 0 0 1-4 4h-.3A6 6 0 0 1 13 15.9V18h4v2H7v-2h4v-2.1A6 6 0 0 1 7.300 12H7a4 4 0 0 1-4-4V4h3zM5 6v2a2 2 0 0 0 1 1.700V6zm14 0h-1v3.700A2 2 0 0 0 19 8z";
+const useDublinClock = () => {
+  const format = () =>
+    new Date().toLocaleTimeString("en-IE", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Dublin" });
+  const [time, setTime] = useState(format);
+  useEffect(() => {
+    const id = window.setInterval(() => setTime(format()), 30000);
+    return () => window.clearInterval(id);
+  }, []);
+  return time;
+};
 
-const ACHIEVEMENTS: { b: string; rest?: string; small: string }[] = [
-  { b: "100+ Leaving Cert students on day 1", rest: " of the Ganzy MVP launch", small: "Started as a Leaving Cert study planner. Relaunched Nov 2026." },
-  { b: "Enterprise Ireland New Frontiers Phase 2", small: "2026 · youngest founders ever accepted" },
-  { b: "PostHog Startup Plan: $50k+ credits", small: "2026" },
-  { b: "Dr Séamus McDermott Entrepreneurial Scholar", small: "2026 · Liffey Trust + UCC · €9,000" },
-  { b: "Hult Prize Campus Director, UCC", small: "Nov 2025–Mar 2026 · ran UCC's first-ever Hult Prize, 5 teams pitched" },
-  { b: "National SDG Hackathon champions", small: "plus Best Pitch · iOS app built in 90 minutes" },
+const ICONS: { to: string; label: string; file?: boolean; svg: ReactNode }[] = [
+  {
+    to: "/work",
+    label: "Work",
+    svg: (
+      <>
+        <rect x="6" y="10" width="52" height="34" rx="3" fill="#fff" stroke="#24211C" strokeWidth="2.5" />
+        <path d="M14 30h36" stroke="#24211C" strokeWidth="2" />
+        <circle cx="18" cy="30" r="3.5" fill="#F26B1D" stroke="#24211C" strokeWidth="1.5" />
+        <circle cx="32" cy="30" r="3.5" fill="#2E5AA7" stroke="#24211C" strokeWidth="1.5" />
+        <circle cx="46" cy="30" r="3.5" fill="#3E7D5A" stroke="#24211C" strokeWidth="1.5" />
+        <path d="M14 20h12M38 20h10" stroke="#9A917F" strokeWidth="2" strokeLinecap="round" />
+        <path d="M20 44l-6 14M44 44l6 14M32 44v14" stroke="#24211C" strokeWidth="2.5" strokeLinecap="round" />
+      </>
+    ),
+  },
+  {
+    to: "/quests",
+    label: "Projects",
+    svg: (
+      <>
+        <rect x="5" y="9" width="54" height="44" rx="3" fill="#C8955C" stroke="#24211C" strokeWidth="2.5" />
+        <rect x="10" y="14" width="44" height="34" fill="#D9AE78" />
+        <rect x="14" y="18" width="14" height="13" fill="#fff" stroke="#24211C" strokeWidth="1.5" transform="rotate(-5 21 24)" />
+        <rect x="33" y="17" width="15" height="11" fill="#F4C94A" stroke="#24211C" strokeWidth="1.5" transform="rotate(4 40 22)" />
+        <rect x="26" y="33" width="16" height="12" fill="#BFD7EA" stroke="#24211C" strokeWidth="1.5" transform="rotate(-3 34 39)" />
+        <circle cx="21" cy="19" r="2.2" fill="#D64532" />
+        <circle cx="40" cy="18" r="2.2" fill="#2E5AA7" />
+        <circle cx="34" cy="34" r="2.2" fill="#3E7D5A" />
+      </>
+    ),
+  },
+  {
+    to: "/sketchbook",
+    label: "Sketchbook",
+    svg: (
+      <>
+        <rect x="12" y="7" width="42" height="52" rx="3" fill="#fff" stroke="#24211C" strokeWidth="2.5" />
+        <path d="M20 15v40M27 15v40M34 15v40M41 15v40M48 15v40M18 20h34M18 27h34M18 34h34M18 41h34M18 48h34" stroke="#A9C3DE" strokeWidth="1" />
+        <path d="M22 44c5-10 10 2 15-8s8-4 10-6" fill="none" stroke="#F26B1D" strokeWidth="2.5" strokeLinecap="round" />
+        <g fill="#fff" stroke="#24211C" strokeWidth="2">
+          <circle cx="12" cy="15" r="3" />
+          <circle cx="12" cy="25" r="3" />
+          <circle cx="12" cy="35" r="3" />
+          <circle cx="12" cy="45" r="3" />
+        </g>
+      </>
+    ),
+  },
+  {
+    to: "/contact",
+    label: "Contact",
+    svg: (
+      <>
+        <rect x="7" y="15" width="50" height="34" rx="3" fill="#fff" stroke="#24211C" strokeWidth="2.5" />
+        <path d="M8 17l24 18 24-18" fill="none" stroke="#24211C" strokeWidth="2.5" strokeLinejoin="round" />
+        <rect x="44" y="20" width="9" height="10" fill="#F26B1D" stroke="#24211C" strokeWidth="1.5" />
+      </>
+    ),
+  },
+  {
+    to: "/Michal_Szczepan_CV.pdf",
+    label: "CV",
+    file: true,
+    svg: (
+      <>
+        <path d="M14 6h26l12 12v40H14z" fill="#fff" stroke="#24211C" strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M40 6v12h12" fill="#F6F1E6" stroke="#24211C" strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M20 26h22M20 32h26M20 38h18" stroke="#9A917F" strokeWidth="2" strokeLinecap="round" />
+        <rect x="18" y="44" width="22" height="10" rx="2" fill="#D64532" stroke="#24211C" strokeWidth="1.5" />
+        <text x="29" y="52" fontFamily="Figtree,sans-serif" fontSize="7.5" fontWeight="700" fill="#fff" textAnchor="middle">PDF</text>
+      </>
+    ),
+  },
+];
+
+const NAV = [
+  { to: "/work", label: "Work" },
+  { to: "/quests", label: "Projects" },
+  { to: "/sketchbook", label: "Sketchbook" },
+  { to: "/contact", label: "Contact" },
+];
+
+const RECOGNITION = [
+  { badge: "NF", bg: "#FBE3CF", title: "New Frontiers Phase 2, Enterprise Ireland", text: "Youngest person ever accepted, at 18, with Ganzy." },
+  { badge: "€9k", bg: "#F9EDBF", title: "Dr. Séamus McDermott Entrepreneurial Scholarship", text: "Awarded €9,000 by the Liffey Trust." },
+  { badge: "1st", bg: "#D9E8DE", title: "National Irish SDG Hackathon, winner and Best Pitch", text: "With Remento, an app for early signs of dementia." },
+  { badge: "HP", bg: "#DCE5F3", title: "Campus Director, Hult Prize at UCC", text: "Recruited teams and organised workshops, mentors, judges and pitching events." },
 ];
 
 const Index = () => {
-  const [sel, setSel] = useState<Cart>("work");
-  const navigate = useNavigate();
+  const desktop = useIsDesktop();
+  const time = useDublinClock();
+  const deskRef = useRef<HTMLElement>(null);
+  const winRefs = useRef<Partial<Record<WinId, HTMLElement | null>>>({});
+  const drag = useRef<{ id: WinId; pointer: number; sx: number; sy: number; ox: number; oy: number } | null>(null);
+
+  const [pos, setPos] = useState<Record<WinId, Pos>>(START);
+  const [order, setOrder] = useState<WinId[]>(START_ORDER);
+  const [closed, setClosed] = useState<Set<WinId>>(new Set());
 
   useEffect(() => {
-    document.title = "Michal Szczepan — Select your world";
+    document.title = "Michal Szczepan";
+  }, []);
+
+  /** Keep a window fully inside the desk so nothing ends up off-screen. */
+  const clamp = useCallback((id: WinId, p: Pos): Pos => {
+    const desk = deskRef.current;
+    const win = winRefs.current[id];
+    if (!desk || !win) return p;
+    const maxX = Math.max(0, desk.clientWidth - win.offsetWidth);
+    const maxY = Math.max(0, desk.clientHeight - win.offsetHeight);
+    return { x: Math.min(Math.max(0, p.x), maxX), y: Math.min(Math.max(0, p.y), maxY) };
   }, []);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      const t = e.target as HTMLElement | null;
-      if (t?.closest("input,textarea,select,[contenteditable]")) return;
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
-      const step = (d: number) =>
-        setSel((s) => ORDER[(ORDER.indexOf(s) + d + ORDER.length) % ORDER.length]);
-      if (e.key === "ArrowRight") {
-        step(1);
-        e.preventDefault();
-      } else if (e.key === "ArrowLeft") {
-        step(-1);
-        e.preventDefault();
-      } else if (e.key === "Enter" && !t?.closest("a,button")) {
-        navigate(INFO[sel].to);
-      }
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [sel, navigate]);
+    if (!desktop) return;
+    const onResize = () =>
+      setPos((prev) => {
+        const next = { ...prev };
+        (Object.keys(next) as WinId[]).forEach((id) => (next[id] = clamp(id, next[id])));
+        return next;
+      });
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [desktop, clamp]);
 
-  const step = (d: number) => setSel((s) => ORDER[(ORDER.indexOf(s) + d + ORDER.length) % ORDER.length]);
-  const info = INFO[sel];
+  const raise = (id: WinId) => setOrder((o) => (o[o.length - 1] === id ? o : [...o.filter((w) => w !== id), id]));
+
+  const onBarDown = (id: WinId) => (e: ReactPointerEvent<HTMLDivElement>) => {
+    if (!desktop || e.button !== 0 || (e.target as HTMLElement).closest("button")) return;
+    e.currentTarget.setPointerCapture(e.pointerId);
+    drag.current = { id, pointer: e.pointerId, sx: e.clientX, sy: e.clientY, ox: pos[id].x, oy: pos[id].y };
+  };
+  const onBarMove = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const d = drag.current;
+    if (!d || d.pointer !== e.pointerId) return;
+    const next = clamp(d.id, { x: d.ox + e.clientX - d.sx, y: d.oy + e.clientY - d.sy });
+    setPos((p) => ({ ...p, [d.id]: next }));
+  };
+  const onBarUp = () => {
+    drag.current = null;
+  };
+
+  const focused = order[order.length - 1];
+
+  const renderWin = ({ id, title, label, className, children, as = "section" }: { id: WinId; title: string; label: string; className: string; children: ReactNode; as?: "section" | "figure" }) => {
+    if (closed.has(id)) return null;
+    const Tag = as;
+    const style: CSSProperties | undefined = desktop
+      ? { left: pos[id].x, top: pos[id].y, zIndex: 2 + order.indexOf(id) }
+      : undefined;
+    return (
+      <Tag
+        ref={(el: HTMLElement | null) => { winRefs.current[id] = el; }}
+        className={`win ${className}${focused === id ? " focus" : ""}`}
+        style={style}
+        aria-label={label}
+        onPointerDown={() => raise(id)}
+        onFocus={() => raise(id)}
+      >
+        <div className="bar" onPointerDown={onBarDown(id)} onPointerMove={onBarMove} onPointerUp={onBarUp} onPointerCancel={onBarUp}>
+          <div className="dots">
+            <button type="button" className="close" aria-label={`Close ${label} window`} onClick={() => setClosed((c) => new Set(c).add(id))} />
+            <i aria-hidden="true" />
+            <i aria-hidden="true" />
+          </div>
+          <div className="title">{title}</div>
+        </div>
+        <div className="body">{children}</div>
+      </Tag>
+    );
+  };
 
   return (
     <div className="pg-home">
-      <SiteHud world="home" />
-      <main className="stage" id="stage">
-        <div className="console">
-          <div className="console-top">
-            <span className="brand">MS-1 HANDHELD <i>P1</i></span>
-            <span className="pw">POWER <span className="led" /></span>
-          </div>
-          <div className="console-mid">
-            <div className="dpad" role="group" aria-label="Choose a world">
-              <button className="u" tabIndex={-1} aria-hidden="true">▲</button>
-              <button className="l" onClick={() => step(-1)} aria-label="Previous cartridge">◀</button>
-              <button className="r" onClick={() => step(1)} aria-label="Next cartridge">▶</button>
-              <button className="d" tabIndex={-1} aria-hidden="true">▼</button>
-            </div>
+      <header className="menubar">
+        <Link className="brand" to="/">
+          <img src={profilePhoto} alt="" />
+          Michal Szczepan
+        </Link>
+        <nav aria-label="Main">
+          {NAV.map((n) => (
+            <Link key={n.to} to={n.to}>{n.label}</Link>
+          ))}
+        </nav>
+        <div className="right">
+          <span className="city">Cork, Ireland</span>
+          <span aria-label={`Time in Cork ${time}`}>{time}</span>
+        </div>
+      </header>
 
-            <div className="screen">
-              <div className="scr-bar"><span>P1 · Michal</span><span className="blink">Select your world</span><span>Cork, Ireland</span></div>
-              <div className="scr-body">
-                <div>
-                  <p className="kicker">Player 1</p>
-                  <h1 tabIndex={-1}>Michal Szczepan</h1>
-                  <p className="role">Co-founder &amp; CTO of <b>Ganzy</b></p>
-                  <p className="pitch">I'm building the companion app that helps high schoolers with ADHD stay locked in. Electrical engineering student at UCC. Self-taught backend programmer. Hackathon addict.</p>
-                  <h2><span>Achievements unlocked</span></h2>
-                  <ul className="ach">
-                    {ACHIEVEMENTS.map((a) => (
-                      <li key={a.b}>
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d={TROPHY} /></svg>
-                        <div><b>{a.b}</b>{a.rest}<small>{a.small}</small></div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <div className="dialog" aria-live="polite">
-                    <span className="d-tag">World info</span>
-                    <h3>{info.title}</h3>
-                    <p>{info.text}</p>
-                    <Link className="go" to={info.to}>▶ PRESS A TO LOAD</Link>
-                  </div>
-                  <div className="links">
-                    <h2><span>Contact</span></h2>
-                    <ul>
-                      <li><a href="https://linkedin.com/in/michal-szczepan-728189370" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                      <li><a href="https://github.com/mchalszczepan-png" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                      <li><a href="/Michal_Szczepan_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a></li>
-                      <li><a href="https://ganzy.app" target="_blank" rel="noopener noreferrer">ganzy.app</a></li>
-                    </ul>
-                  </div>
+      <main className="desktop" ref={deskRef}>
+        <nav className="icons" aria-label="Pages">
+          {ICONS.map((ic) => {
+            const inner = (
+              <>
+                <svg viewBox="0 0 64 64" aria-hidden="true">{ic.svg}</svg>
+                <span>{ic.label}</span>
+              </>
+            );
+            return ic.file ? (
+              <a key={ic.to} className="icon" href={ic.to} target="_blank" rel="noopener noreferrer">{inner}</a>
+            ) : (
+              <Link key={ic.to} className="icon" to={ic.to}>{inner}</Link>
+            );
+          })}
+        </nav>
+
+        {renderWin({
+          id: "about",
+          title: "About Michal",
+          label: "About",
+          className: "about",
+          children: (
+            <>
+              <img className="me" src={profilePhoto} alt="Michal Szczepan" />
+              <div>
+                <h1>Michal Szczepan</h1>
+                <p className="role"><b>Co-founder and CTO of Ganzy.</b> Electrical and Electronic Engineering student at University College Cork.</p>
+                <p className="more">I lead product and technical planning at Ganzy and coordinate a team of four developers. Before university I ran a custom PC sales and repair business.</p>
+                <div className="btns">
+                  <Link className="btn primary" to="/work">See my work</Link>
+                  <a className="btn" href="/Michal_Szczepan_CV.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+                  <Link className="btn" to="/contact">Get in touch</Link>
                 </div>
               </div>
-            </div>
+            </>
+          ),
+        })}
 
-            <div className="abtns" role="group" aria-label="Controls">
-              <button className="b" onClick={() => setSel("work")} aria-label="Back to first cartridge"><span>B</span></button>
-              <button className="a" onClick={() => navigate(info.to)} aria-label="Load selected world"><span>A</span></button>
-            </div>
-          </div>
+        {renderWin({
+          id: "ganzy",
+          title: "Ganzy",
+          label: "Ganzy",
+          className: "ganzy",
+          children: (
+            <>
+              <div className="head">
+                <img src={ganzyLogo} alt="Ganzy logo" />
+                <div>
+                  <h2>Ganzy</h2>
+                  <p><a href="https://ganzy.app" target="_blank" rel="noopener noreferrer">ganzy.app</a></p>
+                </div>
+              </div>
+              <p className="desc">A companion app that helps high-school students with ADHD.</p>
+              <dl>
+                <dt>Role</dt><dd>Co-founder and CTO</dd>
+                <dt>Since</dt><dd>September 2025</dd>
+                <dt>Team</dt><dd>Four developers</dd>
+                <dt>Programme</dt><dd>New Frontiers Phase 2, Enterprise Ireland</dd>
+              </dl>
+            </>
+          ),
+        })}
 
-          <div className="shelf">
-            <p className="shelf-h">Insert a cartridge</p>
-            <div className="carts">
-              <Link className={`cart${sel === "work" ? " sel" : ""}`} to="/work" data-w="work" onMouseEnter={() => setSel("work")} onFocus={() => setSel("work")}>
-                <div className="cart-wrap"><div className="cart-body"><span className="cart-ridges" />
-                  <div className="cart-label">
-                    <svg className="art" viewBox="0 0 64 64" fill="none" stroke="#5dffa4" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="18" y="18" width="28" height="28" rx="2" /><path d="M26 18v-8M38 18v-8M26 46v8M38 46v8M18 26h-8M18 38h-8M46 26h8M46 38h8" /><circle cx="32" cy="32" r="4" fill="#d99a4b" stroke="none" /></svg>
-                    <div><span>World 1</span><b>The Workbench</b></div>
-                  </div>
-                  <div className="cart-pins" /></div></div>
-              </Link>
-              <Link className={`cart${sel === "quests" ? " sel" : ""}`} to="/quests" data-w="quests" onMouseEnter={() => setSel("quests")} onFocus={() => setSel("quests")}>
-                <div className="cart-wrap"><div className="cart-body"><span className="cart-ridges" />
-                  <div className="cart-label">
-                    <svg className="art" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l20 7v16c0 14-9 23-20 29C21 52 12 43 12 29V13z" fill="#b8322a" stroke="#1d1b16" strokeWidth="3" strokeLinejoin="round" /><path d="M32 16v34M22 28h20" stroke="#f0c75e" strokeWidth="4" strokeLinecap="round" /></svg>
-                    <div><span>World 2</span><b>Side Quests</b></div>
-                  </div>
-                  <div className="cart-pins" /></div></div>
-              </Link>
-              <Link className={`cart${sel === "sketch" ? " sel" : ""}`} to="/sketchbook" data-w="sketch" onMouseEnter={() => setSel("sketch")} onFocus={() => setSel("sketch")}>
-                <div className="cart-wrap"><div className="cart-body"><span className="cart-ridges" />
-                  <div className="cart-label">
-                    <svg className="art" viewBox="0 0 64 64" fill="none" stroke="#26334f" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M10 48l4-12 28-28 8 8-28 28z" fill="#f6d675" /><path d="M42 8l8 8M14 36l8 8" /><path d="M8 56c8-4 12 2 20-1s14-3 22 0" stroke="#d6453d" /></svg>
-                    <div><span>World 3</span><b>Sketchbook</b></div>
-                  </div>
-                  <div className="cart-pins" /></div></div>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <p className="foot-note">← → CHOOSE · ENTER LOAD · THE HUD FOLLOWS YOU EVERYWHERE</p>
+        {renderWin({
+          id: "recog",
+          title: "Recognition",
+          label: "Recognition",
+          className: "recog",
+          children: (
+            <ul>
+              {RECOGNITION.map((r) => (
+                <li key={r.badge}>
+                  <span className="badge" style={{ background: r.bg }} aria-hidden="true">{r.badge}</span>
+                  <div><b>{r.title}</b><small>{r.text}</small></div>
+                </li>
+              ))}
+            </ul>
+          ),
+        })}
+
+        {renderWin({
+          id: "photo",
+          title: "hult-group-photo.jpg",
+          label: "Photo",
+          className: "photo",
+          as: "figure",
+          children: (
+            <>
+              <img src={hultGroupPhoto} alt="Teams at the Hult Prize event at University College Cork" />
+              <figcaption>Hult Prize at University College Cork.</figcaption>
+            </>
+          ),
+        })}
+
+        <aside className="note"><b>Currently</b>Building Ganzy and studying engineering at UCC.</aside>
       </main>
     </div>
   );
