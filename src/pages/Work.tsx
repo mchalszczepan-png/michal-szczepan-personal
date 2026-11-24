@@ -25,36 +25,14 @@ type Row = {
 
 const rows: Row[] = [
   {
-    when: "Ongoing",
+    when: "Sep 2025 – present",
     hero: true,
     pin: { c: "#d13b2f", img: ganzyLogo, alt: "Ganzy logo" },
-    title: "Co-founder & CTO",
-    org: "Ganzy, with Jack Garvey (CEO)",
+    title: "Co-Founder & CTO",
+    org: "Ganzy",
     out: (
       <>
-        <b>100+</b> Leaving Cert students on day one. New Frontiers Phase 2. Relaunched Nov 2026.
-      </>
-    ),
-  },
-  {
-    when: "2026",
-    pin: { c: "#16874d", img: liffeyLogo, alt: "Liffey Trust logo" },
-    title: "Dr Séamus McDermott Entrepreneurial Scholar",
-    org: "Liffey Trust + UCC",
-    out: (
-      <>
-        <b>€9,000</b> scholarship.
-      </>
-    ),
-  },
-  {
-    when: "Nov 2025 – Mar 2026",
-    pin: { c: "#e6007e", img: hultLogo, alt: "Hult Prize logo" },
-    title: "Hult Prize Campus Director",
-    org: "UCC",
-    out: (
-      <>
-        Ran UCC’s <b>first-ever</b> Hult Prize. 5 teams pitched; winners Windhover went to the nationals.
+        Lead product and technical planning for an adaptive planner. Translate requirements into development tasks for <b>four developers</b> and review implementation against agreed behaviour.
       </>
     ),
   },
@@ -62,50 +40,68 @@ const rows: Row[] = [
     when: "Sep 2025 – present",
     pin: { c: "#1d56b3", kind: "dot" },
     title: "Class Representative",
-    org: "Electrical & Electronic Eng., UCC",
-    out: <b>Elected two years running.</b>,
-  },
-  {
-    when: "Sep – Nov 2025",
-    pin: { c: "#d13b2f", kind: "dot" },
-    title: "Entrepreneurial Mindshift",
-    org: "UCC elective, UW0007",
-    out: (
-      <>
-        Built the EduCat / ScreenPaws prototype in <b>28 days</b>.
-      </>
-    ),
+    org: "Electrical & Electronic Engineering, UCC",
+    out: "Built a shared database of learning materials for students who needed extra resources.",
   },
   {
     when: "2025 – 2029",
     pin: { c: "#fff", kind: "sq", img: uccCrest, alt: "University College Cork crest" },
-    title: "BE Electrical & Electronic Eng.",
-    org: "UCC, Cork",
+    title: "BE Electrical & Electronic Engineering",
+    org: "University College Cork",
     out: (
       <>
-        Four-year degree. Standing so far: <b>1:2</b>.
+        Current average: <b>Second Class Honours Grade 1</b>, three percentage points below a First-Class Honours grade.
       </>
     ),
   },
   {
-    when: "Oct 2023 & Feb 2024",
+    when: "",
+    pin: { c: "#e6007e", img: hultLogo, alt: "Hult Prize logo" },
+    title: "Campus Director, Hult Prize",
+    org: "University College Cork",
+    out: (
+      <>
+        Recruited teams and organised workshops, mentors, judges and pitching events for student social ventures. <b>Five teams</b> pitched at the final.
+      </>
+    ),
+  },
+  {
+    when: "",
+    pin: { c: "#16874d", img: liffeyLogo, alt: "Liffey Trust logo" },
+    title: "Dr. Séamus McDermott Entrepreneurial Scholarship",
+    org: "Liffey Trust",
+    out: (
+      <>
+        Awarded <b>€9,000</b>.
+      </>
+    ),
+  },
+  {
+    when: "",
+    pin: { c: "#d13b2f", kind: "dot" },
+    title: "Developing an Entrepreneurial Mindset",
+    org: "UCC module UW0007",
+    out: "Validated ScreenPaws through customer discovery and pitching.",
+  },
+  {
+    when: "",
     pin: { c: "#16874d", img: eypLogo, alt: "European Youth Parliament logo" },
     title: "European Youth Parliament delegate",
-    org: "Regional session, then National Session",
+    org: "Munster Regional Session and National Session",
     out: (
       <>
-        National Session held in <b>Dáil Éireann</b>. Topic: cyber security.
+        Defended group legislation on cyber security in <b>Dáil Éireann</b> at the National Session. Worked on legislation on Pegasus spyware at the Regional Session.
       </>
     ),
   },
   {
-    when: "2020 – 2022",
+    when: "From 2020",
     pin: { c: "#d13b2f", kind: "dot" },
-    title: "Founder, custom PC business",
-    org: "Started at 13",
+    title: "Founder & Technician",
+    org: "Custom PC Sales & Repair Business",
     out: (
       <>
-        <b>€4,000+</b> revenue. Survived a <b>€1,100</b> fake-cheque scam.
+        Started at 13. Generated more than <b>€4,000</b> in revenue over roughly 18 months. Moved into repairs and component sales after a forged-cheque fraud and the global chip shortage.
       </>
     ),
   },
@@ -114,18 +110,17 @@ const rows: Row[] = [
 type Sticky = { bg: string; r: string; pen: string; h: string; p: ReactNode; ok?: boolean };
 
 const shipped: Sticky[] = [
-  { bg: "#bfe3c9", r: "-1.8deg", pen: "#1d56b3", ok: true, h: "MVP launch", p: <><em>100+</em> Leaving Cert students on day one</> },
-  { bg: "#fbe98a", r: "1.6deg", pen: "#232a37", ok: true, h: "New Frontiers Phase 2", p: <>Enterprise Ireland. <em>Youngest founders ever</em> accepted</> },
-  { bg: "#bcd9f2", r: "-1deg", pen: "#232a37", ok: true, h: "PostHog Startup Plan", p: <><em>$50k+</em> in credits</> },
-  { bg: "#f8c9cf", r: "2.1deg", pen: "#1d56b3", ok: true, h: "Relaunch, Nov 2026", p: <>after ~<em>3</em> UI overhauls</> },
+  { bg: "#fbe98a", r: "1.6deg", pen: "#232a37", ok: true, h: "New Frontiers Phase 2", p: <>Enterprise Ireland. <em>Youngest person</em> accepted, at 18</> },
+  { bg: "#bfe3c9", r: "-1.8deg", pen: "#1d56b3", ok: true, h: "US-first strategy", p: <>Led the transition after <em>student research</em></> },
+  { bg: "#bcd9f2", r: "-1deg", pen: "#232a37", ok: true, h: "Validation post", p: <>About <em>100</em> upvotes and <em>50</em> comments in two days</> },
+  { bg: "#f8c9cf", r: "2.1deg", pen: "#1d56b3", ok: true, h: "Planner logic", p: <>Modelled in mathematics, pseudocode and wireframes</> },
 ];
 
 const doing: Sticky[] = [
-  { bg: "#fbe98a", r: "1.4deg", pen: "#232a37", h: "Ganzy app", p: "One Expo codebase: web, iOS, Android" },
-  { bg: "#fcd2a0", r: "-2deg", pen: "#1d56b3", h: "Backend", p: "Convex + Clerk sign-in" },
-  { bg: "#bfe3c9", r: "1deg", pen: "#232a37", h: "AI chat", p: "Drafts titles, steps, dates. Voice dictation" },
-  { bg: "#bcd9f2", r: "-1.5deg", pen: "#1d56b3", h: "Telemetry", p: "PostHog. Replay only if opted in" },
-  { bg: "#f8c9cf", r: "1.8deg", pen: "#232a37", h: "Specs", p: "Requirements, user stories, decision records" },
+  { bg: "#fbe98a", r: "1.4deg", pen: "#232a37", h: "Product planning", p: "Adaptive planner across academics, college goals, activities and deadlines" },
+  { bg: "#fcd2a0", r: "-2deg", pen: "#1d56b3", h: "System specifications", p: "Requirements and detailed system behaviour" },
+  { bg: "#bfe3c9", r: "1deg", pen: "#232a37", h: "Development tasks", p: "Requirements broken down for four developers" },
+  { bg: "#bcd9f2", r: "-1.5deg", pen: "#1d56b3", h: "Implementation review", p: "Delivery checked against agreed behaviour" },
 ];
 
 const StickyNote = ({ s }: { s: Sticky }) => (
@@ -183,9 +178,9 @@ const Work = () => {
                 <path d="M28 18 C 110 12 200 20 272 14" fill="none" stroke="#d13b2f" strokeWidth="4" strokeLinecap="round" />
               </svg>
               <p className="sub ink">
-                <b>Michal Szczepan</b>, co-founder &amp; CTO of Ganzy. Studying electrical &amp; electronic engineering at UCC, Cork.
+                <b>Michal Szczepan</b>, Co-Founder &amp; CTO of Ganzy. Electrical &amp; Electronic Engineering student at UCC, Cork.
                 <span className="ca">
-                  The Ganzy team-room wall. Whiteboard: my career so far. Sticky notes: where Ganzy is at.
+                  Experience in product design, planner algorithms, user research, technical documentation and coordination of a four-developer team.
                 </span>
               </p>
             </div>
@@ -195,7 +190,7 @@ const Work = () => {
               <Tape cls="tr2" />
               <h2>Michal Szczepan</h2>
               <p className="r">
-                Co-founder &amp; CTO, Ganzy
+                Co-Founder &amp; CTO, Ganzy
                 <br />
                 Cork, Ireland
               </p>
@@ -232,7 +227,7 @@ const Work = () => {
                 height={800}
               />
               <figcaption className="ca ink" style={v({ "--cr": "1.5deg" })}>
-                UCC SDG Hackathon: 1st place. My first hackathon.
+                UCC SDG Hackathon qualifier, 1st place
               </figcaption>
             </figure>
           </div>
@@ -258,12 +253,12 @@ const Work = () => {
 
                   <div className="sh ink">
                     <h2 id="tl-h" className="mk">
-                      Career timeline
+                      Timeline
                       <svg viewBox="0 0 150 12" preserveAspectRatio="none" aria-hidden="true">
                         <path d="M1 7 C 40 2 90 11 149 4" fill="none" stroke="#1d56b3" strokeWidth="3.600" strokeLinecap="round" />
                       </svg>
                     </h2>
-                    <p>newest on top</p>
+                    <p>Experience and education</p>
                   </div>
 
                   <ol className="tv ink" aria-labelledby="tl-h">
@@ -289,20 +284,23 @@ const Work = () => {
 
                   <aside className="undated ink" aria-labelledby="und-h">
                     <h3 id="und-h" className="mk">
-                      No dates written up<span>(still on the board)</span>
+                      Additional
                     </h3>
                     <ul>
                       <li>
-                        <b>Student Council President</b>St Francis College
+                        <b>Student Council President</b>St. Francis College, Rochestown
                       </li>
                       <li>
-                        <b>Leaving Cert 613 / 625</b>Douglas Community School
+                        <b>Leaving Certificate 613 / 625</b>Top 2% nationally across nine subjects
                       </li>
                       <li>
-                        <b>UCC Rocketry Society</b>Python flight sim, 3D modelling
+                        <b>UCC Rocketry Society</b>Team of five designed and launched a rocket
                       </li>
                       <li>
-                        <b>SDG Hackathons</b>UCC 1st (€1,000), then national champions + Best Pitch
+                        <b>SDG Hackathons</b>UCC qualifier (€1,000) and national final (€3,000), with Best Pitch
+                      </li>
+                      <li>
+                        <b>Patch Pitchathon</b>Winner. Idea to working demo and pitch in 45 minutes
                       </li>
                     </ul>
                   </aside>
@@ -332,13 +330,13 @@ const Work = () => {
                   </span>
                   <div>
                     <h2 id="kb-h" className="mk ink">Ganzy</h2>
-                    <p className="ca ink">where it is at, in sticky notes</p>
+                    <p className="ca ink">Companion app for high-schoolers with ADHD</p>
                   </div>
                 </div>
 
                 <div className="cols">
                   <div className="col">
-                    <h3 className="lab mk ink" style={v({ "--r": "-1.8deg" })}>Shipped</h3>
+                    <h3 className="lab mk ink" style={v({ "--r": "-1.8deg" })}>Done</h3>
                     <ul>
                       {shipped.map((s) => (
                         <StickyNote key={s.h} s={s} />
@@ -347,7 +345,7 @@ const Work = () => {
                   </div>
 
                   <div className="col">
-                    <h3 className="lab mk ink" style={v({ "--r": "1.2deg" })}>Doing</h3>
+                    <h3 className="lab mk ink" style={v({ "--r": "1.2deg" })}>In progress</h3>
                     <ul>
                       {doing.map((s) => (
                         <StickyNote key={s.h} s={s} />
@@ -360,11 +358,11 @@ const Work = () => {
                     <ul>
                       <li className="sticky" style={v({ "--bg": "#fcd2a0", "--r": "-2.4deg", "--pen": "#d13b2f" })}>
                         <h4 className="mk ink">App stores</h4>
-                        <p className="ca ink">Publish Ganzy on Google Play and the Apple App Store</p>
+                        <p className="ca ink">Publish on Google Play and the Apple App Store</p>
                       </li>
                       <li className="sticky" style={v({ "--bg": "#c9e8f5", "--r": "1.8deg", "--pen": "#2f6fb5" })}>
                         <h4 className="mk ink">Winter exams</h4>
-                        <p className="ca ink">1:1 average in my engineering exams</p>
+                        <p className="ca ink">1:1 average in the winter engineering exams</p>
                       </li>
                       <li className="slot" aria-hidden="true" />
                     </ul>
@@ -387,7 +385,7 @@ const Work = () => {
                     height={1706}
                   />
                   <figcaption className="ca ink red" style={v({ "--cr": "-1.5deg" })}>
-                    Ganzy on the big screen, New Frontiers
+                    Ganzy at New Frontiers, Enterprise Ireland
                   </figcaption>
                 </figure>
                 <figure className="print" style={v({ "--r": "2.2deg" })}>
@@ -399,7 +397,7 @@ const Work = () => {
                     height={1066}
                   />
                   <figcaption className="ca ink grn" style={v({ "--cr": "1.5deg" })}>
-                    National SDG Hackathon finals. We won.
+                    National Irish SDG Hackathon final: winner and Best Pitch
                   </figcaption>
                 </figure>
               </div>

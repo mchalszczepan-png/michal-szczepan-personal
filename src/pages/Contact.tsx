@@ -42,7 +42,7 @@ const Contact = () => {
       if (error) throw error;
       if (result?.error) throw new Error(result.error);
 
-      toast({ title: "Message sent!", description: "Thanks for reaching out. I'll get back to you soon." });
+      toast({ title: "Message sent", description: "Thank you. I will reply as soon as I can." });
       form.reset();
       setOpen(false);
     } catch (err: any) {
@@ -53,7 +53,7 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    document.title = "Contact — Michal Szczepan";
+    document.title = "Contact: Michal Szczepan";
   }, []);
 
   return (
@@ -67,23 +67,22 @@ const Contact = () => {
             <span className="pw">POWER <span className="led" /></span>
           </div>
           <div className="screen">
-            <div className="scr-bar"><span>P1 · Michal</span><span className="blink">Contact</span><span>Cork, Ireland</span></div>
+            <div className="scr-bar"><span>Michal Szczepan</span><span className="blink">Contact</span><span>Cork, Ireland</span></div>
             <div className="scr-body">
-              <p className="kicker">Player 1</p>
-              <h1>Get in Touch</h1>
-              <p className="pitch">Let's discuss your next project or just say hello</p>
+              <p className="kicker">Michal Szczepan</p>
+              <h1>Contact</h1>
+              <p className="pitch">Co-Founder &amp; CTO of Ganzy. Based in Cork, Ireland.</p>
 
               <h2><span>Contact Information</span></h2>
               <p className="pitch">
-                Feel free to reach out through any of these channels. I'm always open to
-                discussing new projects, creative ideas, or opportunities.
+                Contact by email, or through GitHub and LinkedIn.
               </p>
 
               <ul className="channels">
                 <li>
                   <button type="button" onClick={() => setOpen(true)} className="channel">
                     <span className="ico"><Mail aria-hidden="true" /></span>
-                    <span><b>Email</b><small>Send me a message</small></span>
+                    <span><b>Email</b><small>Send a message</small></span>
                   </button>
                 </li>
                 <li>
@@ -110,7 +109,7 @@ const Contact = () => {
         <DialogContent className="sm:max-w-md border-4 border-[#1d1b16] bg-[#efe8d6] text-[#1d1b16] rounded-2xl shadow-[6px_6px_0_#1d1b16]">
           <DialogHeader>
             <DialogTitle>Send a Message</DialogTitle>
-            <DialogDescription>Fill out the form below and I'll get back to you.</DialogDescription>
+            <DialogDescription>Fill in the form and I will reply as soon as I can.</DialogDescription>
           </DialogHeader>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

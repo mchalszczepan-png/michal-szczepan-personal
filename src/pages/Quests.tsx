@@ -42,17 +42,14 @@ const quests: Quest[] = [
   {
     title: "Vitruvian",
     pin: "",
-    meta: "Built at Junction 2026, AstraZeneca track · Helsinki · with Pavit Gogia",
-    what: "Helps Finnish GPs write complete cancer referrals. Voice dictation becomes a structured referral, and a cancer-risk aid cites NICE NG12.",
+    meta: "Junction 2026 · Helsinki · AstraZeneca track · with Pavit Gogia",
+    what: "Healthcare AI project built at Junction 2026 in Helsinki, on the AstraZeneca track.",
     chips: [
       "Fine-tuned Gemma LoRA, AUROC 0.96 on synthetic patients",
-      <><b>100+</b>days suspected-cancer wait</>,
-      <><b>41</b>of them at the GP</>,
     ],
-    stack: "React · Convex · Modal · Gemini / MedGemma",
     n: 5,
-    hard: "In Finland the wait for a cancer diagnosis is over 100 days, and 41 of those are spent at the GP. GPs can't order an MRI, so the referral is everything. If it's vague, it gets sent back. We had one hackathon to turn a GP talking into a full referral, plus a risk check that shows where it got its answer.",
-    learned: "I fine-tuned my first Gemma LoRA and got AUROC 0.96. Then I had to be honest about it. 78 synthetic patients are not real patients. A good start, nothing more (yet).",
+    hard: "Fine-tuned a Gemma LoRA model within the time limit of the hackathon.",
+    learned: "The AUROC of 0.96 was measured on synthetic patients, not on real patients.",
     media: (
       <>
         <div className="badge" style={v({ "--sc": "#e9742c", "--r": "-2.5deg" })}>
@@ -76,28 +73,28 @@ const quests: Quest[] = [
   {
     title: "Remento",
     pin: "g",
-    meta: "UCC SDG Hackathon, then National SDG Hackathon · with Jack Garvey & Nathan Manley",
-    what: "An iOS app built in 90 minutes to spot early signs of dementia: a weekly 5-minute test plus voice analysis. My first hackathon.",
+    meta: "UCC SDG Hackathon qualifier and National Irish SDG Hackathon",
+    what: "Swift app that uses weekly five-minute tests to track cognitive performance and flag possible early signs of dementia.",
     chips: [
       <><b>90</b>min build</>,
-      <><b>1st</b>UCC, €1,000</>,
-      <><b>National</b>champions</>,
+      <><b>€1,000</b>UCC qualifier</>,
+      <><b>€3,000</b>national final</>,
       <><b>Best</b>Pitch</>,
     ],
     n: 4,
-    hard: "Everyone else got 3 hours. We got 90 minutes, thanks to a scheduling mix-up at UCC. A whole iOS app in Swift, voice analysis included, at my first ever hackathon.",
-    learned: "Keep it small. One 5-minute test a week was enough. We won UCC, then nationals, and took Best Pitch too (still proud of that one).",
+    hard: "Built with 90 minutes instead of the standard three hours, due to a scheduling issue.",
+    learned: "Won the UCC qualifier, then the national final and Best Pitch. Total prize funding was €4,000.",
     media: (
       <>
         <figure className="pol" style={v({ "--ar": "1/1", "--r": "3deg" })}>
           <Pin />
           <img src={sdgUcc} alt="Remento team at the UCC SDG Hackathon" loading="lazy" />
-          <figcaption>UCC SDG Hackathon, 1st place</figcaption>
+          <figcaption>UCC SDG Hackathon qualifier, 1st place</figcaption>
         </figure>
         <figure className="pol" style={v({ "--ar": "4/5", "--r": "-2.5deg" })}>
           <Pin c="b" />
           <img src={sdgNational} alt="Remento team on stage at the National SDG Hackathon" loading="lazy" />
-          <figcaption>National champions + Best Pitch</figcaption>
+          <figcaption>National final: winner and Best Pitch</figcaption>
         </figure>
       </>
     ),
@@ -105,73 +102,63 @@ const quests: Quest[] = [
   {
     title: "pc-from-anywhere",
     pin: "b",
-    meta: "Open source · Tailscale + SSH + tmux",
-    what: "Use my PC from my phone on a 3 to 4 hour daily commute. Open-source guide and setup script on GitHub.",
-    chips: [<><b>3–4 h</b>commute, daily</>, <><b>tmux-resurrect</b>restores sessions</>],
+    meta: "Open source · Tailscale, SSH, Termius, tmux",
+    what: "Free, private setup for accessing a home PC from a phone or tablet. Published a one-shot Linux installation script and guide.",
+    chips: [<><b>tmux</b>persistent sessions</>, <><b>Linux</b>one-shot install script</>],
     n: 2,
-    hard: "My PC is at home. I'm commuting 3 to 4 hours a day. Every time the connection dropped or the PC restarted, my sessions on the phone died with it.",
-    learned: "You don't need anything fancy. Tailscale, SSH and tmux did the job. Writing it up as a guide and a setup script turned my fix into something other people can use.",
+    hard: "The installation script covers Ubuntu, Debian, Fedora, Arch and several derivatives.",
+    learned: "Documented the setup as a guide and a script so it can be repeated on another machine.",
     media: (
       <>
         <span className="dymo nv" style={v({ "--ds": "16px", "--r": "-3deg" })}>Tailscale + SSH + tmux</span>
-        <span className="dymo" style={v({ "--ds": "16px", "--r": "2deg" })}>3–4 h commute</span>
+        <span className="dymo" style={v({ "--ds": "16px", "--r": "2deg" })}>Linux install script</span>
         <span className="dymo rd" style={v({ "--ds": "16px", "--r": "-1deg" })}>Open source</span>
       </>
     ),
   },
   {
-    title: "Hermes Agent vector DB",
+    title: "Claude Code tools",
     pin: "y",
-    meta: "Give(a)Go OpenClaw build-athon · presented",
-    what: "A vector database behind Hermes Agent: safe LLM access to company data.",
-    chips: [<><b>Presented</b>at the build-athon</>],
+    meta: "Open source · GitHub",
+    what: "Tools to switch Claude Code between model providers, search and sync session history across projects, and resume sessions through different providers.",
+    chips: [<><b>claude-glm-switcher</b>CLI</>, <><b>claude-session-search</b>shell tools</>, <><b>despecify-sessions</b>Claude Code skill</>],
     n: 3,
-    hard: "Giving an AI agent access to company data without it seeing stuff it shouldn't. In one build-athon.",
-    learned: "Access rules go in at the start. Bolting them on afterwards is how data leaks.",
+    hard: "Resuming a session through a different provider required removing the model tags stored in the session history.",
+    learned: "claude-glm-switcher is MIT licensed and supports Anthropic, Z.ai, OpenRouter and LiteLLM backends, among others.",
     media: (
       <>
-        <div className="badge" style={v({ "--sc": "#2f6fb5", "--r": "2deg" })}>
-          <Pin />
-          <div className="strap" />
-          <div className="clip" />
-          <div className="bd">
-            <b>OpenClaw build-athon</b>
-            <small>Give(a)Go</small>
-            <div className="nm">
-              Michal Szczepan<span>presenter</span>
-            </div>
-          </div>
-        </div>
-        <span className="dymo gn" style={v({ "--ds": "16px", "--r": "-3deg" })}>Vector DB</span>
+        <span className="dymo nv" style={v({ "--ds": "16px", "--r": "2deg" })}>claude-glm-switcher</span>
+        <span className="dymo gn" style={v({ "--ds": "16px", "--r": "-3deg" })}>claude-session-search</span>
+        <span className="dymo rd" style={v({ "--ds": "16px", "--r": "-1deg" })}>despecify-sessions</span>
       </>
     ),
   },
   {
     title: "LazyMornings",
     pin: "",
-    meta: "GiveAGo AI Build Jam · January 2026 · team of 5",
-    what: "An AI agent that texts your friends and family for you. Random, personal messages on a schedule (so grandma always gets her happy birthday). We built the backend with Python and Browser-use.",
+    meta: "GiveAGo AI Build Jam · team of 5",
+    what: "Python messaging agent that schedules and sends randomized, context-aware messages to friends and family. Only the backend was built, using Python and Browser-use.",
     chips: [<><b>4 h</b>sprint</>, <><b>Browser-use</b>+ Python</>],
     n: 3,
-    hard: "Four hours, five people, one agent that has to open a real browser and send a message that doesn't sound like a robot wrote it.",
-    learned: "Watching an agent use a browser shows you very fast what it can and can't do. Some of it is magic. Some of it is a toddler with a mouse.",
+    hard: "Built within four hours by a team of five.",
+    learned: "Demonstrated a functional prototype integrating an agentic AI workflow.",
     media: (
       <figure className="pol solo" style={v({ "--ar": "3/2", "--r": "-3deg" })}>
         <Pin c="g" />
         <img src={giveago} alt="Michal building LazyMornings at the GiveAGo AI Build Jam" loading="lazy" />
-        <figcaption>AI Build Jam, Jan 2026</figcaption>
+        <figcaption>GiveAGo AI Build Jam</figcaption>
       </figure>
     ),
   },
   {
     title: "CareComply",
     pin: "b",
-    meta: "NDRC Startup Sprint · February 2026",
-    what: "A nursing roster and compliance tool, built during the Startup Sprint.",
-    chips: [<b>Feb 2026</b>, <><b>Roster</b>+ compliance</>],
+    meta: "NDRC Startup Sprint · with co-founder Jack",
+    what: "Compliance tool for nursing homes, built at the NDRC Startup Sprint.",
+    chips: [<><b>5</b>Directors of Nursing called</>, <><b>LEO Limerick</b>fast-track offer</>],
     n: 3,
-    hard: "Before writing any code, Jack and I cold-called five Directors of Nursing, from Dublin to Galway. Then the roster had to follow the compliance rules too, or nobody would touch it.",
-    learned: "Validate before you build. Those calls were worth more than any feature. LEO Limerick offered us fast-track investment off the back of it (we didn't take it).",
+    hard: "Cold-called five Directors of Nursing, from Dublin to Galway, before writing any code.",
+    learned: "LEO Limerick offered fast-track investment. The offer was not accepted.",
     media: (
       <>
         <figure className="pol solo" style={v({ "--ar": "3/2", "--r": "2.5deg" })}>
@@ -179,19 +166,19 @@ const quests: Quest[] = [
           <img src={carecomply} alt="The CareComply team at the NDRC Startup Sprint" loading="lazy" />
           <figcaption>NDRC Startup Sprint</figcaption>
         </figure>
-        <span className="dymo rd" style={v({ "--ds": "15px", "--r": "-2deg" })}>Nursing roster</span>
+        <span className="dymo rd" style={v({ "--ds": "15px", "--r": "-2deg" })}>Nursing home compliance</span>
       </>
     ),
   },
   {
     title: "Custom PC business",
     pin: "g",
-    meta: "2020 to 2022 · started at 13",
-    what: "Built and sold custom PCs, a business I started at 13 during lockdown.",
-    chips: [<><b>€4,000+</b>revenue</>, <><b>€1,100</b>fake cheque, survived</>],
+    meta: "Founder & Technician · started at 13",
+    what: "Started at 13 after identifying large markups on pre-built gaming PCs. Sourced components, assembled and benchmarked computers, handled customers and repaired systems.",
+    chips: [<><b>€4,000+</b>revenue</>, <><b>€1,100</b>fake cheque</>],
     n: 4,
-    hard: "Someone paid with a fake cheque. The bank flagged it a week later, when the PC was already sitting in a parcel sorting centre in Britain. Then the silicon shortage pushed builds from €800 to €2,500+.",
-    learned: "A sale isn't final until the money clears. I rebuilt from repairs and flipping parts, and still got the business past €4,000 in revenue.",
+    hard: "A €1,100 cheque was flagged as fake a week later, after the PC had already been sent. The global chip shortage then raised component prices from €800 to €2,500+.",
+    learned: "Adapted by moving from complete builds into repairs and individual component sales.",
     media: (
       <>
         <div className="cheque" style={v({ "--r": "-3deg" })}>
@@ -203,7 +190,7 @@ const quests: Quest[] = [
           <span className="fake">Fake</span>
         </div>
         <div className="tag" style={v({ "--r": "2.5deg" })}>
-          Started at 13<small>2020 to 2022</small>
+          Started at 13<small>Custom PCs</small>
         </div>
       </>
     ),
@@ -211,18 +198,18 @@ const quests: Quest[] = [
   {
     title: "UCC Rocketry",
     pin: "y",
-    meta: "UCC Rocketry & Space Exploration Society · est. 2024",
-    what: "A Python flight simulator and 3D modelling for the society.",
-    chips: [<><b>Python</b>flight sim</>, <><b>3D</b>modelling</>],
+    meta: "UCC Rocketry Society · team of five",
+    what: "Designed a rocket from scratch, 3D printed the parts and calculated the trajectory.",
+    chips: [<><b>3D</b>printed parts</>, <><b>Trajectory</b>calculation</>],
     n: 3,
-    hard: "Getting a Python simulation to behave like a real rocket before anything gets built.",
-    learned: "Simulate first, build second. It's a lot cheaper to crash a rocket in code.",
+    hard: "Designing the rocket from scratch as a team of five.",
+    learned: "The rocket was launched at Lord Waterford's estate in January.",
     media: (
       <>
         <div className="sticker photo" style={v({ "--r": "-6deg", width: "132px", height: "132px" })}>
-          <img src={rocket} alt="UCC Rocketry and Space Exploration Society badge" />
+          <img src={rocket} alt="UCC Rocketry Society badge" />
         </div>
-        <span className="dymo" style={v({ "--ds": "15px", "--r": "2deg" })}>Python flight sim</span>
+        <span className="dymo" style={v({ "--ds": "15px", "--r": "2deg" })}>3D printed parts</span>
       </>
     ),
   },
@@ -230,7 +217,7 @@ const quests: Quest[] = [
 
 const Quests = () => {
   useEffect(() => {
-    document.title = "Side Quests · Michal Szczepan";
+    document.title = "Projects: Michal Szczepan";
   }, []);
 
   return (
@@ -251,12 +238,12 @@ const Quests = () => {
           <div className="frame">
             <div className="board">
               <div className="q-head">
-                <h1 className="dymo big" tabIndex={-1}>Side quests</h1>
+                <h1 className="dymo big" tabIndex={-1}>Projects</h1>
                 <div className="q-legend">
                   <Pin c="b" />
-                  <p>Hackathons, builds and one business, pinned up.</p>
+                  <p>Hackathons, software projects and a business.</p>
                   <p>
-                    Chillies are how hard it was:
+                    Difficulty:
                     <span className="chillies" aria-hidden="true">
                       <svg className="chilli"><use href="#q-chilli" /></svg>
                       <svg className="chilli"><use href="#q-chilli" /></svg>
