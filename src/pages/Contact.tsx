@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Mail, Github, Linkedin, Send, Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import Navigation from "@/components/Navigation";
+import SiteHud from "@/components/SiteHud";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import "@/styles/contact.css";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be under 100 characters"),
@@ -51,83 +52,62 @@ const Contact = () => {
     }
   };
 
+  useEffect(() => {
+    document.title = "Contact — Michal Szczepan";
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      
-      <section className="pt-32 pb-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <h1 className="text-3xl font-bold mb-2">Get in Touch</h1>
-          <p className="text-muted-foreground mb-8">
-            Let's discuss your next project or just say hello
-          </p>
+    <div className="pg-contact">
+      <SiteHud world="home" />
 
-          <hr className="border-border mb-8" />
+      <main className="stage" id="stage">
+        <div className="console">
+          <div className="console-top">
+            <span className="brand">MS-1 HANDHELD <i>P1</i></span>
+            <span className="pw">POWER <span className="led" /></span>
+          </div>
+          <div className="screen">
+            <div className="scr-bar"><span>P1 · Michal</span><span className="blink">Contact</span><span>Cork, Ireland</span></div>
+            <div className="scr-body">
+              <p className="kicker">Player 1</p>
+              <h1>Get in Touch</h1>
+              <p className="pitch">Let's discuss your next project or just say hello</p>
 
-          <div className="max-w-xl">
-            <h2 className="text-xl font-bold mb-4">Contact Information</h2>
-            <p className="text-muted-foreground mb-6">
-              Feel free to reach out through any of these channels. I'm always open to 
-              discussing new projects, creative ideas, or opportunities.
-            </p>
+              <h2><span>Contact Information</span></h2>
+              <p className="pitch">
+                Feel free to reach out through any of these channels. I'm always open to
+                discussing new projects, creative ideas, or opportunities.
+              </p>
 
-            <div className="space-y-4">
-              <button
-                onClick={() => setOpen(true)}
-                className="flex items-center gap-4 p-4 border border-border bg-card hover:bg-muted w-full text-left"
-              >
-                <div className="w-10 h-10 bg-primary flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">Email</p>
-                  <p className="text-sm text-muted-foreground">Send me a message</p>
-                </div>
-              </button>
-
-              <a 
-                href="https://github.com/mchalszczepan-png"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 border border-border bg-card hover:bg-muted no-underline"
-              >
-                <div className="w-10 h-10 bg-primary flex items-center justify-center">
-                  <Github className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">GitHub</p>
-                  <p className="text-sm text-muted-foreground">github.com/mchalszczepan-png</p>
-                </div>
-              </a>
-
-              <a 
-                href="https://www.linkedin.com/in/michal-szczepan-728189370"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 border border-border bg-card hover:bg-muted no-underline"
-              >
-                <div className="w-10 h-10 bg-primary flex items-center justify-center">
-                  <Linkedin className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">LinkedIn</p>
-                  <p className="text-sm text-muted-foreground">linkedin.com/in/michal-szczepan-728189370</p>
-                </div>
-              </a>
+              <ul className="channels">
+                <li>
+                  <button type="button" onClick={() => setOpen(true)} className="channel">
+                    <span className="ico"><Mail aria-hidden="true" /></span>
+                    <span><b>Email</b><small>Send me a message</small></span>
+                  </button>
+                </li>
+                <li>
+                  <a href="https://github.com/mchalszczepan-png" target="_blank" rel="noopener noreferrer" className="channel">
+                    <span className="ico"><Github aria-hidden="true" /></span>
+                    <span><b>GitHub</b><small>github.com/mchalszczepan-png</small></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/michal-szczepan-728189370" target="_blank" rel="noopener noreferrer" className="channel">
+                    <span className="ico"><Linkedin aria-hidden="true" /></span>
+                    <span><b>LinkedIn</b><small>linkedin.com/in/michal-szczepan-728189370</small></span>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
-
-      <footer className="py-6 px-4 border-t border-border">
-        <div className="container mx-auto max-w-4xl text-center">
-          <p className="text-muted-foreground text-sm">© 2025 Michal Szczepan. All rights reserved.</p>
-        </div>
-      </footer>
+        <p className="foot-note">© {new Date().getFullYear()} Michal Szczepan. All rights reserved.</p>
+      </main>
 
       {/* Contact Form Dialog */}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md border-4 border-[#1d1b16] bg-[#efe8d6] text-[#1d1b16] rounded-2xl shadow-[6px_6px_0_#1d1b16]">
           <DialogHeader>
             <DialogTitle>Send a Message</DialogTitle>
             <DialogDescription>Fill out the form below and I'll get back to you.</DialogDescription>

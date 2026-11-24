@@ -1,5 +1,7 @@
-import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import SiteHud from "@/components/SiteHud";
+import "@/styles/contact.css";
 
 const NotFound = () => {
   const location = useLocation();
@@ -8,15 +10,30 @@ const NotFound = () => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
   }, [location.pathname]);
 
+  useEffect(() => {
+    document.title = "Page not found — Michal Szczepan";
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-gray-600">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 underline hover:text-blue-700">
-          Return to Home
-        </a>
-      </div>
+    <div className="pg-contact">
+      <SiteHud world="home" />
+      <main className="stage" id="stage">
+        <div className="console">
+          <div className="console-top">
+            <span className="brand">MS-1 HANDHELD <i>P1</i></span>
+            <span className="pw">POWER <span className="led" /></span>
+          </div>
+          <div className="screen">
+            <div className="scr-bar"><span>P1 · Michal</span><span className="blink">No cartridge</span><span>Cork, Ireland</span></div>
+            <div className="scr-body">
+              <p className="kicker">Error</p>
+              <h1 className="nf-code">404</h1>
+              <p className="nf-title">Oops! Page not found</p>
+              <Link to="/" className="go">▶ Return to Home</Link>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 };
