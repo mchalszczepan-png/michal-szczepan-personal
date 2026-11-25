@@ -15,8 +15,8 @@ type Pos = { x: number; y: number };
 const START: Record<WinId, Pos> = {
   about: { x: 72, y: 36 },
   ganzy: { x: 700, y: 60 },
-  recog: { x: 120, y: 412 },
-  photo: { x: 716, y: 430 },
+  recog: { x: 120, y: 496 },
+  photo: { x: 716, y: 496 },
 };
 const START_ORDER: WinId[] = ["photo", "recog", "ganzy", "about"];
 
@@ -127,9 +127,10 @@ const NAV = [
 
 const RECOGNITION = [
   { badge: "NF", bg: "#FBE3CF", title: "New Frontiers Phase 2, Enterprise Ireland", text: "Youngest person ever accepted, at 18, with Ganzy." },
-  { badge: "€9k", bg: "#F9EDBF", title: "Dr. Séamus McDermott Entrepreneurial Scholarship", text: "Awarded €9,000 by the Liffey Trust." },
-  { badge: "1st", bg: "#D9E8DE", title: "National Irish SDG Hackathon, winner and Best Pitch", text: "With Remento, an app for early signs of dementia." },
-  { badge: "HP", bg: "#DCE5F3", title: "Campus Director, Hult Prize at UCC", text: "Recruited teams and organised workshops, mentors, judges and pitching events." },
+  { badge: "€9k", bg: "#F9EDBF", title: "Dr. Séamus McDermott Entrepreneurial Scholarship", text: "€9,000 from the Liffey Trust, Europe's first-ever accelerator programme." },
+  { badge: "1st", bg: "#D9E8DE", title: "National Irish SDG Hackathon, winner and Best Pitch", text: "With Remento, an app for early signs of dementia. We had 90 minutes to build while every other team had three hours." },
+  { badge: "HP", bg: "#DCE5F3", title: "Campus Director, Hult Prize at UCC", text: "UCC's first Hult Prize. It went from three people at the first workshop to five teams pitching at a packed final." },
+  { badge: "PP", bg: "#EBDDF1", title: "Patch Pitchathon, winner", text: "From no idea to a finished pitch and a working demo in 45 minutes." },
 ];
 
 const Index = () => {
@@ -263,7 +264,8 @@ const Index = () => {
               <div>
                 <h1>Michal Szczepan</h1>
                 <p className="role"><b>Co-founder and CTO of Ganzy.</b> Electrical and Electronic Engineering student at University College Cork.</p>
-                <p className="more">I lead product and technical planning at Ganzy and coordinate a team of four developers. Before university I ran a custom PC sales and repair business.</p>
+                <p className="more">I grew up in Cork. At 12 I noticed my school had no canteen at all, so I bought gum and 7-Up in bulk and sold it at lunch. At 13, stuck at home in lockdown, I sold my consoles and started building custom PCs.</p>
+                <p className="more">Now I write the specifications and the planner logic for Ganzy, and our four developers build from them. I do it alongside a full-time degree.</p>
                 <div className="btns">
                   <Link className="btn primary" to="/work">See my work</Link>
                   <a className="btn" href="/Michal_Szczepan_CV.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
@@ -288,7 +290,7 @@ const Index = () => {
                   <p><a href="https://ganzy.app" target="_blank" rel="noopener noreferrer">ganzy.app</a></p>
                 </div>
               </div>
-              <p className="desc">A companion app that helps high-school students with ADHD.</p>
+              <p className="desc">A companion app that helps high-school students with ADHD. It started with my own frustration in secondary school: plenty of effort, and no system for what to study next.</p>
               <dl>
                 <dt>Role</dt><dd>Co-founder and CTO</dd>
                 <dt>Since</dt><dd>September 2025</dd>
@@ -330,7 +332,7 @@ const Index = () => {
           ),
         })}
 
-        <aside className="note"><b>Currently</b>Building Ganzy and studying engineering at UCC.</aside>
+        <aside className="note"><b>Currently</b>Building Ganzy, and aiming for a 1:1 average in the winter engineering exams at UCC.</aside>
       </main>
     </div>
   );

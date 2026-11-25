@@ -31,7 +31,7 @@
 .pg-home .menubar .right{margin-left:auto;display:flex;gap:18px;color:var(--ink-2);white-space:nowrap}
 
 /* desk */
-.pg-home .desktop{position:relative;min-height:max(calc(100vh - 40px),860px)}
+.pg-home .desktop{position:relative;min-height:max(calc(100vh - 40px),960px)}
 
 /* desktop icons */
 .pg-home .icons{position:absolute;top:24px;right:26px;display:grid;grid-auto-flow:row;gap:14px;z-index:1}

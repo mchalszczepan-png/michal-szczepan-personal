@@ -32,7 +32,7 @@ const rows: Row[] = [
     org: "Ganzy",
     out: (
       <>
-        Lead product and technical planning for an adaptive planner. Translate requirements into development tasks for <b>four developers</b> and review implementation against agreed behaviour.
+        I write the system specifications and the planner logic, and our <b>four developers</b> build from them. The maths, the pseudocode and the wireframes are mine, and so is checking that what gets built behaves the way we agreed. After research with students, I led the move to a US-first product.
       </>
     ),
   },
@@ -41,7 +41,7 @@ const rows: Row[] = [
     pin: { c: "#1d56b3", kind: "dot" },
     title: "Class Representative",
     org: "Electrical & Electronic Engineering, UCC",
-    out: "Built a shared database of learning materials for students who needed extra resources.",
+    out: "I built a shared database of learning materials for students who needed extra resources, and made condensed formula notes with a stripped-down list of everything people had to know. If I see someone struggling with something I have already fixed, I help.",
   },
   {
     when: "2025 – 2029",
@@ -50,7 +50,7 @@ const rows: Row[] = [
     org: "University College Cork",
     out: (
       <>
-        Current average: <b>Second Class Honours Grade 1</b>, three percentage points below a First-Class Honours grade.
+        Current average: <b>Second Class Honours Grade 1</b>, three percentage points below a First-Class Honours grade. I am drawn to the electrical side. AI keeps demanding more power, and I want to be on the supply side of that problem, in power generation, energy storage and the grid.
       </>
     ),
   },
@@ -61,7 +61,7 @@ const rows: Row[] = [
     org: "University College Cork",
     out: (
       <>
-        Recruited teams and organised workshops, mentors, judges and pitching events for student social ventures. <b>Five teams</b> pitched at the final.
+        Nobody had run the Hult Prize at UCC before, so there was no playbook. The early workshops had dozens of signups and almost nobody in the room, even the one where we flew in a director from Hult in London. We kept going, and the final had <b>five teams</b> pitching to a packed room, from a student loneliness app to an AI tool that spots invasive plants.
       </>
     ),
   },
@@ -72,7 +72,7 @@ const rows: Row[] = [
     org: "Liffey Trust",
     out: (
       <>
-        Awarded <b>€9,000</b>.
+        Awarded <b>€9,000</b> by the Liffey Trust, Europe's first-ever accelerator programme. My application started with selling gum in school corridors and ended with Ganzy.
       </>
     ),
   },
@@ -81,7 +81,7 @@ const rows: Row[] = [
     pin: { c: "#d13b2f", kind: "dot" },
     title: "Developing an Entrepreneurial Mindset",
     org: "UCC module UW0007",
-    out: "Validated ScreenPaws through customer discovery and pitching.",
+    out: "Taught by Gillian Barrett and Eamonn Curtin. I rebuilt EduCat with a new team and renamed it ScreenPaws. Each week we tested assumptions with potential users and practised pitching to the class. It was the first time I felt real social impact behind a project.",
   },
   {
     when: "",
@@ -90,7 +90,7 @@ const rows: Row[] = [
     org: "Munster Regional Session and National Session",
     out: (
       <>
-        Defended group legislation on cyber security in <b>Dáil Éireann</b> at the National Session. Worked on legislation on Pegasus spyware at the Regional Session.
+        At the Munster Regional Session my committee drafted and defended legislation on Pegasus spyware. We then went to the National Session in <b>Dáil Éireann</b> to do the same for cyber security, broadcast live on Oireachtas TV. It felt like a hackathon for policy instead of code.
       </>
     ),
   },
@@ -101,7 +101,18 @@ const rows: Row[] = [
     org: "Custom PC Sales & Repair Business",
     out: (
       <>
-        Started at 13. Generated more than <b>€4,000</b> in revenue over roughly 18 months. Moved into repairs and component sales after a forged-cheque fraud and the global chip shortage.
+        Started at 13, in lockdown. I sold my PS3, PS4 and old laptop to pay for parts, built my own PC because the pre-built ones were marked up far past the cost of the components, and kept going, building two at a time with my friend Paul on marketing. It made more than <b>€4,000</b> over roughly 18 months, until a forged cheque and the global chip shortage emptied my workbench. I moved into repairs and selling parts.
+      </>
+    ),
+  },
+  {
+    when: "Sep – Dec 2019",
+    pin: { c: "#16874d", kind: "dot" },
+    title: "Lunchtime shop",
+    org: "St. Francis College, Rochestown",
+    out: (
+      <>
+        My school had no canteen at all, so at 12 I bought gum and 7-Up in bulk from Dealz and sold it at lunch. Two classmates helped, and after paying them I still made over <b>€150</b> before Christmas. COVID closed the school before I could ask the principal for a proper stand.
       </>
     ),
   },
@@ -110,17 +121,18 @@ const rows: Row[] = [
 type Sticky = { bg: string; r: string; pen: string; h: string; p: ReactNode; ok?: boolean };
 
 const shipped: Sticky[] = [
-  { bg: "#fbe98a", r: "1.6deg", pen: "#232a37", ok: true, h: "New Frontiers Phase 2", p: <>Enterprise Ireland. <em>Youngest person</em> accepted, at 18</> },
-  { bg: "#bfe3c9", r: "-1.8deg", pen: "#1d56b3", ok: true, h: "US-first strategy", p: <>Led the transition after <em>student research</em></> },
+  { bg: "#fbe98a", r: "1.6deg", pen: "#232a37", ok: true, h: "New Frontiers Phase 2", p: <>Enterprise Ireland. <em>Youngest person</em> ever accepted, at 18</> },
+  { bg: "#bfe3c9", r: "-1.8deg", pen: "#1d56b3", ok: true, h: "US-first strategy", p: <>Moved there after talking to <em>students</em></> },
   { bg: "#bcd9f2", r: "-1deg", pen: "#232a37", ok: true, h: "Validation post", p: <>About <em>100</em> upvotes and <em>50</em> comments in two days</> },
-  { bg: "#f8c9cf", r: "2.1deg", pen: "#1d56b3", ok: true, h: "Planner logic", p: <>Modelled in mathematics, pseudocode and wireframes</> },
+  { bg: "#f8c9cf", r: "2.1deg", pen: "#1d56b3", ok: true, h: "Planner logic", p: <>Written out in maths, pseudocode and wireframes</> },
+  { bg: "#fcd2a0", r: "-1.2deg", pen: "#232a37", ok: true, h: "Hard feedback", p: <>Mentors said our validation was weak and our market too narrow. They were <em>right</em>, so we restructured</> },
 ];
 
 const doing: Sticky[] = [
-  { bg: "#fbe98a", r: "1.4deg", pen: "#232a37", h: "Product planning", p: "Adaptive planner across academics, college goals, activities and deadlines" },
-  { bg: "#fcd2a0", r: "-2deg", pen: "#1d56b3", h: "System specifications", p: "Requirements and detailed system behaviour" },
-  { bg: "#bfe3c9", r: "1deg", pen: "#232a37", h: "Development tasks", p: "Requirements broken down for four developers" },
-  { bg: "#bcd9f2", r: "-1.5deg", pen: "#1d56b3", h: "Implementation review", p: "Delivery checked against agreed behaviour" },
+  { bg: "#fbe98a", r: "1.4deg", pen: "#232a37", h: "Planner", p: "What a student should do next, across academics, college goals, activities, deadlines and the time they have" },
+  { bg: "#fcd2a0", r: "-2deg", pen: "#1d56b3", h: "System specifications", p: "Exact requirements and behaviour for the developers to build from" },
+  { bg: "#bfe3c9", r: "1deg", pen: "#232a37", h: "Development tasks", p: "Requirements broken into tasks for four developers" },
+  { bg: "#bcd9f2", r: "-1.5deg", pen: "#1d56b3", h: "Implementation review", p: "Checking what gets built against what we agreed" },
 ];
 
 const StickyNote = ({ s }: { s: Sticky }) => (
@@ -180,7 +192,7 @@ const Work = () => {
               <p className="sub ink">
                 <b>Michal Szczepan</b>, Co-Founder &amp; CTO of Ganzy. Electrical &amp; Electronic Engineering student at UCC, Cork.
                 <span className="ca">
-                  Experience in product design, planner algorithms, user research, technical documentation and coordination of a four-developer team.
+                  I write specifications, planner maths and wireframes for a team of four developers, and I have been building things since I was 12.
                 </span>
               </p>
             </div>
@@ -227,7 +239,7 @@ const Work = () => {
                 height={800}
               />
               <figcaption className="ca ink" style={v({ "--cr": "1.5deg" })}>
-                UCC SDG Hackathon qualifier, 1st place
+                UCC SDG Hackathon qualifier: 1st place and €1,000
               </figcaption>
             </figure>
           </div>
@@ -288,19 +300,28 @@ const Work = () => {
                     </h3>
                     <ul>
                       <li>
-                        <b>Student Council President</b>St. Francis College, Rochestown
+                        <b>Student Council President</b>St. Francis College, Rochestown. I ran the council's meetings and took students' ideas to the school management board
                       </li>
                       <li>
-                        <b>Leaving Certificate 613 / 625</b>Top 2% nationally across nine subjects
+                        <b>Leaving Certificate 613 / 625</b>Top 2% nationally across nine subjects. Maths and Applied Maths both 95% or higher
                       </li>
                       <li>
-                        <b>UCC Rocketry Society</b>Team of five designed and launched a rocket
+                        <b>UCC Rocketry Society</b>Our team of five designed a rocket from scratch, 3D printed the parts, calculated the trajectory and launched it at Lord Waterford's estate in January
                       </li>
                       <li>
-                        <b>SDG Hackathons</b>UCC qualifier (€1,000) and national final (€3,000), with Best Pitch
+                        <b>SDG Hackathons</b>UCC qualifier (€1,000) and national final (€3,000), with Best Pitch. Remento, built in 90 minutes against everyone else's three hours
                       </li>
                       <li>
                         <b>Patch Pitchathon</b>Winner. Idea to working demo and pitch in 45 minutes
+                      </li>
+                      <li>
+                        <b>NDRC Startup Sprint</b>CareComply. We cold-called five Directors of Nursing before writing any code
+                      </li>
+                      <li>
+                        <b>Spark Startup Lab</b>UCC's startup accelerator. I was one of about 15 students picked, with weekly workshops leading to a final pitch to a panel of experts
+                      </li>
+                      <li>
+                        <b>Cork Entrepreneur Meetup</b>Founders who meet every Saturday to talk business. I am there every week
                       </li>
                     </ul>
                   </aside>
@@ -385,7 +406,7 @@ const Work = () => {
                     height={1706}
                   />
                   <figcaption className="ca ink red" style={v({ "--cr": "-1.5deg" })}>
-                    Ganzy at New Frontiers, Enterprise Ireland
+                    Jack Garvey and me at New Frontiers, Enterprise Ireland
                   </figcaption>
                 </figure>
                 <figure className="print" style={v({ "--r": "2.2deg" })}>
@@ -397,7 +418,7 @@ const Work = () => {
                     height={1066}
                   />
                   <figcaption className="ca ink grn" style={v({ "--cr": "1.5deg" })}>
-                    National Irish SDG Hackathon final: winner and Best Pitch
+                    National Irish SDG Hackathon final: winner, Best Pitch and €3,000
                   </figcaption>
                 </figure>
               </div>

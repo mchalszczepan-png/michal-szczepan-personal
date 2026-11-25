@@ -6,9 +6,10 @@ type Hack = { name: string; sub?: string; done: boolean };
 
 const INITIAL_HACKS: Hack[] = [
   { name: "Junction 2026", sub: "Helsinki, AstraZeneca track", done: true },
-  { name: "GiveAGo AI Build Jam", sub: "LazyMornings", done: true },
-  { name: "UCC and National Irish SDG Hackathons", sub: "winner, Best Pitch", done: true },
-  { name: "Patch Pitchathon", sub: "winner", done: true },
+  { name: "GiveAGo AI Build Jam", sub: "LazyMornings, built in four hours", done: true },
+  { name: "UCC and National Irish SDG Hackathons", sub: "Remento in 90 minutes, winner, Best Pitch", done: true },
+  { name: "Patch Pitchathon", sub: "winner, idea to demo in 45 minutes", done: true },
+  { name: "NDRC Startup Sprint", sub: "CareComply, five cold calls before any code", done: true },
 ];
 
 const Tick = () => (
@@ -70,6 +71,7 @@ const Sketchbook = () => {
                 </text>
               </svg>
             </div>
+            <p className="m-p">Maths and Applied Maths were both 95% or higher in my Leaving Cert, and I took part in the Applied Maths Olympiad. Not bad for someone who couldn't wrap his head around long division. At Ganzy I write the planner out in maths and pseudocode before a developer touches it.</p>
           </section>
 
           <section className="note n-books" aria-label="Reading shelf">
@@ -127,7 +129,7 @@ const Sketchbook = () => {
               </svg>
             </div>
             <p>
-              <b>Psychology, sales and entrepreneurship</b>, plus general books.
+              I started at 12 with the fifteen 1,200-page books of The Wheel of Time. Then I read my first entrepreneurship book, and I have been working through <b>psychology, sales and entrepreneurship</b> ever since. After a year of heavy reading I noticed I was forgetting most of it by the next day, so I went looking for memory techniques: spaced repetition, active recall and mnemonics.
             </p>
           </section>
 
@@ -152,6 +154,7 @@ const Sketchbook = () => {
               </g>
             </svg>
             <span className="cap">Pencil sketch</span>
+            <p className="d-p">In the UCC Rocketry Society our team of five calculated a trajectory for a rocket we designed ourselves, then launched it at Lord Waterford's estate in January.</p>
           </section>
 
           <section className="note n-write" aria-label="Creative writing">
@@ -203,22 +206,36 @@ const Sketchbook = () => {
                 wireframe
               </text>
             </svg>
-            <p>Wireframing and web design. Personal website built with TypeScript and React.</p>
+            <p>Wireframes are part of my job at Ganzy, so I draw them before anything gets built. This personal website is TypeScript and React, built from scratch.</p>
           </section>
 
           <section className="note n-rep" aria-label="Class representative">
             <h2>Class Representative</h2>
-            <p>Electrical &amp; Electronic Engineering, UCC. Built a shared database of learning materials for students who needed extra resources.</p>
+            <p>Electrical &amp; Electronic Engineering, UCC. I built a shared database of learning materials for students who needed extra resources, and wrote condensed formula notes with a stripped-down list of everything people had to know. If I see someone struggling with something I have already fixed, I help.</p>
             <span className="cap">Sep 2025 to present</span>
           </section>
 
           <section className="note n-learn" aria-label="Learning to program">
             <h2>Programming</h2>
-            <p>Python (primary), basic JavaScript, TypeScript, HTML and CSS. Studying backend development through Boot.dev.</p>
+            <p>Python first, plus basic JavaScript, TypeScript, HTML and CSS. I am studying backend development through Boot.dev.</p>
+            <p className="l-p">The first thing I took apart was a PS4. I jailbroke it, ran Linux on it and played Nintendo games on it with an Xbox 360 controller. (I also learnt that whenever I have the time, I can make my PS4 into a handy NAS :) )</p>
             <div className="code" aria-hidden="true">
               primary = "Python"<br />
               studying = "Boot.dev"
             </div>
+          </section>
+
+          <section className="note n-web n-climb" aria-label="Climbing">
+            <h2>Climbing</h2>
+            <p>I picked up indoor climbing the summer before 5th year at Awesome Walls, and kept it up at the Mardyke with UCC Mountaineering. I was climbing around 6a+ to 6b, with a few 6c sends, though my gym grades routes so harshly that I am convinced a 6c there is a 7a anywhere else.</p>
+            <p>It is weeks of failure compressed into a single wall. You spend session after session on the same route, still falling off at the same spot, and then one day it clicks. Fail, adapt, eventually send. It is the same loop I run in everything else.</p>
+            <p>Two friends and I once spent two weeks climbing in the Jura Krakowsko-Czestochowska near Katowice in Poland.</p>
+          </section>
+
+          <section className="note n-write n-ball" aria-label="Football and piano">
+            <h2>Football and piano</h2>
+            <p>Before any of the business there was football. After at least two hours of training every day, our team won the trophy for our division, and the man in a suit handing out the medals turned out to be the Lord Mayor of Cork. It was my first proper link between hard work and a result.</p>
+            <p>The piano went worse. I spent three months learning a single song, then found out I should probably have learned the basics first.</p>
           </section>
         </div>
 

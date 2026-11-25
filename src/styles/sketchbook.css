@@ -89,7 +89,8 @@
 .pg-sketch .n-hack h2{font-size:2rem}
 
 .pg-sketch .wire{width:100%;height:auto;stroke:var(--pen);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.pg-sketch .n-web p,.pg-sketch .n-learn p,.pg-sketch .n-rep p{font-size:1.14rem}
+.pg-sketch .n-web p,.pg-sketch .n-learn p,.pg-sketch .n-rep p,.pg-sketch .n-math p,.pg-sketch .n-draw p,.pg-sketch .n-write p{font-size:1.14rem}
+.pg-sketch .note p + p,.pg-sketch .n-math .m-p,.pg-sketch .n-draw .d-p{margin-top:10px}
 .pg-sketch .n-rep h2{font-size:2rem}
 .pg-sketch .n-learn .code{font-family:'IBM Plex Mono',monospace;font-size:.88rem;background:#eef3f8;border:1.5px solid #9eb7d1;border-radius:4px;padding:8px 12px;margin-top:10px;color:#1c3550;line-height:1.5;overflow-wrap:anywhere}
 .pg-sketch .n-learn .code i{font-style:normal;color:var(--red)}

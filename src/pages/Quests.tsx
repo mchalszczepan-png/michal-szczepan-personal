@@ -43,13 +43,13 @@ const quests: Quest[] = [
     title: "Vitruvian",
     pin: "",
     meta: "Junction 2026 · Helsinki · AstraZeneca track · with Pavit Gogia",
-    what: "Healthcare AI project built at Junction 2026 in Helsinki, on the AstraZeneca track.",
+    what: "A healthcare AI project built with Pavit Gogia at Junction 2026 in Helsinki, on the AstraZeneca track.",
     chips: [
       "Fine-tuned Gemma LoRA, AUROC 0.96 on synthetic patients",
     ],
     n: 5,
-    hard: "Fine-tuned a Gemma LoRA model within the time limit of the hackathon.",
-    learned: "The AUROC of 0.96 was measured on synthetic patients, not on real patients.",
+    hard: "We had to fine-tune a Gemma LoRA model inside the time limit of the hackathon.",
+    learned: "The AUROC of 0.96 was measured on synthetic patients, not on real ones, so it says nothing yet about real patients.",
     media: (
       <>
         <div className="badge" style={v({ "--sc": "#e9742c", "--r": "-2.5deg" })}>
@@ -74,7 +74,7 @@ const quests: Quest[] = [
     title: "Remento",
     pin: "g",
     meta: "UCC SDG Hackathon qualifier and National Irish SDG Hackathon",
-    what: "Swift app that uses weekly five-minute tests to track cognitive performance and flag possible early signs of dementia.",
+    what: "A Swift app that uses weekly five-minute tests to track cognitive performance and flag possible early signs of dementia. All three of us on the team have relatives affected by dementia.",
     chips: [
       <><b>90</b>min build</>,
       <><b>€1,000</b>UCC qualifier</>,
@@ -82,8 +82,8 @@ const quests: Quest[] = [
       <><b>Best</b>Pitch</>,
     ],
     n: 4,
-    hard: "Built with 90 minutes instead of the standard three hours, due to a scheduling issue.",
-    learned: "Won the UCC qualifier, then the national final and Best Pitch. Total prize funding was €4,000.",
+    hard: "UCC had a scheduling issue, so we had 90 minutes to build while every other team had three hours.",
+    learned: "We won the UCC qualifier, then the national final and Best Pitch, with €4,000 in prizes in total. Winning was a bonus. The real takeaway was that a team focused on a problem it cares about can build something in less time than it takes to do your shopping.",
     media: (
       <>
         <figure className="pol" style={v({ "--ar": "1/1", "--r": "3deg" })}>
@@ -100,14 +100,30 @@ const quests: Quest[] = [
     ),
   },
   {
+    title: "Patch Pitchathon",
+    pin: "y",
+    meta: "Patch Pitchathon · with Ian Cullinane and Dylan O'Riordan",
+    what: "An adaptive learning system that works like a personal, AI-driven curriculum builder, to get people learning hands-on skills outdoors. People protect what they care about, and they care about what they experience firsthand.",
+    chips: [<><b>45</b>min build</>, <><b>1st</b>place</>],
+    n: 3,
+    hard: "We went from no idea to a finished pitch and a working demo in 45 minutes.",
+    learned: "We won it. It also cemented my obsession with building universal learning engines, which is the problem I want to spend the rest of my life on.",
+    media: (
+      <>
+        <span className="dymo nv" style={v({ "--ds": "16px", "--r": "-2deg" })}>Idea to demo in 45 min</span>
+        <span className="dymo gn" style={v({ "--ds": "16px", "--r": "3deg" })}>Winner</span>
+      </>
+    ),
+  },
+  {
     title: "pc-from-anywhere",
     pin: "b",
     meta: "Open source · Tailscale, SSH, Termius, tmux",
-    what: "Free, private setup for accessing a home PC from a phone or tablet. Published a one-shot Linux installation script and guide.",
+    what: "A free, terminal-based setup that lets me use my home PC from a phone or tablet. I published a guide and a one-shot Linux installation script so anyone can copy it.",
     chips: [<><b>tmux</b>persistent sessions</>, <><b>Linux</b>one-shot install script</>],
     n: 2,
-    hard: "The installation script covers Ubuntu, Debian, Fedora, Arch and several derivatives.",
-    learned: "Documented the setup as a guide and a script so it can be repeated on another machine.",
+    hard: "One installation script had to work on Ubuntu, Debian, Fedora, Arch and several derivatives.",
+    learned: "I wrote the guide and the script around Tailscale, OpenSSH, tmux, TPM, Resurrect and Continuum, so the setup can be repeated on another machine.",
     media: (
       <>
         <span className="dymo nv" style={v({ "--ds": "16px", "--r": "-3deg" })}>Tailscale + SSH + tmux</span>
@@ -120,11 +136,11 @@ const quests: Quest[] = [
     title: "Claude Code tools",
     pin: "y",
     meta: "Open source · GitHub",
-    what: "Tools to switch Claude Code between model providers, search and sync session history across projects, and resume sessions through different providers.",
+    what: "Three small open-source tools for Claude Code. One switches between model providers, one searches and syncs session history across projects, and one lets a session resume through a different provider.",
     chips: [<><b>claude-glm-switcher</b>CLI</>, <><b>claude-session-search</b>shell tools</>, <><b>despecify-sessions</b>Claude Code skill</>],
     n: 3,
-    hard: "Resuming a session through a different provider required removing the model tags stored in the session history.",
-    learned: "claude-glm-switcher is MIT licensed and supports Anthropic, Z.ai, OpenRouter and LiteLLM backends, among others.",
+    hard: "A stored session remembers which model it ran on, so resuming it through another provider meant removing the model tags from the session history.",
+    learned: "claude-glm-switcher is MIT licensed and works with Anthropic, Z.ai, OpenRouter and LiteLLM backends, among others.",
     media: (
       <>
         <span className="dymo nv" style={v({ "--ds": "16px", "--r": "2deg" })}>claude-glm-switcher</span>
@@ -137,11 +153,11 @@ const quests: Quest[] = [
     title: "LazyMornings",
     pin: "",
     meta: "GiveAGo AI Build Jam · team of 5",
-    what: "Python messaging agent that schedules and sends randomized, context-aware messages to friends and family. Only the backend was built, using Python and Browser-use.",
+    what: "A Python agent that schedules and sends randomized, context-aware messages to friends and family, like a happy birthday text to your nan on her birthday. Only the backend got built, using Python and Browser-use.",
     chips: [<><b>4 h</b>sprint</>, <><b>Browser-use</b>+ Python</>],
     n: 3,
-    hard: "Built within four hours by a team of five.",
-    learned: "Demonstrated a functional prototype integrating an agentic AI workflow.",
+    hard: "A team of five had four hours to build it.",
+    learned: "It was a sharp reminder of how much you can build in a tiny window when you strip away everything except the problem and your tools.",
     media: (
       <figure className="pol solo" style={v({ "--ar": "3/2", "--r": "-3deg" })}>
         <Pin c="g" />
@@ -153,12 +169,12 @@ const quests: Quest[] = [
   {
     title: "CareComply",
     pin: "b",
-    meta: "NDRC Startup Sprint · with co-founder Jack",
-    what: "Compliance tool for nursing homes, built at the NDRC Startup Sprint.",
+    meta: "NDRC Startup Sprint at ENGINE Limerick · with co-founder Jack",
+    what: "A compliance tool for nursing homes. Jack and I showed up at ENGINE Limerick with no idea, recruited a team and picked nursing home rosters.",
     chips: [<><b>5</b>Directors of Nursing called</>, <><b>LEO Limerick</b>fast-track offer</>],
     n: 3,
-    hard: "Cold-called five Directors of Nursing, from Dublin to Galway, before writing any code.",
-    learned: "LEO Limerick offered fast-track investment. The offer was not accepted.",
+    hard: "Instead of jumping into code, we spent Saturday cold-calling five Directors of Nursing, from Dublin to Galway. They were running complex rosters on WhatsApp.",
+    learned: "We pitched them a fix and changed the product around what hurt most. The LEO Limerick director offered to fast-track us for investment, and we did not take the offer. Don't write a line of code until you have spoken to the people who will use the thing.",
     media: (
       <>
         <figure className="pol solo" style={v({ "--ar": "3/2", "--r": "2.5deg" })}>
@@ -171,14 +187,30 @@ const quests: Quest[] = [
     ),
   },
   {
+    title: "EduCat and ScreenPaws",
+    pin: "b",
+    meta: "TECS competition, then UCC module UW0007",
+    what: "A phone app that stays locked until kids finish short educational games. I have watched my sister grow up with screens in her hands, and I wanted parents to have a simple way to make that time count.",
+    chips: [<><b>28</b>days to build</>, <><b>0</b>Kotlin before</>, <><b>Figma</b>prototype</>],
+    n: 4,
+    hard: "In 6th year, a friend and I had 28 days to build an Android prototype without knowing a single line of Kotlin, on top of school. We did not win.",
+    learned: "I rebuilt it for a UCC module with a new team and renamed it ScreenPaws. This time we slowed down, mapped the problem and talked to users. The people around an idea shape it as much as the idea itself.",
+    media: (
+      <>
+        <span className="dymo nv" style={v({ "--ds": "16px", "--r": "-2deg" })}>Kotlin in 28 days</span>
+        <span className="dymo rd" style={v({ "--ds": "16px", "--r": "2deg" })}>ScreenPaws</span>
+      </>
+    ),
+  },
+  {
     title: "Custom PC business",
     pin: "g",
     meta: "Founder & Technician · started at 13",
-    what: "Started at 13 after identifying large markups on pre-built gaming PCs. Sourced components, assembled and benchmarked computers, handled customers and repaired systems.",
+    what: "Lockdown, age 13, and I wanted a gaming PC. I sold my PS3, PS4 and old laptop at a car boot sale to pay for parts, then saw that pre-built PCs were marked up far past what the components cost, with €800 builds selling for €1,200 or more. So I built my own and sold it for a €100 profit, then did it again, building two at a time with my friend Paul on marketing.",
     chips: [<><b>€4,000+</b>revenue</>, <><b>€1,100</b>fake cheque</>],
     n: 4,
-    hard: "A €1,100 cheque was flagged as fake a week later, after the PC had already been sent. The global chip shortage then raised component prices from €800 to €2,500+.",
-    learned: "Adapted by moving from complete builds into repairs and individual component sales.",
+    hard: "Two hits landed almost together. A customer paid with a €1,100 cheque that the bank flagged as fake a week later, after the PC was long gone in a British parcel sorting centre. Then the global chip shortage pushed the parts for an €800 build past €2,500.",
+    learned: "I learned more from staring at my empty workbench than from any sale: negotiation, fraud awareness, basic accounting and the reality of supply chains. After a week of bashing my head against the wall, I moved into small repairs and flipping individual parts. Less margin, but still enough cash.",
     media: (
       <>
         <div className="cheque" style={v({ "--r": "-3deg" })}>
@@ -199,11 +231,11 @@ const quests: Quest[] = [
     title: "UCC Rocketry",
     pin: "y",
     meta: "UCC Rocketry Society · team of five",
-    what: "Designed a rocket from scratch, 3D printed the parts and calculated the trajectory.",
+    what: "Our team of five in the UCC Rocketry Society designed a rocket from scratch, 3D printed the parts and calculated its trajectory.",
     chips: [<><b>3D</b>printed parts</>, <><b>Trajectory</b>calculation</>],
     n: 3,
-    hard: "Designing the rocket from scratch as a team of five.",
-    learned: "The rocket was launched at Lord Waterford's estate in January.",
+    hard: "Starting from nothing meant the parts and the numbers were ours to work out.",
+    learned: "We launched it at Lord Waterford's estate in January.",
     media: (
       <>
         <div className="sticker photo" style={v({ "--r": "-6deg", width: "132px", height: "132px" })}>
@@ -241,7 +273,7 @@ const Quests = () => {
                 <h1 className="dymo big" tabIndex={-1}>Projects</h1>
                 <div className="q-legend">
                   <Pin c="b" />
-                  <p>Hackathons, software projects and a business.</p>
+                  <p>Hackathons, competitions, software projects and a business.</p>
                   <p>
                     Difficulty:
                     <span className="chillies" aria-hidden="true">
