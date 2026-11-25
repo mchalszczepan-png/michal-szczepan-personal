@@ -11,7 +11,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   useEffect(() => {
-    document.title = "Page not found — Michal Szczepan";
+    document.title = "Page not found: Michal Szczepan";
   }, []);
 
   return (
@@ -24,11 +24,11 @@ const NotFound = () => {
             <span className="pw">POWER <span className="led" /></span>
           </div>
           <div className="screen">
-            <div className="scr-bar"><span>P1 · Michal</span><span className="blink">No cartridge</span><span>Cork, Ireland</span></div>
+            <div className="scr-bar"><span>Michal Szczepan</span><span className="blink">Not found</span><span>Cork, Ireland</span></div>
             <div className="scr-body">
               <p className="kicker">Error</p>
               <h1 className="nf-code">404</h1>
-              <p className="nf-title">Oops! Page not found</p>
+              <p className="nf-title">Page not found</p>
               <Link to="/" className="go">▶ Return to Home</Link>
             </div>
           </div>

@@ -5,10 +5,10 @@ import "@/styles/sketchbook.css";
 type Hack = { name: string; sub?: string; done: boolean };
 
 const INITIAL_HACKS: Hack[] = [
-  { name: "Junction 2026", sub: "Helsinki", done: true },
-  { name: "Give(a)Go OpenClaw build-athon", done: true },
-  { name: "UCC + National SDG Hackathons", sub: "champions, Best Pitch", done: true },
-  { name: "the next one", sub: "tap to claim it", done: false },
+  { name: "Junction 2026", sub: "Helsinki, AstraZeneca track", done: true },
+  { name: "GiveAGo AI Build Jam", sub: "LazyMornings", done: true },
+  { name: "UCC and National Irish SDG Hackathons", sub: "winner, Best Pitch", done: true },
+  { name: "Patch Pitchathon", sub: "winner", done: true },
 ];
 
 const Tick = () => (
@@ -42,13 +42,13 @@ const Sketchbook = () => {
               <path d="M2 12C40 4 70 18 110 10s70 6 100 0 60 6 88 0" />
             </svg>
           </h1>
-          <p className="sub">what I do when nobody's pitching</p>
+          <p className="sub">Interests and activities</p>
         </header>
 
         <div className="sgrid">
           <section className="note n-math" aria-label="Maths">
             <h2>
-              Maths <small>(I really like it)</small>
+              Maths
             </h2>
             <div className="math-bd">
               <div>
@@ -59,7 +59,6 @@ const Sketchbook = () => {
                 <p className="eq">
                   <span className="r">a² + b² = c²</span>
                 </p>
-                <span className="margin-note">proof by &ldquo;trust me&rdquo; = not allowed</span>
               </div>
               <svg className="graph" viewBox="0 0 220 190" role="img" aria-label="Hand-drawn parabola on axes">
                 <path d="M20 168V16M8 160h200" />
@@ -74,7 +73,7 @@ const Sketchbook = () => {
           </section>
 
           <section className="note n-books" aria-label="Reading shelf">
-            <h2>Currently reading</h2>
+            <h2>Reading</h2>
             <div className="shelf">
               <svg
                 viewBox="0 0 400 210"
@@ -152,12 +151,12 @@ const Sketchbook = () => {
                 <path d="M276 200l16 6M284 214l22 4M270 214l14 8" />
               </g>
             </svg>
-            <span className="cap">construction lines left in on purpose</span>
+            <span className="cap">Pencil sketch</span>
           </section>
 
           <section className="note n-write" aria-label="Creative writing">
             <h2>Creative writing</h2>
-            <p className="tt">Chapter, untitled</p>
+            <p className="tt">Untitled</p>
             <div className="lines" aria-hidden="true">
               <svg viewBox="0 0 300 18"><path d="M2 10c10-8 12 8 22 0s12 8 22 0 12 6 22 0 10 8 20 0 12 6 22 0 10 6 20 0 12 8 22 0 10 6 20 0 12 6 22 0 14 6 20 0" /></svg>
               <svg viewBox="0 0 300 18"><path d="M2 10c10-8 12 8 22 0s12 8 22 0 12 6 22 0 10 8 20 0 12 6 22 0 10 6 20 0 12 8 22 0 10 6 20 0" /></svg>
@@ -168,11 +167,10 @@ const Sketchbook = () => {
               <svg viewBox="0 0 300 18"><path d="M2 10c10-8 12 8 22 0s12 8 22 0 12 6 22 0 10 8 20 0 12 6 22 0 10 6 20 0 12 8 22 0 10 6 20 0 12 6 22 0" /></svg>
               <svg viewBox="0 0 300 18"><path d="M2 10c10-8 12 8 22 0s12 8 22 0 12 6 22 0 10 8 20 0 12 6 22 0 10 6 20 0" /></svg>
             </div>
-            <span className="cap">drafts, rewrites, repeat</span>
-          </section>
+                      </section>
 
           <section className="note n-hack" aria-label="Hackathons">
-            <h2>Hackathon addict</h2>
+            <h2>Hackathons</h2>
             <ul className="checks">
               {hacks.map((h, i) => (
                 <li key={h.name}>
@@ -202,30 +200,30 @@ const Sketchbook = () => {
               <circle cx="302" cy="72" r="8" />
               <path d="M100 128l14-6" stroke="#c2382d" />
               <text x="118" y="140" fontFamily="Caveat,cursive" fontSize="20" fill="#c2382d" stroke="none">
-                make it quirky
+                wireframe
               </text>
             </svg>
-            <p>Designing sites is half the fun. This one included.</p>
+            <p>Wireframing and web design. Personal website built with TypeScript and React.</p>
           </section>
 
           <section className="note n-rep" aria-label="Class representative">
             <h2>Class Representative</h2>
-            <p>Electrical &amp; Electronic Engineering, UCC.</p>
+            <p>Electrical &amp; Electronic Engineering, UCC. Built a shared database of learning materials for students who needed extra resources.</p>
             <span className="cap">Sep 2025 to present</span>
           </section>
 
           <section className="note n-learn" aria-label="Learning to program">
-            <h2>Learning to code, on the side</h2>
-            <p>Learning programming in my spare time.</p>
+            <h2>Programming</h2>
+            <p>Python (primary), basic JavaScript, TypeScript, HTML and CSS. Studying backend development through Boot.dev.</p>
             <div className="code" aria-hidden="true">
-              for quest in side_quests:<br />
-              &nbsp;&nbsp;learn(quest)  <i># repeat</i>
+              primary = "Python"<br />
+              studying = "Boot.dev"
             </div>
           </section>
         </div>
 
         <div className="s-foot">
-          <span>Say hi:</span>
+          <span>Links:</span>
           <a href="https://www.linkedin.com/in/michal-szczepan-728189370" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/mchalszczepan-png" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="/Michal_Szczepan_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>

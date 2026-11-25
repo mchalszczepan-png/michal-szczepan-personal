@@ -71,7 +71,7 @@ const ICONS = {
 const NAV = [
   { to: "/", label: "Home", short: "Home", icon: ICONS.home, evenodd: true },
   { to: "/work", label: "Work", short: "Work", icon: ICONS.work, evenodd: true },
-  { to: "/quests", label: "Side Quests", short: "Quests", icon: ICONS.quests },
+  { to: "/quests", label: "Projects", short: "Projects", icon: ICONS.quests },
   { to: "/sketchbook", label: "Sketchbook", short: "Sketch", icon: ICONS.sketch, evenodd: true },
 ];
 
@@ -98,14 +98,14 @@ const SiteHud = ({ world }: { world: World }) => {
         <div className="hud-avatar" aria-hidden="true"><Avatar /></div>
         <div className="hud-id">
           <b className="hud-name">Michal Szczepan</b>
-          <span className="hud-class">Co-founder &amp; CTO · Cork, Ireland</span>
+          <span className="hud-class">Co-Founder &amp; CTO · Cork, Ireland</span>
         </div>
         <div className="hud-xp">
-          <div className="hud-xp-top"><span>XP</span><span>BE EEE · UCC '25–'29</span></div>
+          <div className="hud-xp-top"><span>UCC</span><span>BE EEE · '25–'29</span></div>
           <div className="bar" role="img" aria-label="Degree progress: BE Electrical and Electronic Engineering, UCC, 2025 to 2029"><i /></div>
         </div>
         <div className="hud-quest">
-          <span>Current quest</span>
+          <span>Company</span>
           <b>Ganzy</b>
           <Link className="hud-contact" to="/contact" aria-current={path === "/contact" ? "page" : undefined}>Contact</Link>
         </div>
