@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import SiteHud from "@/components/SiteHud";
-import "@/styles/contact.css";
+import "@/styles/not-found.css";
 
 const NotFound = () => {
   const location = useLocation();
@@ -15,7 +15,7 @@ const NotFound = () => {
   }, []);
 
   return (
-    <div className="pg-contact">
+    <div className="pg-notfound">
       <SiteHud world="home" />
       <main className="stage" id="stage">
         <div className="console">

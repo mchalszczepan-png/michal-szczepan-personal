@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import profilePhoto from "@/assets/profile-photo.jpg";
 import ganzyLogo from "@/assets/ganzy-logo.png";
 import hultGroupPhoto from "@/assets/hult-group-photo.jpg";
+import DesktopMenuBar from "@/components/DesktopMenuBar";
 import "@/styles/home.css";
 
 /** Free-floating windows are used only at this width and up; below it they stack. */
@@ -29,17 +30,6 @@ const useIsDesktop = () => {
     return () => mq.removeEventListener("change", onChange);
   }, []);
   return desktop;
-};
-
-const useDublinClock = () => {
-  const format = () =>
-    new Date().toLocaleTimeString("en-IE", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Dublin" });
-  const [time, setTime] = useState(format);
-  useEffect(() => {
-    const id = window.setInterval(() => setTime(format()), 30000);
-    return () => window.clearInterval(id);
-  }, []);
-  return time;
 };
 
 const ICONS: { to: string; label: string; file?: boolean; svg: ReactNode }[] = [
@@ -118,13 +108,6 @@ const ICONS: { to: string; label: string; file?: boolean; svg: ReactNode }[] = [
   },
 ];
 
-const NAV = [
-  { to: "/work", label: "Work" },
-  { to: "/quests", label: "Projects" },
-  { to: "/sketchbook", label: "Sketchbook" },
-  { to: "/contact", label: "Contact" },
-];
-
 const RECOGNITION = [
   { badge: "NF", bg: "#FBE3CF", title: "New Frontiers Phase 2, Enterprise Ireland", text: "Youngest person ever accepted, at 18, with Ganzy." },
   { badge: "€9k", bg: "#F9EDBF", title: "Dr. Séamus McDermott Entrepreneurial Scholarship", text: "€9,000 from the Liffey Trust, Europe's first-ever accelerator programme." },
@@ -135,7 +118,6 @@ const RECOGNITION = [
 
 const Index = () => {
   const desktop = useIsDesktop();
-  const time = useDublinClock();
   const deskRef = useRef<HTMLElement>(null);
   const winRefs = useRef<Partial<Record<WinId, HTMLElement | null>>>({});
   const drag = useRef<{ id: WinId; pointer: number; sx: number; sy: number; ox: number; oy: number } | null>(null);
@@ -220,21 +202,7 @@ const Index = () => {
 
   return (
     <div className="pg-home">
-      <header className="menubar">
-        <Link className="brand" to="/">
-          <img src={profilePhoto} alt="" />
-          Michal Szczepan
-        </Link>
-        <nav aria-label="Main">
-          {NAV.map((n) => (
-            <Link key={n.to} to={n.to}>{n.label}</Link>
-          ))}
-        </nav>
-        <div className="right">
-          <span className="city">Cork, Ireland</span>
-          <span aria-label={`Time in Cork ${time}`}>{time}</span>
-        </div>
-      </header>
+      <DesktopMenuBar />
 
       <main className="desktop" ref={deskRef}>
         <nav className="icons" aria-label="Pages">
